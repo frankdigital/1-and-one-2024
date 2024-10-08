@@ -1,12 +1,12 @@
 .jw-socials {
-    @apply flex gap-2 md:gap-spacing-100;
+	@apply flex gap-2 md:gap-spacing-100;
 
-    &__social-link {
-        &:hover,
-        &:focus {
-            .jw-contained-icon {
-                @apply bg-purple-100;
-            }
-        }
-    }
+	&__social-link {
+		&:hover,
+		&:focus {
+			.jw-contained-icon {
+				@apply bg-orange-100;
+			}
+		}
+	}
 }

@@ -1,15 +1,15 @@
 .jw-contained-icon {
-    @apply rounded-buttonMobile bg-purple-50 p-spacing-200 transition-colors duration-150;
+	@apply bg-orange-50 rounded-buttonMobile p-spacing-200 transition-colors duration-150;
 
-    &__icon {
-        @apply size-6 text-theme-surface-accent;
-    }
+	&__icon {
+		@apply size-6 text-theme-surface-accent;
+	}
 
-    &--small {
-        @apply p-2;
+	&--small {
+		@apply p-2;
 
-        .jw-contained-icon__icon {
-            @apply size-5;
-        }
-    }
+		.jw-contained-icon__icon {
+			@apply size-5;
+		}
+	}
 }

@@ -1,39 +1,45 @@
-$color-purple-950: hsl(270, 100%, 12%);
-$color-purple-900: hsl(267, 100%, 24%);
-$color-purple-800: hsl(270, 100%, 40%);
-$color-purple-700: hsl(270, 100%, 50%);
-$color-purple-600: hsl(271, 100%, 54%);
-$color-purple-500: hsl(267, 100%, 61%);
-$color-purple-400: hsl(264, 100%, 72%);
-$color-purple-300: hsl(261, 100%, 82%);
-$color-purple-200: hsl(259, 100%, 90%);
-$color-purple-100: hsl(260, 100%, 95%);
-$color-purple-50: hsl(260, 100%, 97%);
-
 $color-brand-black: hsl(0, 0%, 7%);
 $color-brand-white: hsl(0, 0%, 100%);
 
-$color-blue-900: hsl(192, 30%, 16%);
-$color-blue-800: hsl(191, 30%, 26%);
-$color-blue-700: hsl(191, 31%, 36%);
-$color-blue-600: hsl(192, 31%, 47%);
-$color-blue-500: hsl(191, 31%, 49%);
-$color-blue-400: hsl(191, 33%, 66%);
-$color-blue-300: hsl(192, 33%, 76%);
-$color-blue-200: hsl(190, 32%, 85%);
-$color-blue-100: hsl(195, 33%, 95%);
-$color-blue-50: hsl(195, 33%, 98%);
+$color-orange-50: hsl(26, 47%, 97%);
+$color-orange-100: hsl(23, 53%, 94%);
+$color-orange-200: hsl(23, 53%, 83%);
+$color-orange-300: hsl(23, 52%, 71%);
+$color-orange-400: hsl(23, 52%, 59%);
+$color-orange-500: hsl(24, 57%, 48%);
+$color-orange-600: hsl(24, 73%, 38%);
+$color-orange-700: hsl(24, 73%, 29%);
+$color-orange-800: hsl(23, 72%, 21%);
+$color-orange-900: hsl(23, 72%, 13%);
+$color-orange-950: hsl(23, 72%, 8%);
 
-$color-grey-900: hsl(0, 0%, 9%);
-$color-grey-800: hsl(0, 0%, 18%);
-$color-grey-700: hsl(0, 0%, 27%);
-$color-grey-600: hsl(0, 0%, 36%);
-$color-grey-500: hsl(0, 0%, 45%);
-$color-grey-400: hsl(0, 0%, 60%);
-$color-grey-300: hsl(0, 0%, 73%);
-$color-grey-200: hsl(0, 0%, 80%);
-$color-grey-100: hsl(0, 0%, 90%);
-$color-grey-50: hsl(0, 0%, 95%);
+$color-shell-50: hsl(30, 100%, 100%);
+$color-shell-100: hsl(48, 71%, 99%);
+$color-shell-200: hsl(42, 71%, 97%);
+$color-shell-300: hsl(45, 38%, 94%);
+$color-shell-400: hsl(40, 18%, 87%);
+$color-shell-500: hsl(42, 9%, 77%);
+$color-shell-600: hsl(40, 5%, 68%);
+$color-shell-700: hsl(38, 4%, 58%);
+$color-shell-800: hsl(38, 4%, 58%);
+$color-shell-900: hsl(48, 3%, 39%);
+$color-shell-950: hsl(45, 3%, 29%);
+
+$color-black-50: hsl(0, 0%, 95%);
+$color-black-100: hsl(0, 0%, 90%);
+$color-black-200: hsl(0, 0%, 80%);
+$color-black-300: hsl(0, 0%, 73%);
+$color-black-400: hsl(0, 0%, 60%);
+$color-black-500: hsl(0, 0%, 45%);
+$color-black-600: hsl(0, 0%, 36%);
+$color-black-700: hsl(0, 0%, 27%);
+$color-black-800: hsl(0, 0%, 18%);
+$color-black-900: hsl(0, 0%, 9%);
+
+$color-brand-black: hsl(0, 0%, 7%);
+$color-brand-orange: hsl(24, 73%, 42%);
+$color-brand-white: hsl(0, 0%, 100%);
+$color-brand-shell: hsl(42, 76%, 97%);
 
 $color-feedback-error: hsl(0, 84%, 37%);
 $color-feedback-success: hsl(123, 46%, 34%);
@@ -41,44 +47,44 @@ $color-feedback-success: hsl(123, 46%, 34%);
 @layer base {
 	:root {
 		// Surface
-		--surface-primary: #{$color-brand-white};
-		--surface-secondary: #{$color-grey-50};
-		--surface-tertiary: #{$color-purple-50};
-		--surface-invert: #{$color-purple-950};
-		--surface-accent: #{$color-purple-800};
-		--surface-accent-secondary: '#5C9EAD'; // Question Aled on this
-		--surface-disabled: #{$color-grey-300};
+		--surface-primary: #{$color-brand-shell};
+		--surface-secondary: #{$color-shell-50};
+		--surface-tertiary: #{$color-shell-300};
+		--surface-invert: #{$color-brand-black};
+		--surface-accent: #{$color-brand-orange};
+		--surface-accent-secondary: #{$color-brand-black}; // Question Aled on this
+		--surface-disabled: #{$color-orange-300};
 		--surface-error: #{$color-feedback-error};
 		--surface-success: #{$color-feedback-success};
 
 		// Border
-		--border-primary: #{$color-purple-950};
-		--border-secondary: #{$color-grey-200};
-		--border-tertiary: #{$color-purple-200};
+		--border-primary: #{$color-orange-950};
+		--border-secondary: #{$color-orange-200};
+		--border-tertiary: #{$color-black-200};
 		--border-invert: #{$color-brand-white};
-		--border-invert-secondary: #{$color-brand-white};
-		--border-accent: #{$color-purple-800};
-		--border-accent-secondary: #{$color-brand-white};
-		--border-disabled: #{$color-grey-300};
+		--border-invert-secondary: rgba(#{$color-brand-white}, 0.2);
+		--border-accent: #{$color-brand-orange};
+		--border-accent-secondary: #{$color-brand-orange};
+		--border-disabled: #{$color-orange-300};
 		--border-error: #{$color-feedback-error};
 		--border-success: #{$color-feedback-success};
 
 		// Text
-		--text-primary: #{$color-purple-950};
-		--text-secondary: #{$color-grey-600};
+		--text-primary: #{$color-brand-black};
+		--text-secondary: #{$color-black-600};
 		--text-primary-invert: #{$color-brand-white};
-		--text-secondary-invert: #{$color-grey-100};
-		--text-accent: #{$color-purple-800};
-		--text-accent-secondary: '#5C9EAD';
-		--text-link: #{$color-purple-950};
+		--text-secondary-invert: #{$color-black-100};
+		--text-accent: #{$color-orange-600};
+		--text-accent-secondary: #{$color-brand-black};
+		--text-link: #{$color-orange-800};
 		--text-link-invert: #{$color-brand-white};
-		--text-disabled: #{$color-grey-300};
+		--text-disabled: #{$color-black-300};
 		--text-error: #{$color-feedback-error};
 		--text-success: #{$color-feedback-success};
 
 		// CTA - Primary
 		--cta-primary-surface: var(--surface-accent);
-		--cta-primary-surface-hover: #{$color-purple-700};
+		--cta-primary-surface-hover: #{$color-orange-700};
 		--cta-primary-surface-disabled: var(--surface-disabled);
 		--cta-primary-text: var(--text-primary-invert);
 		--cta-primary-text-disabled: var(--text-primary-invert);
@@ -90,13 +96,13 @@ $color-feedback-success: hsl(123, 46%, 34%);
 		--cta-secondary-border: var(--border-primary);
 		--cta-secondary-boreder-hover: var(--border-primary);
 		--cta-secondary-border-disabled: var(--border-disabled);
-		--cta-secondary-text: var(--text-grey-600);
+		--cta-secondary-text: var(--text-primary);
 		--cta-secondary-text-hover: var(--text-primary-invert);
-		--cta-secondary-text-disabled: var(--text-primary-invert);
+		--cta-secondary-text-disabled: var(--text-primary-disabled);
 
 		// CTA - Primary Invert
 		--cta-primary-invert-surface: var(--surface-accent);
-		--cta-primary-invert-surface-hover: #{$color-purple-700};
+		--cta-primary-invert-surface-hover: #{$color-orange-700};
 		--cta-primary-invert-surface-disabled: var(--surface-disabled);
 		--cta-primary-invert-text: var(--text-primary-invert);
 		--cta-primary-invert-text-disabled: var(--text-primary-invert);
@@ -104,16 +110,10 @@ $color-feedback-success: hsl(123, 46%, 34%);
 		// CTA - Secondary Invert
 		--cta-secondary-invert-surface: var(--surface-primary);
 		--cta-secondary-invert-surface-hover: var(--surface-primary);
-		--cta-secondary-invert-surface-disabled: rgba(
-			#{$color-brand-white},
-			0.5
-		);
+		--cta-secondary-invert-surface-disabled: rgba(#{$color-brand-white}, 0.5);
 		--cta-secondary-invert-border: var(--border-invert);
 		--cta-secondary-invert-border-hover: var(--border-invert);
-		--cta-secondary-invert-border-disabled: rgba(
-			#{$color-brand-white},
-			0.5
-		);
+		--cta-secondary-invert-border-disabled: rgba(#{$color-brand-white}, 0.5);
 		--cta-secondary-invert-text: var(--text-primary-invert);
 		--cta-secondary-invert-text-hover: var(--text-primary);
 		--cta-secondary-invert-text-disabled: var(--text-primary-invert);
@@ -132,8 +132,45 @@ $color-feedback-success: hsl(123, 46%, 34%);
 // $color-purple-100: #ede4ff;
 // $color-purple-50: #f5f0ff;
 
+// $color-orange-50: #fbf7f4;
+// $color-orange-100: #f8eee8;
+// $color-orange-200: #f8eee8;
+// $color-orange-300: #dbac8e;
+// $color-orange-400: #cd8b61;
+// $color-orange-500: #bf6b34;
+// $color-orange-600: #a6511a;
+// $color-orange-700: #813f14;
+// $color-orange-800: #5c2d0f;
+// $color-orange-900: #371b09;
+// $color-orange-950: #251206;
+
+// $color-shell-50: #fffefd;
+// $color-shell-100: #fefdf9;
+// $color-shell-200: #fdfaf3;
+// $color-shell-300: #f5f2e9;
+// $color-shell-400: #e4e0d8;
+// $color-shell-500: #cac7c0;
+// $color-shell-600: #b1aea8;
+// $color-shell-700: #989590;
+// $color-shell-800: #989590;
+// $color-shell-900: #656460;
+// $color-shell-950: #4c4b48;
+
+// $color-black-50: #f2f2f2;
+// $color-black-100: #e5e5e5;
+// $color-black-200: #cccccc;
+// $color-black-300: #b9b9b9;
+// $color-black-400: #999999;
+// $color-black-500: #737373;
+// $color-black-600: #5c5c5c;
+// $color-black-700: #454545;
+// $color-black-800: #2e2e2e;
+// $color-black-900: #171717;
+
 // $color-brand-black: #111111;
+// $color-brand-orange: #b85a1d;
 // $color-brand-white: #ffffff;
+// $color-brand-shell: #fdf9f0;
 
 // $color-blue-900: #1c2f34;
 // $color-blue-800: #2e4f56;

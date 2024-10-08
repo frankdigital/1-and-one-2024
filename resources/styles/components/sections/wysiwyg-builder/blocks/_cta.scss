@@ -1,11 +1,11 @@
 .jw-wysiwyg-cta-block {
-    @apply rounded-card gap-x-700 gap-y-400 flex w-full flex-col bg-purple-50 px-horizontal-md py-spacing-600 md:flex-row md:items-center md:justify-between;
+	@apply bg-orange-50 rounded-card gap-x-700 gap-y-400 flex w-full flex-col px-horizontal-md py-spacing-600 md:flex-row md:items-center md:justify-between;
 
-    &__content-container {
-        @apply gap-y-150 flex max-w-180 flex-col;
-    }
+	&__content-container {
+		@apply gap-y-150 flex max-w-180 flex-col;
+	}
 
-    &__cta {
-        @apply shrink-0;
-    }
+	&__cta {
+		@apply shrink-0;
+	}
 }

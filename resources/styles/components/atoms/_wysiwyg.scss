@@ -1,59 +1,59 @@
 .jw-wysiwyg {
-    @apply gap-y-300 flex flex-col;
-    h1 {
-        @apply typography-h1;
-    }
-    h2 {
-        @apply typography-h2;
-    }
-    h3 {
-        @apply typography-h3;
-    }
-    h4 {
-        @apply typography-h4;
-    }
-    h5 {
-        @apply typography-h5;
-    }
+	@apply gap-y-300 flex flex-col;
+	h1 {
+		@apply typography-h1;
+	}
+	h2 {
+		@apply typography-h2;
+	}
+	h3 {
+		@apply typography-h3;
+	}
+	h4 {
+		@apply typography-h4;
+	}
+	h5 {
+		@apply typography-h5;
+	}
 
-    dt,
-    h6 {
-        @apply typography-h6;
-    }
-    pre {
-        @apply rounded-card whitespace-pre bg-purple-50 p-spacing-200 text-justify;
-        word-wrap: break-word;
-    }
+	dt,
+	h6 {
+		@apply typography-h6;
+	}
+	pre {
+		@apply bg-orange-50 rounded-card whitespace-pre p-spacing-200 text-justify;
+		word-wrap: break-word;
+	}
 
-    dd {
-        @apply mb-2 last:mb-0;
-    }
+	dd {
+		@apply mb-2 last:mb-0;
+	}
 
-    p,
-    li,
-    dd,
-    dl {
-        @apply typography-body;
-    }
+	p,
+	li,
+	dd,
+	dl {
+		@apply typography-body;
+	}
 
-    a {
-        @apply jw-default-link;
-    }
+	a {
+		@apply jw-default-link;
+	}
 
-    ::marker {
-        @apply relative left-1 font-bold text-theme-surface-accent;
-    }
-    ul,
-    ol {
-        @apply gap-y-150 flex flex-col;
-    }
-    ul {
-        @apply list-disc pl-5;
-    }
-    ol {
-        @apply list-decimal pl-5;
-    }
-    li {
-        @apply ps-spacing-150 md:ps-spacing-200;
-    }
+	::marker {
+		@apply relative left-1 font-bold text-theme-surface-accent;
+	}
+	ul,
+	ol {
+		@apply gap-y-150 flex flex-col;
+	}
+	ul {
+		@apply list-disc pl-5;
+	}
+	ol {
+		@apply list-decimal pl-5;
+	}
+	li {
+		@apply ps-spacing-150 md:ps-spacing-200;
+	}
 }

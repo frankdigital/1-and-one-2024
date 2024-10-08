@@ -11,7 +11,7 @@
 
 	<div @class([ccn($baseClass, 'content-container')])>
 		<div @class([ccn($baseClass, 'content')])>
-			<x-text as="span" :strong="true" textStyle="body" @class([ccn($baseClass, 'label')])>
+			<x-text as="span" :strong="true" textStyle="bodySmall" @class([ccn($baseClass, 'label')])>
 				{!! $label !!}
 			</x-text>
 

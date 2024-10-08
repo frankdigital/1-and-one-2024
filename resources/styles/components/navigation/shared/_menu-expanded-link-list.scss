@@ -1,8 +1,8 @@
 .jw-menu-expanded-link-list {
-	@apply flex flex-1 flex-col pt-spacing-400 lg:pt-0;
+	@apply flex flex-1 flex-col lg:pt-0;
 
 	&__label {
-		@apply px-spacing-400 lg:px-0;
+		@apply px-spacing-400 pb-spacing-150 pt-spacing-400 lg:p-0;
 	}
 
 	ul {

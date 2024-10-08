@@ -39,8 +39,8 @@ add_action('enqueue_block_editor_assets', function () {
 
     // Register the custom admin color scheme
     wp_admin_css_color(
-        'Theme',
-        __('Theme'),
+        '1 and One Theme',
+        __('1 and One Theme'),
         $css,
         array('#23282d', '#fff', '#b85a1d', '#b85a1d')
     );

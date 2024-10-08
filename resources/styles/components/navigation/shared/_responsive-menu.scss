@@ -1,0 +1,32 @@
+.jw-responsive-menu {
+	&__list {
+		@apply flex items-center;
+	}
+
+	&__item {
+		@apply relative whitespace-nowrap;
+	}
+
+	&__action {
+		&:after {
+			content: '';
+			@apply pointer-events-none absolute bottom-0.5 left-0 h-0.25 w-0 bg-theme-text-primary transition-all duration-200;
+		}
+	}
+
+	&__action:hover {
+		&:after {
+			@apply w-full;
+		}
+	}
+
+	&__action.is-active {
+		&:after {
+			@apply w-full;
+		}
+	}
+
+	&__item--hidden {
+		@apply hidden;
+	}
+}

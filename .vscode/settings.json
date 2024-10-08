@@ -1,0 +1,27 @@
+{
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.formatOnSave": true,
+	"editor.tabSize": 4,
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[typescript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[php]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.formatOnSave": true
+	},
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": "explicit",
+		"source.fixAll.tslint": "explicit",
+		"source.fixAll.stylelint": "explicit"
+	},
+	"workbench.colorCustomizations": {
+		"titleBar.activeForeground": "#fff",
+		"titleBar.inactiveForeground": "#fff",
+		"titleBar.activeBackground": "#B85A1D",
+		"titleBar.inactiveBackground": "#B85A1D"
+	},
+	"window.title": "1 and One Theme${separator}${activeEditorShort}${separator}${rootName}"
+}

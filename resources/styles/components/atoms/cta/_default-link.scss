@@ -1,0 +1,25 @@
+.jw-default-link {
+    @apply relative inline-block w-max;
+
+    &:after {
+        content: '';
+        @apply pointer-events-none absolute bottom-0.5 left-0 h-0.25 w-full bg-theme-text-primary transition-all duration-200;
+    }
+
+    &:hover,
+    &:focus {
+        @apply after:w-0;
+    }
+
+    &--default {
+        @apply typography-body text-theme-text-primary;
+    }
+
+    &--small {
+        @apply typography-small-body text-theme-text-primary;
+    }
+
+    &--large {
+        @apply typography-large-body text-theme-text-primary;
+    }
+}

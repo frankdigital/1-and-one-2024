@@ -1,0 +1,29 @@
+.jw-image-lr-full {
+    @apply py-0;
+
+    &__container {
+        @apply flex flex-col px-0 lg:grid lg:grid-cols-2;
+    }
+
+    &__image-container {
+        @apply md:h-160 lg:h-170 relative h-80 sm:h-80;
+    }
+
+    &__image {
+        @apply absolute inset-0 h-full w-full object-cover;
+    }
+
+    &__content-container {
+        @apply gap-y-400 vertical-lg lg:px-gridMarginDesktop flex flex-col px-5 lg:justify-center;
+    }
+
+    &__content {
+        @apply gap-y-300 flex flex-col;
+    }
+
+    &--image-right {
+        .jw-image-lr-full__image-container {
+            @apply lg:order-2;
+        }
+    }
+}

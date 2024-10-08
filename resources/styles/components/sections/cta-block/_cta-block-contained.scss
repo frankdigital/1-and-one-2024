@@ -1,0 +1,39 @@
+.jw-cta-block-contained {
+	@apply relative;
+
+	&__margin {
+		@apply rounded-card vertical-lg relative overflow-hidden;
+	}
+
+	&__overlay {
+		@apply absolute left-0 top-0 z-1 h-full w-full bg-black opacity-50;
+	}
+
+	&__gradient {
+		@apply absolute left-0 top-0 z-1 h-full w-full;
+
+		background: linear-gradient(180deg, rgba(0, 0, 0, 0) -17.79%, rgba(0, 0, 0, 0.6) 80%);
+	}
+
+	&__image-container {
+		@apply absolute left-0 top-0 h-full w-full;
+	}
+
+	&__image {
+		img {
+			@apply h-full w-full object-cover;
+		}
+	}
+
+	&__content-container {
+		@apply gap-y-500 relative z-10 flex w-full flex-col px-6 md:max-w-150 lg:mx-24 lg:max-w-150 lg:px-0;
+	}
+
+	&__content {
+		@apply gap-y-300 flex flex-col;
+	}
+
+	&__cta-container {
+		@apply flex-col gap-spacing-300 md:flex-row;
+	}
+}

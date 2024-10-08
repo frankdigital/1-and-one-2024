@@ -1,0 +1,41 @@
+.jw-primary-hero-split {
+	@apply relative bg-theme-surface-invert py-0 lg:bg-transparent;
+
+	&__background {
+		@apply absolute left-0 top-0 z-2 hidden h-full w-1/2 bg-theme-surface-invert lg:block;
+	}
+
+	&__overlay {
+		@apply absolute left-0 top-0 z-1 h-full w-full;
+
+		background: linear-gradient(
+			180deg,
+			rgba(0, 0, 0, 0) 0%,
+			rgba(0, 0, 0, 0.6) 100%
+		);
+		box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+	}
+
+	&__image-container {
+		@apply relative h-80 md:h-100 lg:absolute lg:left-0 lg:top-0 lg:h-full lg:w-full;
+	}
+
+	&__image {
+		@apply absolute left-0 top-0 h-full w-full object-cover;
+	}
+
+	&__container {
+	}
+
+	&__content-container {
+		@apply gap-y-600 relative z-10 flex flex-col items-start justify-center py-vertical-lg pt-vertical-xl text-left lg:max-w-134;
+	}
+
+	&__content {
+		@apply gap-y-400 relative flex flex-col lg:pt-0;
+	}
+
+	&__cta-container.jw-cta-container {
+		@apply gap-spacing-400;
+	}
+}

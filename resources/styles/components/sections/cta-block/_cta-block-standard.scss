@@ -1,0 +1,39 @@
+.jw-cta-block-standard {
+    @apply relative py-0;
+
+    &__container {
+        @apply vertical-lg relative px-4 md:px-18 lg:px-0;
+    }
+
+    &__gradient {
+        @apply absolute left-0 top-0 z-20 h-full w-full;
+
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) -17.79%, rgba(0, 0, 0, 0.6) 80%);
+    }
+
+    &__image-container {
+        @apply absolute left-0 top-0 h-full w-full;
+    }
+
+    &__image {
+        img {
+            @apply absolute inset-0 h-full w-full object-cover;
+        }
+    }
+
+    &__content-container {
+        @apply gap-y-500 relative z-30 mx-auto flex flex-col text-center md:max-w-150 lg:max-w-205;
+    }
+
+    &__content {
+        @apply gap-y-300 flex flex-col;
+    }
+
+    &__cta-container {
+        @apply flex-col gap-spacing-150 md:flex-row md:justify-center;
+
+        .jw-cta {
+            @apply md:flex-grow lg:flex-none;
+        }
+    }
+}

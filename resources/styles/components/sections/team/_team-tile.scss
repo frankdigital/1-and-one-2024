@@ -1,0 +1,30 @@
+.jw-team-tile {
+	@apply relative flex flex-col gap-spacing-250;
+
+	&__image-container {
+		@apply h-105 relative overflow-hidden rounded will-change-transform lg:rounded-lg;
+	}
+
+	&__image {
+		img {
+			@apply transition-transform duration-500;
+		}
+	}
+
+	&__content-container {
+		@apply flex flex-col gap-spacing-200 pr-spacing-300;
+	}
+
+	&__cta {
+		&:before {
+			@apply absolute inset-0;
+			content: '';
+		}
+	}
+
+	&:hover &__image {
+		img {
+			@apply scale-105;
+		}
+	}
+}

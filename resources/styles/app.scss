@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import './core/reset';
+@import './core/site-scaling';
+
+@import './core/colors';
+@import './core/functions';
+@import './core/lenis';
+@import './core/padding';
+@import './core/spacing';
+@import './core/typography';
+@import './core/forms';
+@import './core/gravity-forms';
+
+// @import './components/atoms//breadcrumbs/breadcrumb';
+// @import './components/atoms//breadcrumbs/breadcrumbs';
+
+@import './components/atoms/cta/cta';
+@import './components/atoms/cta/cta-button-contained';
+@import './components/atoms/cta/cta-text-link';
+@import './components/atoms/cta/cta-container';
+@import './components/atoms/cta/default-link';
+
+@import './components/atoms/animate-height';
+@import './components/atoms/accordion';
+@import './components/atoms/caption';
+@import './components/atoms/carousel/arrow';
+@import './components/atoms/carousel/progress';
+@import './components/atoms/contact-item';
+@import './components/atoms/container';
+@import './components/atoms/icon-handler';
+@import './components/atoms/image-resource';
+@import './components/atoms/parallax';
+@import './components/atoms/section';
+@import './components/atoms/section-wrap';
+@import './components/atoms/socials';
+@import './components/atoms/tabs-list';
+@import './components/atoms/wysiwyg';
+
+// // @import './components/layouts/';
+
+@import './components/heroes/primary/left';
+@import './components/heroes/primary/split';
+@import './components/heroes/primary/stacked';
+@import './components/heroes/primary/standard';
+
+@import './components/navigation/standard';
+
+@import './components/navigation/mega-menu/callout';
+@import './components/navigation/mobile-menu/default';
+
+@import './components/navigation/shared/small-icon-link';
+@import './components/navigation/shared/responsive-menu';
+@import './components/navigation/shared/menu-expanded-link';
+@import './components/navigation/shared/menu-expanded-link-list';
+@import './components/navigation/shared/menu-featured-tile';
+
+@import './components/heroes/secondary/standard';
+
+@import './components/sections/blog-listing/blog-listing-standard';
+
+@import './components/sections/contact-form/default';
+
+@import './components/sections/cta-block/cta-block-contained';
+@import './components/sections/cta-block/cta-block-standard';
+
+@import './components/sections/faq/faq-standard';
+@import './components/sections/faq/faq-with-cta';
+
+@import './components/sections/full-width-image/full-width-image-default';
+
+@import './components/sections/image-left-right/image-left-right-default';
+@import './components/sections/image-left-right/image-left-right-full-bleed';
+
+@import './components/sections/locations/tabbed';
+@import './components/sections/locations/single-tab';
+
+@import './components/sections/logos/logos-standard';
+@import './components/sections/logos/logos-carousel';
+
+@import './components/sections/team/default';
+@import './components/sections/team/team-tile';
+
+@import './components/sections/usps/usp';
+@import './components/sections/usps/horizontal';
+@import './components/sections/usps/vertical';
+
+@import './components/sections/page-cards/default';
+@import './components/sections/page-cards/overlaid';
+@import './components/sections/page-cards/single';
+@import './components/sections/page-cards/single-overlaid';
+
+@import './components/sections/testimonials/testimonials-dual';
+@import './components/sections/testimonials/testimonials-single';
+@import './components/sections/testimonials/testimonial-tile';
+
+@import './components/sections/service-tiles/default';
+@import './components/sections/service-tiles/single';
+
+@import './components/sections/intro/intro-default';
+
+@import './components/sections/wysiwyg-builder/default';
+@import './components/sections/wysiwyg-builder/blocks/text';
+@import './components/sections/wysiwyg-builder/blocks/image';
+@import './components/sections/wysiwyg-builder/blocks/embed';
+@import './components/sections/wysiwyg-builder/blocks/testimonial';
+@import './components/sections/wysiwyg-builder/blocks/cta';
+
+@import './components/footer/simple';
+
+@import './components/ui/card/card-blog';
+@import './components/ui/choices';
+
+@import './components/ui/contained-icon';
+@import './components/ui/location-block';
+@import './components/ui/pill';
+
+@import './components/ui/modal/base-modal';
+@import './components/ui/modal/team-modal';
+
+body {
+	@apply font-heading;
+}
+
+@layer utilities {
+	.text-balance {
+		text-wrap: balance;
+	}
+
+	.no-scrollbar::-webkit-scrollbar {
+		display: none;
+	}
+	.no-scrollbar {
+		-ms-overflow-style: none;
+		scrollbar-width: none;
+	}
+}

@@ -1,0 +1,27 @@
+.jw-tabs-list {
+    @apply relative;
+
+    &:before {
+        @apply absolute inset-x-0 bottom-0 h-px w-full bg-theme-border-secondary;
+        content: '';
+    }
+
+    &__list {
+        @apply no-scrollbar relative flex gap-x-5 overflow-auto;
+
+        &:after {
+            @apply absolute inset-x-0 bottom-0 h-1 origin-left bg-theme-border-accent transition-[scale,translate];
+            scale: var(--_width, 0.125) 1;
+            translate: var(--_left, 0) 0;
+            content: '';
+        }
+    }
+    &__tab {
+        @apply typography-body relative shrink-0 py-spacing-200 font-medium transition-colors hover:text-theme-text-primary;
+
+        &--active,
+        &[aria-selected='true'] {
+            @apply text-theme-text-primary;
+        }
+    }
+}

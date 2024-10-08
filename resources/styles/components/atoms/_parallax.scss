@@ -1,0 +1,9 @@
+.jw-parallax {
+    @apply relative overflow-hidden;
+    &__content-container {
+        @apply absolute inset-0;
+    }
+    &__content {
+        @apply relative size-full will-change-transform;
+    }
+}

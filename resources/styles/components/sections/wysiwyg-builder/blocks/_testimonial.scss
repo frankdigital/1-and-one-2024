@@ -1,0 +1,19 @@
+.jw-wysiwyg-testimonial-block {
+	@apply gap-y-250 flex flex-col border-l-4 border-theme-surface-accent px-spacing-500 py-spacing-300;
+
+	&__testimonial {
+		@apply text-theme-text-primary;
+	}
+
+	&__footer {
+		@apply flex items-end gap-spacing-100 text-theme-text-primary;
+	}
+
+	&__name {
+		@apply text-theme-text-accent;
+	}
+
+	&__position {
+		@apply not-italic;
+	}
+}

@@ -1,0 +1,20 @@
+.jw-section {
+	@apply vertical-lg mx-auto;
+
+	&__contain {
+		@apply max-w-450;
+	}
+
+	&__padding-top {
+	}
+
+	&__padding-bottom {
+	}
+
+	& + .jw-section {
+		@apply pt-0;
+	}
+
+	& + .hero {
+	}
+}

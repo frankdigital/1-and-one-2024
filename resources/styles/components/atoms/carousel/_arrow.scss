@@ -1,0 +1,11 @@
+.jw-carousel-arrow {
+	@apply shrink-0 text-theme-surface-invert;
+
+	&:disabled {
+		@apply text-theme-text-disabled;
+	}
+
+	&__icon {
+		@apply size-5;
+	}
+}

@@ -1,0 +1,13 @@
+.jw-faq-standard {
+	&__container {
+		@apply relative;
+	}
+
+	&__content-container {
+		@apply gap-y-500 flex flex-col;
+	}
+
+	&__content {
+		@apply gap-y-300 flex flex-col;
+	}
+}

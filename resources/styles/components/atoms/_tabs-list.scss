@@ -1,0 +1,41 @@
+.jw-tabs-list {
+	$this: &;
+	@apply relative;
+
+	&:before {
+		@apply absolute inset-x-0 bottom-0 h-px w-full bg-theme-border-secondary;
+		content: '';
+	}
+
+	&__list {
+		@apply no-scrollbar relative flex gap-x-spacing-400 overflow-auto;
+
+		&:after {
+			@apply absolute inset-x-0 bottom-0 h-1 origin-left bg-theme-border-accent transition-[scale,translate];
+			scale: var(--_width, 0.125) 1;
+			translate: var(--_left, 0) 0;
+			content: '';
+		}
+	}
+	&__tab {
+		@apply typography-body relative shrink-0 py-spacing-200 font-medium transition-colors hover:text-theme-text-primary focus:text-theme-text-primary;
+
+		&--active,
+		&[aria-selected='true'] {
+			@apply text-theme-text-primary;
+		}
+	}
+	&__overlay {
+		@apply pointer-events-none absolute inset-y-0 w-4 bg-gradient-to-r from-theme-surface-primary transition-opacity;
+		&--left {
+			@apply -left-px;
+		}
+		&--right {
+			@apply -right-px rotate-180;
+		}
+	}
+	&--start &__overlay--left,
+	&--end &__overlay--right {
+		@apply opacity-0;
+	}
+}

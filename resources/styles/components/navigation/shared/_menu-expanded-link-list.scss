@@ -1,0 +1,11 @@
+.jw-menu-expanded-link-list {
+	@apply flex flex-1 flex-col pt-spacing-400 lg:pt-0;
+
+	&__label {
+		@apply px-spacing-400 lg:px-0;
+	}
+
+	ul {
+		@apply flex flex-col md:grid md:grid-cols-2 md:gap-x-spacing-300 lg:flex lg:flex-col lg:gap-y-spacing-300 lg:p-0 lg:pt-spacing-300;
+	}
+}

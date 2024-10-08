@@ -1,0 +1,19 @@
+.jw-usp {
+	@apply gap-y-400 flex flex-col pr-spacing-300;
+
+	&__body {
+		@apply gap-y-200 flex grow flex-col items-start justify-start;
+	}
+
+	&__description {
+		@apply grow;
+	}
+
+	&__icon.jw-contained-icon {
+		@apply rounded-usp-icon box-border inline-block bg-theme-surface-tertiary p-4 text-theme-border-accent;
+
+		.jw-icon-handler {
+			@apply size-6;
+		}
+	}
+}

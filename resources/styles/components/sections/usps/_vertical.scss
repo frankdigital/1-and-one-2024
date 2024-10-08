@@ -1,0 +1,40 @@
+.jw-usps-vertical {
+	&__container {
+		@apply flex flex-col gap-spacing-700 lg:flex-row;
+	}
+
+	&__sidebar {
+		@apply relative shrink-0 grow;
+	}
+
+	&__content-container {
+		@apply lg:top-header-height gap-y-500 relative flex w-full flex-col justify-between md:flex-row md:items-end md:gap-x-spacing-900 lg:sticky lg:max-w-105 lg:flex-col lg:items-start lg:justify-start lg:gap-spacing-400;
+	}
+
+	&__content {
+		@apply gap-y-300 flex flex-col;
+	}
+
+	&__usps {
+		@apply gap-y-400 grid grid-cols-1 lg:col-span-2;
+	}
+
+	&__divider {
+		@apply border-theme-border-secondary;
+	}
+
+	&__cta-container {
+		@apply hidden min-w-fit md:flex;
+	}
+
+	&__cta {
+		@apply w-full;
+
+		&--mobile {
+			@apply sm:hidden;
+		}
+		&--desktop {
+			@apply hidden sm:inline-flex;
+		}
+	}
+}

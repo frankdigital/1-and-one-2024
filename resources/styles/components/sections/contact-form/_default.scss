@@ -1,0 +1,20 @@
+.jw-contact-form {
+    &__container {
+        @apply gap-x-800 gap-y-600 flex flex-col lg:flex-row;
+    }
+    &__content-container {
+        @apply lg:w-105 gap-y-500 mb-6 flex shrink-0 grow-0 flex-col;
+    }
+
+    &__content {
+        @apply gap-y-250 flex flex-col items-start;
+    }
+
+    &__contact-item {
+        @apply border-b border-theme-border-secondary py-spacing-250 first:border-t;
+    }
+
+    &__form {
+        @apply grow bg-theme-surface-secondary p-spacing-600;
+    }
+}

@@ -1,0 +1,30 @@
+.jw-logos-carousel {
+	@apply overflow-hidden;
+	&__container {
+		@apply gap-y-700 flex flex-col;
+	}
+
+	&__content {
+		@apply gap-y-300 flex flex-col items-center text-center;
+	}
+
+	&__carousel {
+		@apply overflow-visible;
+	}
+
+	&__logos {
+		@apply flex;
+	}
+
+	&__image-container {
+		@apply rounded-card mr-spacing-100 aspect-[45/28] w-37.5 min-w-0 max-w-full shrink-0 grow-0 basis-auto sm:w-45 lg:w-50;
+
+		background-color: #f2f2f2;
+	}
+
+	&__image {
+		img {
+			@apply object-contain;
+		}
+	}
+}

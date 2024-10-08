@@ -1,0 +1,11 @@
+.jw-page-cards-overlaid {
+	&__container {
+		@apply gap-y-700 flex flex-col items-center;
+	}
+	&__content {
+		@apply gap-y-300 flex max-w-150 flex-col items-center text-center;
+	}
+	&__cards {
+		@apply gap-x-150 gap-y-300 grid grid-cols-1 lg:grid-cols-3;
+	}
+}

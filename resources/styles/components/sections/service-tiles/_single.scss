@@ -1,0 +1,60 @@
+.jw-service-tile {
+	$this: &;
+	@apply gap-y-250 relative flex flex-col;
+
+	&__image-container {
+		@apply rounded-card relative h-95 overflow-hidden bg-theme-surface-invert lg:h-120;
+	}
+
+	&__image {
+		@apply size-full object-cover transition-transform duration-500;
+	}
+
+	&__content-container {
+		@apply gap-y-200 flex grow flex-col items-start pr-spacing-300;
+	}
+
+	&__content {
+		@apply gap-y-100 flex grow flex-col items-start;
+	}
+
+	&__heading {
+		@apply relative;
+
+		br {
+			@apply hidden;
+		}
+
+		&:after {
+			content: '';
+			@apply pointer-events-none absolute bottom-0.5 left-0 h-0.25 w-full origin-left scale-x-0 bg-theme-text-primary transition-all duration-500;
+		}
+	}
+
+	&__description {
+		@apply line-clamp-2;
+
+		br {
+			@apply hidden;
+		}
+	}
+
+	&__cta {
+		.cta-text-link {
+		}
+		&:before {
+			@apply absolute inset-0;
+			content: '';
+		}
+	}
+
+	&:hover,
+	&:focus {
+		#{$this}__heading:after {
+			@apply scale-x-100;
+		}
+		#{$this}__image {
+			@apply scale-105;
+		}
+	}
+}

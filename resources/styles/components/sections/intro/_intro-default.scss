@@ -1,0 +1,25 @@
+.jw-intro {
+	&__container {
+		@apply gap-y-700 flex flex-col items-center;
+	}
+
+	&__content-container {
+		@apply gap-y-400 flex flex-col sm:items-center;
+	}
+
+	&__content {
+		@apply gap-y-300 mx-auto flex max-w-205 flex-col items-center text-center;
+	}
+
+	&__image-container {
+		@apply rounded-image max-w-full overflow-hidden;
+	}
+
+	&__image {
+		@apply max-w-full;
+	}
+
+	&__cta {
+		@apply grow;
+	}
+}

@@ -1,0 +1,23 @@
+.jw-megamenu-callout {
+	&__background {
+		@apply absolute right-0 top-0 z-10 h-full w-1/2 bg-theme-surface-tertiary;
+	}
+
+	&__container {
+		@apply hidden flex-row;
+
+		&.is-active {
+			@apply flex;
+		}
+	}
+	&__menu-container {
+		@apply relative z-20 flex flex-1 gap-16 bg-white py-spacing-600 pr-spacing-700;
+	}
+
+	&__menu {
+	}
+
+	&__featured-container {
+		@apply relative z-20 bg-theme-surface-tertiary py-spacing-600 pl-6 xl:pl-spacing-700;
+	}
+}

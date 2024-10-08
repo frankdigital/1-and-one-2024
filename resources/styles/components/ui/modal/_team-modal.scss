@@ -1,0 +1,46 @@
+.jw-team-modal {
+	@apply flex w-full max-w-300 flex-col gap-spacing-600 bg-theme-surface-primary md:gap-6 lg:flex-row lg:gap-spacing-700;
+
+	&__header {
+		@apply shrink-0 flex-grow lg:w-95;
+	}
+
+	&__image-container {
+		@apply relative h-90 w-full md:h-160 lg:h-115 lg:w-full;
+	}
+
+	&__meta-container {
+		@apply flex flex-col gap-spacing-300;
+	}
+
+	&__meta {
+		@apply flex flex-col gap-spacing-100;
+	}
+
+	&__contact {
+		@apply flex border-b border-theme-border-secondary pb-spacing-400;
+	}
+
+	&__traditional-container {
+		@apply flex items-center gap-2 pr-spacing-300;
+	}
+
+	&__social-container {
+		@apply border-l border-theme-border-secondary pl-spacing-300;
+	}
+
+	&__link {
+		@apply flex items-center gap-spacing-100 font-medium;
+
+		&:hover,
+		&:focus {
+			.jw-contained-icon {
+				@apply bg-purple-100;
+			}
+		}
+	}
+
+	&__bio {
+		@apply pt-spacing-400;
+	}
+}

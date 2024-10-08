@@ -1,0 +1,148 @@
+@keyframes modalBackdropAppear {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes modalAppear {
+	0% {
+		opacity: 0;
+		transform: translateY(pxToRem(48));
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes modalBackdropDisappear {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+@keyframes modalDisappear {
+	0% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+	100% {
+		opacity: 0;
+		transform: translateY(pxToRem(48));
+	}
+}
+
+@keyframes modalFormAppear {
+	0% {
+		opacity: 0;
+		transform: translateY(-110%);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes modalFormDisappear {
+	0% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+	100% {
+		opacity: 0;
+		transform: translateY(110%);
+	}
+}
+
+/* Class for the body */
+.no_scroll {
+	overflow: hidden;
+}
+
+.jw-base-modal {
+	@apply fixed inset-0 z-50 hidden h-full w-full items-start justify-center;
+
+	&--active,
+	&--inactive {
+		@apply flex;
+
+		.jw-base-modal__overlay,
+		.jw-base-modal__container {
+			animation-timing-function: ease-in-out;
+			animation-fill-mode: forwards;
+		}
+	}
+
+	&--active {
+		.jw-base-modal__overlay,
+		.jw-base-modal__container {
+			animation-duration: 300ms;
+		}
+
+		.jw-base-modal__overlay {
+			animation-name: modalBackdropAppear;
+		}
+
+		.jw-base-modal__container {
+			animation-name: modalAppear;
+		}
+	}
+
+	&--inactive {
+		.jw-base-modal__overlay,
+		.jw-base-modal__container {
+			animation-duration: 200ms;
+		}
+
+		.jw-base-modal__overlay {
+			animation-name: modalBackdropDisappear;
+		}
+
+		.jw-base-modal__container {
+			animation-name: modalDisappear;
+		}
+	}
+
+	&__overlay {
+		@apply pointer-events-auto fixed inset-0 z-60 h-full w-full overflow-hidden bg-black/40 backdrop-blur-md;
+	}
+
+	&__anchor {
+		@apply pointer-events-none fixed inset-0 z-70 mx-auto flex items-start justify-center overflow-auto;
+	}
+
+	&__container {
+		@apply pointer-events-none relative w-full px-4;
+		overflow: auto !important; /* Hide the scrollbar */
+	}
+
+	&__close-container {
+		@apply h-10 w-10 rounded-full bg-black p-2 text-white;
+	}
+
+	&__close {
+		@apply absolute right-0 top-0 z-70 p-4;
+
+		.jw-icon-handler {
+			@apply block size-6;
+		}
+
+		&:hover,
+		&:focus {
+			.jw-icon-handler {
+				@apply text-theme-surface-accent;
+			}
+		}
+	}
+
+	&__type--team {
+		@apply pointer-events-auto mx-auto max-w-300;
+		@apply my-vertical-sm rounded-card relative flex w-full flex-col gap-spacing-600 bg-theme-surface-primary px-horizontal-lg py-vertical-lg md:gap-6 lg:flex-row lg:gap-spacing-700 lg:py-vertical-sm;
+	}
+}

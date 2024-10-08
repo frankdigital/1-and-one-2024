@@ -1,0 +1,6 @@
+.jw-caption {
+	@apply flex items-center gap-x-3 bg-purple-50 p-spacing-200 text-left text-theme-text-primary;
+	&__icon {
+		@apply size-5 text-theme-surface-accent;
+	}
+}

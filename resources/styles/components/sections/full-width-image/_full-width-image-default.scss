@@ -1,0 +1,50 @@
+.jw-full-width-image-default {
+	@apply relative;
+
+	&__padding-container {
+		@apply relative;
+	}
+
+	&__container {
+		@apply vertical-lg pt-70 lg:vertical-lg;
+	}
+
+	&__background {
+		@apply absolute inset-0 h-full w-full bg-theme-surface-invert;
+	}
+
+	&__image-container {
+		@apply relative inset-0 h-71 w-full md:h-full;
+
+		&:after {
+			@apply absolute top-full z-10 h-16 w-full -translate-y-full bg-gradient-to-t from-theme-surface-invert to-transparent md:hidden;
+			content: '';
+		}
+	}
+
+	&__image {
+		img {
+			@apply absolute inset-0 h-full w-full object-cover;
+		}
+	}
+
+	&__content-container {
+		@apply rounded-card gap-y-400 relative z-10 flex flex-col bg-white p-spacing-500 md:max-w-95 lg:max-w-150 lg:p-spacing-800;
+	}
+
+	&__content {
+		@apply gap-y-300 flex flex-col;
+	}
+
+	&__cta-container {
+		.jw-cta {
+			@apply w-full md:w-auto;
+		}
+	}
+
+	&__reverse {
+		.jw-full-width-image-default__container {
+			@apply flex justify-end;
+		}
+	}
+}

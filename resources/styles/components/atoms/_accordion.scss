@@ -1,0 +1,48 @@
+.jw-accordion {
+	@apply gap-y-150 flex flex-col;
+
+	&__item {
+		@apply flex flex-col overflow-hidden rounded-lg border border-solid border-theme-border-secondary bg-theme-surface-primary transition-all duration-200 focus-within:border-theme-border-accent hover:border-theme-border-accent;
+	}
+
+	&__header {
+		@apply w-full;
+	}
+
+	&__trigger {
+		@apply gap-x-300 flex w-full flex-row items-center justify-between p-spacing-400 text-left;
+	}
+
+	&__trigger-text {
+		@apply text-theme-text-primary transition-colors duration-200;
+		[aria-expanded='true'] & {
+			@apply text-theme-text-accent;
+		}
+	}
+
+	&__content {
+		@apply hidden overflow-hidden;
+	}
+
+	&__answer {
+		@apply px-spacing-400 pb-spacing-400;
+	}
+
+	&__icon-container {
+		@apply relative size-5 shrink-0;
+	}
+
+	&__icon-vertical {
+		@apply absolute left-1/2 top-1/2 h-0.5 w-3.5 origin-center -translate-x-1/2 -translate-y-1/2 rounded-full bg-theme-surface-invert transition-all duration-200 ease-out;
+	}
+
+	&__icon-horizontal {
+		@apply absolute left-1/2 top-1/2 h-3.5 w-0.5 origin-center -translate-x-1/2 -translate-y-1/2 rounded-full bg-theme-surface-invert transition-all duration-200 ease-out;
+
+		[aria-expanded='true'] & {
+			@apply bg-theme-surface-accent;
+			transform: translate(-50%, -50%) rotate(90deg);
+			transition: transform 200ms ease-out;
+		}
+	}
+}

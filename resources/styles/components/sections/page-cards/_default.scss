@@ -1,0 +1,5 @@
+.jw-page-cards {
+	&__cards {
+		@apply gap-x-300 gap-y-300 grid grid-cols-1 lg:grid-cols-2;
+	}
+}

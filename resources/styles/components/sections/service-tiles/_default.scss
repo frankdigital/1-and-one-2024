@@ -1,0 +1,24 @@
+.jw-service-tiles {
+	@apply overflow-hidden;
+	&__container {
+		@apply gap-y-700 flex flex-col items-center;
+	}
+	&__content {
+		@apply gap-y-300 flex max-w-150 flex-col items-center text-center;
+	}
+	&__carousel {
+		@apply gap-y-700 flex flex-col overflow-visible;
+	}
+	&__tiles {
+		@apply gap-x-100 gap-y-300 flex;
+	}
+	&__tile {
+		@apply w-80 min-w-0 shrink-0 grow-0 lg:w-105;
+	}
+	&__controls {
+		@apply gap-x-300 flex items-center;
+	}
+	&__arrows {
+		@apply gap-x-200 flex shrink-0;
+	}
+}

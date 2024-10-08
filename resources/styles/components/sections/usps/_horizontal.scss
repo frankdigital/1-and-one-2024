@@ -1,0 +1,5 @@
+.jw-usps-horizontal {
+    &__usps {
+        @apply gap-y-700 grid grid-cols-1 sm:gap-x-600 sm:gap-y-600 lg:gap-x-300 lg:gap-y-700 sm:order-1 sm:col-span-2 sm:grid-cols-2 lg:grid-cols-3;
+    }
+}

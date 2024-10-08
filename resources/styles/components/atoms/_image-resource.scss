@@ -1,0 +1,19 @@
+.jw-image-resource {
+    &__rounded {
+        img {
+            @apply rounded-image;
+        }
+    }
+
+    &__fill {
+        @apply h-full w-full object-cover;
+
+        img {
+            @apply h-full w-full object-cover;
+        }
+    }
+
+    &__caption {
+        @apply sr-only;
+    }
+}

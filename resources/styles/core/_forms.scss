@@ -1,0 +1,5 @@
+@layer components {
+	.form-input {
+		@apply min-h-input rounded-form-input bg-theme-surface-primary p-spacing-200 text-bodyMobile text-theme-text-primary ring-1 ring-inset ring-theme-border-secondary transition-shadow duration-500 placeholder:text-theme-text-secondary focus:border-theme-border-accent focus:ring-2 focus:ring-theme-border-accent md:text-bodyTablet lg:text-bodyDesktop;
+	}
+}

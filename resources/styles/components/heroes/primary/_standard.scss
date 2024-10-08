@@ -1,0 +1,40 @@
+.jw-primary-hero-standard {
+	@apply relative mx-auto py-0;
+
+	&__container {
+	}
+
+	&__overlay {
+		@apply absolute left-0 top-0 z-20 h-full w-full;
+
+		background: linear-gradient(
+			180deg,
+			rgba(0, 0, 0, 0) 0%,
+			rgba(0, 0, 0, 0.6) 100%
+		);
+	}
+
+	&__image-container {
+		@apply absolute left-0 top-0 z-10 h-full w-full;
+	}
+
+	&__image {
+		@apply h-full w-full object-cover object-center;
+	}
+
+	&__content-container {
+		@apply gap-y-500 vertical-xl relative z-30 flex flex-col items-center justify-center text-center;
+	}
+
+	&__content {
+		@apply gap-y-400 relative flex flex-col;
+	}
+
+	&__cta-container {
+		@apply w-full md:w-auto;
+
+		.jw-cta {
+			@apply w-full md:w-auto;
+		}
+	}
+}

@@ -1,0 +1,17 @@
+.jw-wysiwyg-image-block {
+	@apply w-full max-w-full text-center;
+
+	&--narrow {
+		@apply max-w-209 w-full;
+	}
+
+	&__image-container {
+		@apply rounded-image inline-block w-full overflow-hidden;
+	}
+
+	&__image {
+		img {
+			@apply w-full;
+		}
+	}
+}

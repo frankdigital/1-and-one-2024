@@ -1,0 +1,161 @@
+$color-purple-950: hsl(270, 100%, 12%);
+$color-purple-900: hsl(267, 100%, 24%);
+$color-purple-800: hsl(270, 100%, 40%);
+$color-purple-700: hsl(270, 100%, 50%);
+$color-purple-600: hsl(271, 100%, 54%);
+$color-purple-500: hsl(267, 100%, 61%);
+$color-purple-400: hsl(264, 100%, 72%);
+$color-purple-300: hsl(261, 100%, 82%);
+$color-purple-200: hsl(259, 100%, 90%);
+$color-purple-100: hsl(260, 100%, 95%);
+$color-purple-50: hsl(260, 100%, 97%);
+
+$color-brand-black: hsl(0, 0%, 7%);
+$color-brand-white: hsl(0, 0%, 100%);
+
+$color-blue-900: hsl(192, 30%, 16%);
+$color-blue-800: hsl(191, 30%, 26%);
+$color-blue-700: hsl(191, 31%, 36%);
+$color-blue-600: hsl(192, 31%, 47%);
+$color-blue-500: hsl(191, 31%, 49%);
+$color-blue-400: hsl(191, 33%, 66%);
+$color-blue-300: hsl(192, 33%, 76%);
+$color-blue-200: hsl(190, 32%, 85%);
+$color-blue-100: hsl(195, 33%, 95%);
+$color-blue-50: hsl(195, 33%, 98%);
+
+$color-grey-900: hsl(0, 0%, 9%);
+$color-grey-800: hsl(0, 0%, 18%);
+$color-grey-700: hsl(0, 0%, 27%);
+$color-grey-600: hsl(0, 0%, 36%);
+$color-grey-500: hsl(0, 0%, 45%);
+$color-grey-400: hsl(0, 0%, 60%);
+$color-grey-300: hsl(0, 0%, 73%);
+$color-grey-200: hsl(0, 0%, 80%);
+$color-grey-100: hsl(0, 0%, 90%);
+$color-grey-50: hsl(0, 0%, 95%);
+
+$color-feedback-error: hsl(0, 84%, 37%);
+$color-feedback-success: hsl(123, 46%, 34%);
+
+@layer base {
+	:root {
+		// Surface
+		--surface-primary: #{$color-brand-white};
+		--surface-secondary: #{$color-grey-50};
+		--surface-tertiary: #{$color-purple-50};
+		--surface-invert: #{$color-purple-950};
+		--surface-accent: #{$color-purple-800};
+		--surface-accent-secondary: '#5C9EAD'; // Question Aled on this
+		--surface-disabled: #{$color-grey-300};
+		--surface-error: #{$color-feedback-error};
+		--surface-success: #{$color-feedback-success};
+
+		// Border
+		--border-primary: #{$color-purple-950};
+		--border-secondary: #{$color-grey-200};
+		--border-tertiary: #{$color-purple-200};
+		--border-invert: #{$color-brand-white};
+		--border-invert-secondary: #{$color-brand-white};
+		--border-accent: #{$color-purple-800};
+		--border-accent-secondary: #{$color-brand-white};
+		--border-disabled: #{$color-grey-300};
+		--border-error: #{$color-feedback-error};
+		--border-success: #{$color-feedback-success};
+
+		// Text
+		--text-primary: #{$color-purple-950};
+		--text-secondary: #{$color-grey-600};
+		--text-primary-invert: #{$color-brand-white};
+		--text-secondary-invert: #{$color-grey-100};
+		--text-accent: #{$color-purple-800};
+		--text-accent-secondary: '#5C9EAD';
+		--text-link: #{$color-purple-950};
+		--text-link-invert: #{$color-brand-white};
+		--text-disabled: #{$color-grey-300};
+		--text-error: #{$color-feedback-error};
+		--text-success: #{$color-feedback-success};
+
+		// CTA - Primary
+		--cta-primary-surface: var(--surface-accent);
+		--cta-primary-surface-hover: #{$color-purple-700};
+		--cta-primary-surface-disabled: var(--surface-disabled);
+		--cta-primary-text: var(--text-primary-invert);
+		--cta-primary-text-disabled: var(--text-primary-invert);
+
+		// CTA - Secondary
+		--cta-secondary-surface: var(--surface-primary);
+		--cta-secondary-surface-hover: var(--surface-invert);
+		--cta-secondary-surface-disabled: var(--surface-primary);
+		--cta-secondary-border: var(--border-primary);
+		--cta-secondary-boreder-hover: var(--border-primary);
+		--cta-secondary-border-disabled: var(--border-disabled);
+		--cta-secondary-text: var(--text-grey-600);
+		--cta-secondary-text-hover: var(--text-primary-invert);
+		--cta-secondary-text-disabled: var(--text-primary-invert);
+
+		// CTA - Primary Invert
+		--cta-primary-invert-surface: var(--surface-accent);
+		--cta-primary-invert-surface-hover: #{$color-purple-700};
+		--cta-primary-invert-surface-disabled: var(--surface-disabled);
+		--cta-primary-invert-text: var(--text-primary-invert);
+		--cta-primary-invert-text-disabled: var(--text-primary-invert);
+
+		// CTA - Secondary Invert
+		--cta-secondary-invert-surface: var(--surface-primary);
+		--cta-secondary-invert-surface-hover: var(--surface-primary);
+		--cta-secondary-invert-surface-disabled: rgba(
+			#{$color-brand-white},
+			0.5
+		);
+		--cta-secondary-invert-border: var(--border-invert);
+		--cta-secondary-invert-border-hover: var(--border-invert);
+		--cta-secondary-invert-border-disabled: rgba(
+			#{$color-brand-white},
+			0.5
+		);
+		--cta-secondary-invert-text: var(--text-primary-invert);
+		--cta-secondary-invert-text-hover: var(--text-primary);
+		--cta-secondary-invert-text-disabled: var(--text-primary-invert);
+	}
+}
+
+// $color-purple-950: #1e003c;
+// $color-purple-900: #350078;
+// $color-purple-800: #6500ca;
+// $color-purple-700: #8001ff;
+// $color-purple-600: #8c12ff;
+// $color-purple-500: #943aff;
+// $color-purple-400: #ab72ff;
+// $color-purple-300: #c5a5ff;
+// $color-purple-200: #ddcdff;
+// $color-purple-100: #ede4ff;
+// $color-purple-50: #f5f0ff;
+
+// $color-brand-black: #111111;
+// $color-brand-white: #ffffff;
+
+// $color-blue-900: #1c2f34;
+// $color-blue-800: #2e4f56;
+// $color-blue-700: #406f79;
+// $color-blue-600: #538e9c;
+// $color-blue-500: #5796a4;
+// $color-blue-400: #8dbbc5;
+// $color-blue-300: #aeced6;
+// $color-blue-200: #cee2e6;
+// $color-blue-100: #eff5f7;
+// $color-blue-50: #f7fafb;
+
+// $color-grey-900: #171717;
+// $color-grey-800: #2e2e2e;
+// $color-grey-700: #454545;
+// $color-grey-600: #5c5c5c;
+// $color-grey-500: #737373;
+// $color-grey-400: #999999;
+// $color-grey-300: #b9b9b9;
+// $color-grey-200: #cccccc;
+// $color-grey-100: #e5e5e5;
+// $color-grey-50: #f2f2f2;
+
+// $color-feedback-error: #AD0F0F;
+// $color-feedback-success: #2e7d32;

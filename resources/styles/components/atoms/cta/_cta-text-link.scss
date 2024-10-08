@@ -1,0 +1,59 @@
+.cta-text-link {
+	@apply box-border inline-flex size-full shrink-0 items-center justify-center gap-3 py-1 font-medium text-theme-text-text-link transition-all duration-200;
+
+	&--small {
+	}
+
+	&--default {
+	}
+
+	&--large {
+	}
+}
+
+.cta-text-link__icon {
+	@apply -translate-x-1 transition-transform;
+
+	&--small {
+		@apply size-5;
+	}
+
+	&--default {
+		@apply size-6;
+	}
+
+	&--large {
+		@apply size-6;
+	}
+}
+
+.cta-text-link__label {
+	@apply text-nowrap;
+
+	&--small {
+		@apply text-textLinkSmallMobile sm:text-textLinkSmallTablet lg:text-textLinkSmallDesktop;
+	}
+
+	&--default {
+		@apply text-textLinkLargeMobile sm:text-textLinkLargeTablet lg:text-textLinkLargeDesktop;
+	}
+
+	&--large {
+		@apply text-textLinkLargeMobile sm:text-textLinkLargeTablet lg:text-textLinkLargeDesktop;
+	}
+}
+
+.jw-cta {
+	&:hover,
+	&:focus {
+		.cta-text-link__icon {
+			@apply translate-x-0;
+		}
+	}
+}
+
+.dark {
+	.cta-text-link {
+		@apply text-theme-text-text-link-invert;
+	}
+}

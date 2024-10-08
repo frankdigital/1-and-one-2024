@@ -1,0 +1,41 @@
+.jw-menu-expanded-link {
+	@apply flex gap-x-spacing-200 px-spacing-400 py-spacing-150 lg:p-0;
+
+	&__icon-container {
+		@apply hidden md:flex-shrink-0 lg:block;
+	}
+
+	&__icon {
+	}
+
+	&__content-container {
+	}
+
+	&__content {
+		@apply flex flex-col gap-1;
+	}
+
+	&__label {
+		@apply relative w-max text-theme-text-primary;
+
+		&:after {
+			content: '';
+			@apply pointer-events-none absolute bottom-0.5 left-0 h-0.25 w-0 bg-theme-text-primary transition-all duration-200;
+		}
+	}
+
+	&__excerpt {
+		@apply text-theme-text-secondary;
+	}
+
+	&:hover,
+	&:focus {
+		.jw-contained-icon {
+			@apply bg-purple-100;
+		}
+
+		.jw-menu-expanded-link__label::after {
+			@apply w-full;
+		}
+	}
+}

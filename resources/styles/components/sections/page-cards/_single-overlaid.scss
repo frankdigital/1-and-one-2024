@@ -1,0 +1,61 @@
+.jw-page-card-overlaid {
+	$this: &;
+	@apply rounded-card relative h-115 overflow-hidden lg:h-145;
+
+	&:after {
+		@apply absolute inset-x-0 bottom-0 h-9/10 bg-gradient-to-t from-black/80 from-25% to-90%;
+		content: '';
+	}
+
+	&__image-container {
+		@apply absolute size-full;
+	}
+
+	&__image {
+		@apply object-cover duration-500;
+	}
+
+	&__content-container {
+		@apply gap-y-250 relative z-1 flex h-full flex-col items-start justify-end p-spacing-500;
+	}
+
+	&__content {
+		@apply gap-y-50 flex flex-col duration-500 sm:translate-y-spacing-500;
+	}
+
+	&__heading {
+		br {
+			@apply hidden;
+		}
+	}
+
+	&__description {
+		@apply line-clamp-2;
+
+		br {
+			@apply hidden;
+		}
+	}
+
+	&__cta {
+		.cta-text-link {
+			@apply sm:translate-y-spacing-200 sm:opacity-0 sm:duration-500;
+		}
+		&:before {
+			@apply absolute inset-0;
+			content: '';
+		}
+	}
+
+	&:hover {
+		#{$this}__image {
+			@apply scale-105;
+		}
+		#{$this}__content {
+			@apply sm:translate-y-0;
+		}
+		#{$this}__cta .cta-text-link {
+			@apply sm:translate-y-0 sm:opacity-100;
+		}
+	}
+}

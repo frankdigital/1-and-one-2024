@@ -1,0 +1,40 @@
+.jw-location-tab {
+	@apply gap-x-700 gap-y-700 grid grid-cols-1 lg:grid-cols-2;
+
+	&__image-container {
+		@apply lg:min-h-110 lg:max-h-180 relative h-60 sm:h-95 lg:order-1 lg:h-auto;
+	}
+
+	&__content-container {
+		@apply gap-y-500 flex flex-col;
+	}
+
+	&__content {
+		@apply gap-y-150 flex flex-col;
+	}
+
+	&__contact-row {
+		@apply gap-x-250 grid grid-cols-2 items-start;
+	}
+
+	&__contact-details {
+		@apply flex flex-col items-start;
+	}
+
+	&__contact-heading {
+		@apply mb-spacing-50 font-medium text-theme-text-primary;
+	}
+
+	&__description,
+	&__contact-content {
+		@apply text-theme-text-secondary;
+	}
+
+	&__contact-link {
+		@apply max-w-full break-words;
+	}
+
+	&__divider {
+		@apply border-theme-border-secondary;
+	}
+}

@@ -1,0 +1,6 @@
+@use 'sass:math';
+
+/* prettier-ignore */
+@function pxToRem($pixels, $fontSize: 16) {
+  @return math.div($pixels, $fontSize) * 1rem;
+}

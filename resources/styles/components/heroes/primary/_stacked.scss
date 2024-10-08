@@ -1,0 +1,45 @@
+.jw-primary-hero-stacked {
+    @apply relative py-0;
+
+    &__background {
+        @apply absolute left-0 top-0 z-0 h-full w-full bg-theme-surface-invert;
+        height: calc(100% - #{pxToRem(152)});
+
+        @screen md {
+            height: calc(100% - #{pxToRem(200)});
+        }
+
+        @screen lg {
+            height: calc(100% - #{pxToRem(270)});
+        }
+    }
+
+    &__container {
+    }
+
+    &__image-container {
+        @apply relative h-80 md:h-100 lg:h-135;
+    }
+
+    &__image {
+        img {
+            @apply absolute left-0 top-0 h-full w-full object-cover;
+        }
+    }
+
+    &__content-container {
+        @apply gap-y-500 vertical-lg relative z-10 flex flex-col items-center justify-center text-center;
+    }
+
+    &__content {
+        @apply gap-y-400 relative flex flex-col;
+    }
+
+    &__cta-container {
+        @apply w-full md:w-auto;
+
+        .jw-cta {
+            @apply w-full md:w-auto;
+        }
+    }
+}

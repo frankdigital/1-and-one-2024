@@ -1,0 +1,12 @@
+.jw-section-wrap {
+	@apply gap-y-700 flex w-full flex-col flex-wrap justify-between md:flex-row md:items-end lg:grid lg:grid-cols-2;
+	&__header {
+		@apply gap-y-300 flex flex-col md:max-w-120 lg:max-w-full;
+	}
+	&__cta {
+		@apply md:justify-self-end;
+	}
+	&__body {
+		@apply w-full md:order-1 lg:col-span-2;
+	}
+}

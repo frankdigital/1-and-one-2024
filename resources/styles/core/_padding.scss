@@ -1,0 +1,41 @@
+@layer base {
+    :root {
+        --vertical-sm: #{pxToRem(32)};
+        --vertical-md: #{pxToRem(40)};
+        --vertical-lg: #{pxToRem(48)};
+        --vertical-xl: #{pxToRem(120)};
+
+        --horizontal-sm: #{pxToRem(20)};
+        --horizontal-md: #{pxToRem(20)};
+        --horizontal-lg: #{pxToRem(20)};
+        --horizontal-xl: #{pxToRem(20)};
+    }
+
+    @screen md {
+        :root {
+            --vertical-sm: #{pxToRem(40)};
+            --vertical-md: #{pxToRem(48)};
+            --vertical-lg: #{pxToRem(60)};
+            --vertical-xl: #{pxToRem(160)};
+
+            --horizontal-sm: #{pxToRem(28)};
+            --horizontal-md: #{pxToRem(28)};
+            --horizontal-lg: #{pxToRem(28)};
+            --horizontal-xl: #{pxToRem(28)};
+        }
+    }
+
+    @screen lg {
+        :root {
+            --vertical-sm: #{pxToRem(64)};
+            --vertical-md: #{pxToRem(96)};
+            --vertical-lg: #{pxToRem(120)};
+            --vertical-xl: #{pxToRem(240)};
+
+            --horizontal-sm: #{pxToRem(40)};
+            --horizontal-md: #{pxToRem(64)};
+            --horizontal-lg: #{pxToRem(80)};
+            --horizontal-xl: #{pxToRem(120)};
+        }
+    }
+}

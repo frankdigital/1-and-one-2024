@@ -1,0 +1,23 @@
+.jw-small-icon-link {
+	@apply flex items-center gap-2;
+
+	&__icon {
+		@apply size-6 text-theme-surface-accent;
+	}
+
+	&__label {
+		@apply relative text-theme-text-primary lg:text-captionDesktop;
+
+		&:after {
+			content: '';
+			@apply pointer-events-none absolute bottom-0.5 left-0 h-0.25 w-0 bg-theme-text-primary transition-all duration-200;
+		}
+	}
+
+	&:hover,
+	&:focus {
+		.jw-small-icon-link__label:after {
+			@apply w-full;
+		}
+	}
+}

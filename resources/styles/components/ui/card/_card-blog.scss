@@ -1,0 +1,74 @@
+.jw-card-blog {
+	@apply relative flex flex-col gap-spacing-400;
+
+	&__image-container {
+		@apply rounded-card relative h-60 overflow-hidden bg-theme-surface-invert;
+	}
+
+	&__gradient {
+		background: linear-gradient(180deg, rgba(0, 0, 0, 0) 68.13%, rgba(0, 0, 0, 0.6) 100%);
+
+		@apply absolute inset-0 mt-10;
+	}
+
+	&__image {
+		img {
+			@apply transition-transform duration-500;
+		}
+	}
+
+	&__categories {
+		@apply absolute bottom-0 left-0 z-10 p-3;
+	}
+
+	&__content-container {
+		@apply flex flex-col items-start justify-start gap-spacing-200 pr-spacing-200;
+	}
+
+	&__content {
+		@apply flex flex-col items-start gap-spacing-150;
+	}
+
+	&__title {
+		@apply flex flex-col items-start gap-spacing-100;
+	}
+
+	&__heading {
+		text-decoration: none;
+		color: black;
+		background-image: linear-gradient(var(text-theme-text-primary), var(text-theme-text-primary));
+		background-repeat: no-repeat;
+		background-position: bottom left;
+		background-size: 0% 0.125rem;
+		transition: 1s ease-in-out;
+	}
+
+	&__excerpt {
+		@apply line-clamp-2;
+	}
+
+	&__post-data {
+		@apply flex items-center gap-spacing-150;
+	}
+
+	&__divider {
+		@apply h-1 w-1 rounded-full bg-theme-surface-accent;
+	}
+
+	&__cta {
+		&:before {
+			@apply absolute inset-0;
+			content: '';
+		}
+	}
+
+	&:hover &__image {
+		img {
+			@apply scale-105;
+		}
+	}
+
+	&:hover &__heading {
+		@apply underline;
+	}
+}

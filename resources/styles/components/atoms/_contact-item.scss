@@ -1,0 +1,9 @@
+.jw-contact-item {
+    @apply flex items-start gap-x-3 text-theme-text-primary;
+    &__icon {
+        @apply size-7 shrink-0 text-theme-surface-accent;
+    }
+    &__copy {
+        @apply typography-body text-theme-text-primary;
+    }
+}

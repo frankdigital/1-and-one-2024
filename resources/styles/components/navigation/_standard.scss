@@ -1,0 +1,163 @@
+.jw-header {
+	// @apply py-spacing-200 md:py-spacing-250;
+	@apply sticky top-0 z-50 bg-white;
+
+	&.is-active {
+		@apply border-b border-theme-border-tertiary;
+	}
+
+	&__container {
+		@apply flex items-center justify-between py-spacing-200 md:py-spacing-250 lg:gap-spacing-700;
+	}
+
+	&__navigation--secondary {
+		@apply hidden bg-purple-50 p-spacing-150 lg:flex;
+	}
+
+	&__secondary-links {
+		@apply flex w-full items-center justify-end gap-spacing-400;
+	}
+
+	&__wrapper {
+		@apply flex flex-grow items-center gap-spacing-600;
+	}
+
+	&__logo-container {
+	}
+
+	&__logo {
+		@apply size-12;
+	}
+
+	&__navigation--primary {
+		@apply hidden flex-grow lg:flex;
+
+		.jw-responsive-menu__list {
+			@apply gap-spacing-300;
+		}
+
+		.jw-responsive-menu__item-text {
+			@apply text-theme-text-primary;
+		}
+	}
+
+	&__cta-container {
+		@apply flex items-center gap-spacing-150;
+	}
+
+	&__actions-container {
+		@apply flex shrink-0 items-center gap-spacing-250 lg:flex-row-reverse lg:gap-spacing-400;
+
+		.jw-cta__secondary {
+			@apply hidden lg:flex;
+		}
+	}
+
+	&__action-button {
+		@apply size-6 text-theme-surface-invert;
+	}
+
+	&__action-button--menu {
+		@apply lg:hidden;
+	}
+
+	&__action-button--menu {
+		@apply relative;
+	}
+
+	&__menu-open,
+	&__menu-close {
+		@apply absolute right-0 top-0 z-50 size-6 rotate-90 opacity-0 transition-all duration-200;
+
+		&.is-active {
+			@apply rotate-0 opacity-100;
+		}
+	}
+
+	&__action-button--search {
+	}
+
+	&__mobile-menu {
+		@apply pointer-events-none absolute left-0 h-screen w-full translate-y-5 overflow-hidden overflow-y-auto bg-white opacity-0 transition-all duration-200;
+		top: calc(100% + 1px);
+
+		&.is-active {
+			@apply pointer-events-auto translate-y-0 opacity-100;
+		}
+	}
+
+	&__mega-menu {
+		@apply absolute left-0 top-full w-full translate-y-5 bg-white opacity-0 transition-all duration-200;
+
+		&.is-active {
+			@apply translate-y-0 opacity-100;
+		}
+	}
+
+	&__overlay {
+		@apply pointer-events-none fixed inset-0 z-30 bg-black/40 opacity-0 backdrop-blur-md transition-opacity duration-200;
+
+		&.is-active {
+			@apply pointer-events-auto opacity-100;
+		}
+	}
+
+	&__hamburger {
+		@apply pointer-events-auto relative size-6 cursor-pointer;
+
+		span {
+			@apply absolute left-[3px] block h-0.25 w-[18px] bg-theme-surface-invert;
+
+			transition:
+				transform 0.25s ease-in-out,
+				opacity 0.25s ease-in-out;
+			will-change: transform, opacity;
+			opacity: 1;
+		}
+
+		.top {
+			top: 6px;
+		}
+
+		.middle {
+			top: 12px;
+		}
+
+		.middle-reverse {
+			top: 12px;
+		}
+
+		.bottom {
+			top: 19px;
+		}
+
+		/* Open state styles */
+		&.is-open {
+			.top {
+				transform: scaleX(0) translateY(4px);
+			}
+
+			.middle {
+				transform: rotate(45deg);
+			}
+
+			.middle-reverse {
+				transform: rotate(-45deg);
+			}
+
+			.bottom {
+				transform: scaleX(0) translateY(-4px);
+			}
+		}
+
+		/* Closed state styles */
+		&.is-closed {
+			.top,
+			.middle,
+			.middle-reverse,
+			.bottom {
+				transform: scaleX(1) translateY(0);
+			}
+		}
+	}
+}

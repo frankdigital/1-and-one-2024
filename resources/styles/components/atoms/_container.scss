@@ -1,0 +1,15 @@
+.jw-container {
+	@apply mx-auto w-full max-w-300 px-4 md:px-6 3xl:px-0;
+
+	&--small {
+		@apply max-w-205;
+	}
+
+	&--large {
+		@apply max-w-360;
+	}
+
+	&--header {
+		@apply max-w-328;
+	}
+}

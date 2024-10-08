@@ -1,0 +1,38 @@
+.jw-menu-featured-tile {
+	$this: &;
+
+	@apply h-101 rounded-card relative z-10 flex w-80 overflow-hidden;
+
+	&__image-container {
+		@apply absolute z-10 size-full;
+	}
+
+	&__image {
+		@apply scale-100 object-cover transition-transform duration-500;
+	}
+
+	&__content-container {
+		@apply relative z-20 flex h-full flex-col justify-end gap-spacing-300 p-8;
+
+		#{$this}__heading {
+			@apply text-theme-text-primary-invert;
+		}
+	}
+
+	&__content {
+		@apply flex flex-col gap-1;
+	}
+
+	&__cta-container {
+		.jw-cta {
+			@apply w-full;
+		}
+	}
+
+	&:hover,
+	&:focus {
+		#{$this}__image {
+			@apply scale-105;
+		}
+	}
+}

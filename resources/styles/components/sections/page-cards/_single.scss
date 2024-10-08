@@ -1,0 +1,53 @@
+.jw-page-card {
+	$this: &;
+	@apply rounded-card relative flex flex-col overflow-hidden lg:h-145;
+
+	&__image-container {
+		@apply relative h-60 shrink-0 overflow-hidden bg-theme-surface-invert transition-[height] duration-500 md:h-100;
+	}
+	&__image {
+		@apply transition-transform duration-500 lg:h-100;
+	}
+
+	&__content-container {
+		@apply gap-y-250 flex grow flex-col items-start bg-theme-surface-secondary px-spacing-400 py-spacing-400;
+	}
+
+	&__content {
+		@apply gap-y-100 flex grow flex-col;
+
+		br {
+			@apply hidden;
+		}
+	}
+
+	&__heading {
+		@apply line-clamp-1;
+	}
+
+	&__description {
+		@apply line-clamp-2;
+	}
+
+	&__cta {
+		.cta-text-link {
+			@apply transition-[transform,opacity] duration-500 lg:translate-y-5 lg:opacity-0;
+		}
+		&:before {
+			@apply absolute inset-0;
+			content: '';
+		}
+	}
+
+	&:hover {
+		#{$this}__image-container {
+			@apply lg:h-90;
+		}
+		#{$this}__image {
+			@apply lg:-translate-y-5;
+		}
+		#{$this}__cta .cta-text-link {
+			@apply lg:translate-y-0 lg:opacity-100;
+		}
+	}
+}

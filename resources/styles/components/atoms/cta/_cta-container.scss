@@ -1,0 +1,18 @@
+.jw-cta-container {
+    &__container {
+        @apply flex flex-wrap gap-spacing-150;
+    }
+
+    &__full-width {
+        > * {
+            @apply w-full flex-grow md:w-auto md:flex-none;
+        }
+    }
+
+    &__single {
+    }
+
+    &__multiple {
+        @apply flex flex-wrap gap-spacing-150;
+    }
+}

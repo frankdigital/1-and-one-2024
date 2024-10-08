@@ -26,7 +26,7 @@ $builder
         ->addRelationship('pages', [
             'label' => 'Pages',
             'post_type' => ['page'],
-            'min' => 3,
+            'min' => 1,
             'layout' => 'block',
             'button_label' => 'Add Tile',
             'return_format' => 'id',

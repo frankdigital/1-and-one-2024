@@ -53,28 +53,15 @@
 		</nav>
 	@endif
 
-	@if (isset($content['smallLinks']) && sizeof($content['smallLinks']) > 0)
-		<nav @class([
-			ccn($baseClass, 'menu-container'),
-			ccn($baseClass, 'menu-container--secondary'),
-		])>
-			<ul @class([ccn($baseClass, 'menu')])>
-				@foreach ($content['smallLinks'] as $link)
-					<li @class([ccn($baseClass, 'item')])>
-						<x-small-icon-link icon="Placeholder" :cta="$link['link']" @class([
-							ccn($baseClass, 'action'),
-							ccn($baseClass, 'action--secondary'),
-						]) />
-					</li>
-				@endforeach
-			</ul>
-		</nav>
-	@endif
-
 	<div @class([ccn($baseClass, 'actions-container')])>
 		<div @class([ccn($baseClass, 'cta-container')])>
-			<x-cta classes="" size="small" priority="primary" :cta="$content['primary_cta']" />
-			<x-cta classes="" size="small" priority="secondary" :cta="$content['secondary_cta']" />
+			@if (is_cta_enabled($content['primary_cta']))
+				<x-cta classes="" size="small" priority="primary" :cta="$content['primary_cta']" />
+			@endif
+
+			@if (is_cta_enabled($content['secondary_cta']))
+				<x-cta classes="" size="small" priority="secondary" :cta="$content['secondary_cta']" />
+			@endif
 		</div>
 	</div>
 </div>

@@ -68,14 +68,14 @@ class Page extends Composer {
         return $data;
 	}
 
-			/**
+	/**		
 	 * Returns the ACF Flexible section on the template.
 	 *
 	 * @return string
 	 */
 	public function footer() {
-		$optionsGeneral = $this->getAcfFieldFromOptions('options_general_socials');
-		$optionsFooter = $this->getAcfFieldFromOptions('options_footer');
+		$optionsGeneral = $this->getAcfFieldFromOptions('options_general_socials') ?? [];
+		$optionsFooter = $this->getAcfFieldFromOptions('options_footer') ??  [];
 
 		$mergedArray = array_merge($optionsGeneral, $optionsFooter);
 

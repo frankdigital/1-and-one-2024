@@ -42,6 +42,9 @@ if (!function_exists('is_image_valid')) {
  */
 if (!function_exists('is_cta_enabled')) {
     function is_cta_enabled($cta) {
+        if (!isset($cta)) {
+            return false;
+        }
         
         if ($cta['enable_cta'] === false) {
             return false;

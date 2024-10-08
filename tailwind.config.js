@@ -37,6 +37,7 @@ const config = {
 			},
 			width: {
 				37.5: pxToRem(150),
+				39: pxToRem(156),
 				45: pxToRem(180),
 				50: pxToRem(200),
 				80: pxToRem(320),

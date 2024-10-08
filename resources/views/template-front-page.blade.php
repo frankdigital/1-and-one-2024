@@ -9,7 +9,7 @@
 		@php(the_post())
 
 		@include('heroes.primary.hero', [
-			'type' => 'standard',
+			'type' => 'left',
 			'hero' => $hero,
 		])
 

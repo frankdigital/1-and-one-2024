@@ -59,14 +59,18 @@ function get_gravity_forms_options() {
     if ( ! class_exists( '\GFAPI' ) ) {
         return [];
     }
-    $forms = \GFAPI::get_forms();
-    if ( empty( $forms ) ) {
-        return;
-    }
+
     $choices = [];
+    $forms = \GFAPI::get_forms();
+
+    if ( empty( $forms ) ) {
+        return [];
+    }
+
     foreach ( $forms as $form ) {
         $choices[ $form['id'] ] = $form['title'];
     }
+    
     return $choices;
 }
 /*

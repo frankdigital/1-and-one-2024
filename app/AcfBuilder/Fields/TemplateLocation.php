@@ -31,44 +31,12 @@ $builder
             'label' => '',
             'show_in_graphql' => true
         ])
-            ->addGoogleMap('google_map_data', [
-                'label' => 'Google Map',
-                'instructions' => '',
-                'required' => 0,	
-                'center_lat' => '',
-                'center_lng' => '',
-                'zoom' => '',
-                'height' => '',
-            ])
-
-            ->addAccordion('address', [
-                'label' => 'Location Address',
-                
-                'show_in_graphql' => true
-            ])
-                ->addTrueFalse('toggle_override_google_address', [
-                    'label' => 'Override Google Address',
-                    'instructions' => 'Sometimes the address that Google Maps provides is not the correct address. If this is the case, you can override the address here.',
-                    'default_value' => 0,
-                    'ui' => 1,
-                ])
-
-                ->addTextarea('override_google_address', [
-                    'label' => 'Address',
-                    'instructions' => 'Enter the address of the location. This will be used to display the address on the front end instead of the addrees produced by Google Maps.',
-                    'rows' => 2,
-                    'new_lines' => 'br',
-                    'conditional_logic' => [
-                        [
-                            [
-                                'field' => 'toggle_override_google_address',
-                                'operator' => '==',
-                                'value' => '1',
-                            ],
-                        ],
-                    ],
-                ])
-            ->addAccordion('address_end')->endpoint()
+            ->addTextarea('override_google_address', [
+                'label' => 'Address',
+                'instructions' => 'Enter the address of the location. This will be used to display the address on the front end instead of the addrees produced by Google Maps.',
+                'rows' => 2,
+                'new_lines' => 'br',
+            ])  
         ->endGroup()
 
         ->addGroup('contact', [
@@ -112,8 +80,6 @@ $builder
             ])
 
         ->endGroup()
-    ->endGroup()
-
-    ->addFields(get_field_partial('Fields.Partials.FlexibleSections'));
+    ->endGroup();
 
 return $builder;

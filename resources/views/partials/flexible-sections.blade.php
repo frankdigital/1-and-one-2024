@@ -6,7 +6,7 @@
 	    'intro' => 'intro.intro',
 	    'faq_standard' => 'faq.faq-standard',
 	    'faq_with_cta' => 'faq.faq-with-cta',
-	    'cta_block' => 'cta-block.cta-block-standard',
+	    'cta_block' => 'cta-block.cta-block-contained',
 	    'usp_vertical' => 'usp.usp-vertical',
 	    'usp_horizontal' => 'usp.usp-horizontal',
 	    'locations_tabbed' => 'locations.locations-tabbed',

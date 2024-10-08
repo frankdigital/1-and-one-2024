@@ -18,7 +18,7 @@ $builder
 	])
 		->addRelationship('locations', [
 			'label' => 'Locations', 
-			'max' => 3,
+			'max' => 4,
 			'min' => 1,
 			'post_type' => ['location']
 		])

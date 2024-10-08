@@ -27,8 +27,8 @@ $builder
 		'label' => 'Image',
 		'instructions' => 'Recommended Sizes W:1360px(2720px) H:520px(1040px) format:PNG/JPEG.',
 		'required' => false,
-		'min_width' => '1360',
-		'min_height' => '520',
+		// 'min_width' => '1360',
+		// 'min_height' => '520',
 	])
 	
 	->addAccordion('ctas', [

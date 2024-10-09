@@ -24,7 +24,8 @@ class Fonts {
      * @return string The path suffix.
      */
     public function enqueue_google_font() {
-        wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap', false );
+        wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap', false );
+        wp_enqueue_style('typekit-fonts', 'https://use.typekit.net/edh1sav.css', false, null);
     }
 
     /**

@@ -1,56 +1,56 @@
 @layer base {
-    :root {
-        --spacing-25: #{pxToRem(0)};
-        --spacing-50: #{pxToRem(2)};
-        --spacing-100: #{pxToRem(4)};
-        --spacing-150: #{pxToRem(8)};
-        --spacing-200: #{pxToRem(12)};
-        --spacing-250: #{pxToRem(16)};
-        --spacing-300: #{pxToRem(16)};
-        --spacing-400: #{pxToRem(20)};
-        --spacing-500: #{pxToRem(24)};
-        --spacing-600: #{pxToRem(24)};
-        --spacing-700: #{pxToRem(32)};
-        --spacing-800: #{pxToRem(40)};
-        --spacing-900: #{pxToRem(48)};
-        --spacing-950: #{pxToRem(56)};
-    }
+	:root {
+		--spacing-25: #{pxToRem(0)};
+		--spacing-50: #{pxToRem(2)};
+		--spacing-100: #{pxToRem(4)};
+		--spacing-150: #{pxToRem(8)};
+		--spacing-200: #{pxToRem(12)};
+		--spacing-250: #{pxToRem(16)};
+		--spacing-300: #{pxToRem(16)};
+		--spacing-400: #{pxToRem(20)};
+		--spacing-500: #{pxToRem(24)};
+		--spacing-600: #{pxToRem(24)};
+		--spacing-700: #{pxToRem(32)};
+		--spacing-800: #{pxToRem(40)};
+		--spacing-900: #{pxToRem(48)};
+		--spacing-950: #{pxToRem(56)};
+	}
 
-    @screen md {
-        :root {
-            --spacing-25: #{pxToRem(0)};
-            --spacing-50: #{pxToRem(2)};
-            --spacing-100: #{pxToRem(4)};
-            --spacing-150: #{pxToRem(8)};
-            --spacing-200: #{pxToRem(12)};
-            --spacing-250: #{pxToRem(16)};
-            --spacing-300: #{pxToRem(16)};
-            --spacing-400: #{pxToRem(20)};
-            --spacing-500: #{pxToRem(24)};
-            --spacing-600: #{pxToRem(24)};
-            --spacing-700: #{pxToRem(32)};
-            --spacing-800: #{pxToRem(40)};
-            --spacing-900: #{pxToRem(48)};
-            --spacing-950: #{pxToRem(56)};
-        }
-    }
+	@screen md {
+		:root {
+			--spacing-25: #{pxToRem(0)};
+			--spacing-50: #{pxToRem(2)};
+			--spacing-100: #{pxToRem(4)};
+			--spacing-150: #{pxToRem(8)};
+			--spacing-200: #{pxToRem(12)};
+			--spacing-250: #{pxToRem(16)};
+			--spacing-300: #{pxToRem(16)};
+			--spacing-400: #{pxToRem(20)};
+			--spacing-500: #{pxToRem(24)};
+			--spacing-600: #{pxToRem(24)};
+			--spacing-700: #{pxToRem(32)};
+			--spacing-800: #{pxToRem(40)};
+			--spacing-900: #{pxToRem(48)};
+			--spacing-950: #{pxToRem(56)};
+		}
+	}
 
-    @screen lg {
-        :root {
-            --spacing-25: #{pxToRem(2)};
-            --spacing-50: #{pxToRem(4)};
-            --spacing-100: #{pxToRem(8)};
-            --spacing-150: #{pxToRem(12)};
-            --spacing-200: #{pxToRem(16)};
-            --spacing-250: #{pxToRem(20)};
-            --spacing-300: #{pxToRem(24)};
-            --spacing-400: #{pxToRem(32)};
-            --spacing-500: #{pxToRem(40)};
-            --spacing-600: #{pxToRem(48)};
-            --spacing-700: #{pxToRem(64)};
-            --spacing-800: #{pxToRem(80)};
-            --spacing-900: #{pxToRem(96)};
-            --spacing-950: #{pxToRem(112)};
-        }
-    }
+	@screen lg {
+		:root {
+			--spacing-25: #{pxToRem(2)};
+			--spacing-50: #{pxToRem(4)};
+			--spacing-100: #{pxToRem(8)};
+			--spacing-150: #{pxToRem(12)};
+			--spacing-200: #{pxToRem(16)};
+			--spacing-250: #{pxToRem(20)};
+			--spacing-300: #{pxToRem(24)};
+			--spacing-400: #{pxToRem(32)};
+			--spacing-500: #{pxToRem(40)};
+			--spacing-600: #{pxToRem(48)};
+			--spacing-700: #{pxToRem(64)};
+			--spacing-800: #{pxToRem(80)};
+			--spacing-900: #{pxToRem(96)};
+			--spacing-950: #{pxToRem(112)};
+		}
+	}
 }

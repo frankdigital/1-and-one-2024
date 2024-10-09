@@ -2,8 +2,8 @@ import { compileStyles } from './../utilities/compileStyles';
 import plugin from 'tailwindcss/plugin';
 
 export const fontFamily = {
-	heading: ['Archivo', 'Arial', 'sans-serif'],
-	body: ['Archivo', 'Arial', 'sans-serif'],
+	heading: ['proxima-nova', 'Arial', 'sans-serif'],
+	body: ['proxima-nova', 'Arial', 'sans-serif'],
 };
 
 export default plugin(({ addComponents }) => {

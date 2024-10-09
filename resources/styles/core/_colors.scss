@@ -13,7 +13,7 @@ $color-orange-800: hsl(23, 72%, 21%);
 $color-orange-900: hsl(23, 72%, 13%);
 $color-orange-950: hsl(23, 72%, 8%);
 
-$color-shell-50: hsl(30, 100%, 100%);
+$color-shell-50: #fffefd;
 $color-shell-100: hsl(48, 71%, 99%);
 $color-shell-200: hsl(42, 71%, 97%);
 $color-shell-300: hsl(45, 38%, 94%);
@@ -119,80 +119,3 @@ $color-feedback-success: hsl(123, 46%, 34%);
 		--cta-secondary-invert-text-disabled: var(--text-primary-invert);
 	}
 }
-
-// $color-purple-950: #1e003c;
-// $color-purple-900: #350078;
-// $color-purple-800: #6500ca;
-// $color-purple-700: #8001ff;
-// $color-purple-600: #8c12ff;
-// $color-purple-500: #943aff;
-// $color-purple-400: #ab72ff;
-// $color-purple-300: #c5a5ff;
-// $color-purple-200: #ddcdff;
-// $color-purple-100: #ede4ff;
-// $color-purple-50: #f5f0ff;
-
-// $color-orange-50: #fbf7f4;
-// $color-orange-100: #f8eee8;
-// $color-orange-200: #f8eee8;
-// $color-orange-300: #dbac8e;
-// $color-orange-400: #cd8b61;
-// $color-orange-500: #bf6b34;
-// $color-orange-600: #a6511a;
-// $color-orange-700: #813f14;
-// $color-orange-800: #5c2d0f;
-// $color-orange-900: #371b09;
-// $color-orange-950: #251206;
-
-// $color-shell-50: #fffefd;
-// $color-shell-100: #fefdf9;
-// $color-shell-200: #fdfaf3;
-// $color-shell-300: #f5f2e9;
-// $color-shell-400: #e4e0d8;
-// $color-shell-500: #cac7c0;
-// $color-shell-600: #b1aea8;
-// $color-shell-700: #989590;
-// $color-shell-800: #989590;
-// $color-shell-900: #656460;
-// $color-shell-950: #4c4b48;
-
-// $color-black-50: #f2f2f2;
-// $color-black-100: #e5e5e5;
-// $color-black-200: #cccccc;
-// $color-black-300: #b9b9b9;
-// $color-black-400: #999999;
-// $color-black-500: #737373;
-// $color-black-600: #5c5c5c;
-// $color-black-700: #454545;
-// $color-black-800: #2e2e2e;
-// $color-black-900: #171717;
-
-// $color-brand-black: #111111;
-// $color-brand-orange: #b85a1d;
-// $color-brand-white: #ffffff;
-// $color-brand-shell: #fdf9f0;
-
-// $color-blue-900: #1c2f34;
-// $color-blue-800: #2e4f56;
-// $color-blue-700: #406f79;
-// $color-blue-600: #538e9c;
-// $color-blue-500: #5796a4;
-// $color-blue-400: #8dbbc5;
-// $color-blue-300: #aeced6;
-// $color-blue-200: #cee2e6;
-// $color-blue-100: #eff5f7;
-// $color-blue-50: #f7fafb;
-
-// $color-grey-900: #171717;
-// $color-grey-800: #2e2e2e;
-// $color-grey-700: #454545;
-// $color-grey-600: #5c5c5c;
-// $color-grey-500: #737373;
-// $color-grey-400: #999999;
-// $color-grey-300: #b9b9b9;
-// $color-grey-200: #cccccc;
-// $color-grey-100: #e5e5e5;
-// $color-grey-50: #f2f2f2;
-
-// $color-feedback-error: #AD0F0F;
-// $color-feedback-success: #2e7d32;

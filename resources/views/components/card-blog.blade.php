@@ -25,7 +25,7 @@
 
 			@if (isset($readTime))
 				<div @class([ccn($baseClass, 'divider')])></div>
-				<x-text textStyle="caption" as="span">{{ $readTime }}min read</x-text>
+				<x-text textStyle="caption" as="span">{{ $readTime }} min read</x-text>
 			@endif
 		</div>
 

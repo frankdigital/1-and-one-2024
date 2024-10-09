@@ -39,6 +39,13 @@ $builder
             ])  
         ->endGroup()
 
+        ->addTrueFalse('enable_head_office', [
+            'label' => 'Enable Head Office',
+            'instructions' => 'Check this box if this location is a head office.',
+            'default_value' => 0,
+            'ui' => 1
+        ])
+
         ->addGroup('contact', [
             'label' => 'Contact Information',
             'show_in_graphql' => true

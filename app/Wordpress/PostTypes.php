@@ -60,7 +60,7 @@ class PostTypes {
 				'supports' => ['title', 'revisions', 'post-attributes'],
 				'hierarchical' => true,
 				'menu_icon' => 'dashicons-location-alt',
-				'public' => true,
+				'public' => false,
 				'enter_title_here' => 'Enter Location name',
 				'show_in_graphql' => true,
 				'show_in_nav_menus' => true,

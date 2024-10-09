@@ -9,6 +9,7 @@ class LocationBlock extends Component {
     use UseHelpers;
 
     public $location;
+    public $headOffice = false;
     public $title;
     public $address;
     public $telephone;
@@ -20,7 +21,9 @@ class LocationBlock extends Component {
         // Initialize title and address directly to avoid method calls in constructor
         $this->title = $this->getLocationTitle();
         $this->address = $this->getLocationAddress();
+
         $this->telephone = $this->getAcfFieldFromID('post_type_data_contact_phone', $this->location);
+        $this->headOffice = $this->getAcfFieldFromID('post_type_data_enable_head_office', $this->location);
 
         // Initialize CTA
         $this->cta = [

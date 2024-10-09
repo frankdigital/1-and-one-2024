@@ -26,10 +26,10 @@ class ImageLeftRight extends Composer {
 	public function with() {
 		$section = $this->data->get('section');
 
-
 		return [
 			'content' => $section['content'],
 			'orientation' => $this->pathOr('image-left', ['content', 'orientation'], $section),
+			'darkerBg' => $this->pathOr('lighter', ['content', 'bg_color'], $section) === 'darker',
 		];
 	}
 }

@@ -1,6 +1,10 @@
 .jw-section {
 	@apply vertical-lg mx-auto bg-theme-surface-primary;
 
+	&--darker {
+		@apply bg-theme-surface-tertiary;
+	}
+
 	&__contain {
 		@apply max-w-450;
 	}
@@ -11,9 +15,9 @@
 	&__padding-bottom {
 	}
 
-	& + .jw-section {
-		@apply pt-0;
-	}
+	// & + .jw-section {
+	// 	@apply pt-0;
+	// }
 
 	& + .hero {
 	}

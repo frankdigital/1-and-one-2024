@@ -8,6 +8,7 @@ class Section extends Component {
 	public $paddingClass;
     public $class;
 	public $dark;
+	public $darkerBg;
 	public $contain;
 
 	/**
@@ -16,7 +17,7 @@ class Section extends Component {
 	 * @param  string  $type
 	 * @return void
 	 */
-	public function __construct($class = '', $padding = 'default', $dark = false, $contain = true) {
+	public function __construct($class = '', $padding = 'default', $dark = false, $darkerBg = false, $contain = true) {
 		$PADDING_TOP_CLASS = [
 			'default' => 'jw-section__padding-top',
 			'none' => ''
@@ -37,6 +38,7 @@ class Section extends Component {
 
 		$this->paddingClass = trim("$paddingTopClass $paddingBottomClass");
 		$this->dark = $dark;
+		$this->darkerBg = $darkerBg;
         $this->class = $class;
 		$this->contain = $contain;
 	}

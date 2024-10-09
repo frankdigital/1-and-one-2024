@@ -4,6 +4,7 @@
 
 <section @class([
 	ccn($baseClass),
+	ccn($baseClass . '--darker') => $darkerBg,
 	$class,
 	$paddingClass,
 	'dark' => $dark,

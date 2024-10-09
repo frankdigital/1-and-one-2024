@@ -3,7 +3,7 @@
 	$showCta = is_cta_enabled($content['primary_cta']) || is_cta_enabled($content['secondary_cta']);
 @endphp
 
-<x-section :contain="false" @class([
+<x-section :darkerBg="$darkerBg" :contain="false" @class([
 	ccn($baseClass),
 	ccn($baseClass . '--image-right') => $orientation === 'image-right',
 ])>
@@ -11,7 +11,7 @@
 
 		@if (isset($content['image']) && is_image_valid($content['image']))
 			<div @class([ccn($baseClass, 'image-container')])>
-				<x-image :rounded="true" :fill="true" :image="$content['image']" :size="[600, 518]" @class([ccn($baseClass, 'image')]) />
+				<x-image :rounded="true" :fill="true" :image="$content['image']" :size="[1200, 1036]" @class([ccn($baseClass, 'image')]) />
 			</div>
 		@endif
 

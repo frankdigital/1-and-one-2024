@@ -8,7 +8,7 @@
 	}
 
 	&__content-container {
-		@apply lg:top-header-height gap-y-500 relative flex w-full flex-col justify-between md:flex-row md:items-end md:gap-x-spacing-900 lg:sticky lg:max-w-105 lg:flex-col lg:items-start lg:justify-start lg:gap-spacing-400;
+		@apply gap-y-500 relative flex w-full flex-col justify-between md:flex-row md:items-end md:gap-x-spacing-900 lg:sticky lg:top-header-height lg:max-w-105 lg:flex-col lg:items-start lg:justify-start lg:gap-spacing-400;
 	}
 
 	&__content {
@@ -35,6 +35,12 @@
 		}
 		&--desktop {
 			@apply hidden sm:inline-flex;
+		}
+	}
+
+	&.jw-section--darker {
+		.jw-usp__icon.jw-contained-icon {
+			@apply bg-theme-surface-primary;
 		}
 	}
 }

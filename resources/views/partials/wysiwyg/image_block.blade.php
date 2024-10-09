@@ -8,8 +8,9 @@
 ])>
 	<div @class([ccn($baseClass, 'image-container')])>
 		<x-image :image="$block['image']" :size="[1200, 0]" @class([ccn($baseClass, 'image')]) />
-		@isset($block['credit'])
+
+		@if (isset($block['credit']) && !empty($block['credit']))
 			<x-caption :caption="$block['credit']" />
-		@endisset
+		@endif
 	</div>
 </div>

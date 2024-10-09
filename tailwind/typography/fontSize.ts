@@ -41,7 +41,7 @@ export const fontSize = {
 	largeBodyTablet: [pxToRem(18), { lineHeight: pxToRem(26), fontWeight: 400 }],
 	largeBodyMobile: [pxToRem(18), { lineHeight: pxToRem(26), fontWeight: 400 }],
 
-	bodyDesktop: [pxToRem(18), { lineHeight: pxToRem(28), fontWeight: 400 }],
+	bodyDesktop: [pxToRem(18), { lineHeight: pxToRem(24), fontWeight: 400 }],
 	bodyTablet: [pxToRem(16), { lineHeight: pxToRem(24), fontWeight: 400 }],
 	bodyMobile: [pxToRem(16), { lineHeight: pxToRem(24), fontWeight: 400 }],
 

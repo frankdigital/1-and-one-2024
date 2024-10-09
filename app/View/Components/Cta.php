@@ -30,7 +30,7 @@ class Cta extends Component {
         string $priority = 'primary',
         string $class = '',
         string $size = 'default',
-        ?string $icon = null
+        ?string $icon = 'ArrowRight'
     ) {
         $this->cta = $cta['cta'] ?? [];
         $this->priority = $priority;

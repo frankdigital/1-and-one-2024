@@ -1,110 +1,110 @@
 .cta-contained {
-    @apply rounded-button pointer-events-none relative box-border flex size-full flex-row items-center justify-center gap-3 border transition-all duration-200;
+	@apply rounded-button pointer-events-none relative box-border flex size-full flex-row items-center justify-center gap-3 border transition-all duration-200;
 
-    &--primary {
-        @apply border-theme-cta-primary-surface bg-theme-cta-primary-surface font-medium text-theme-cta-primary-text;
-    }
+	&--primary {
+		@apply border-theme-cta-primary-surface bg-theme-cta-primary-surface font-medium text-theme-cta-primary-text;
+	}
 
-    &--secondary {
-        @apply border-theme-cta-secondary-border bg-theme-cta-secondary-surface text-theme-cta-secondary-text;
-    }
+	&--secondary {
+		@apply border-theme-cta-secondary-border bg-theme-cta-secondary-surface text-theme-cta-secondary-text;
+	}
 
-    &--tertiary {
-    }
+	&--tertiary {
+	}
 
-    &--small {
-        @apply px-4.5 py-3;
-    }
+	&--small {
+		@apply px-4.5 py-3;
+	}
 
-    &--default {
-        @apply px-5.5 py-3;
-    }
+	&--default {
+		@apply px-5.5 py-2.5 pr-4.5;
+	}
 
-    &--large {
-        @apply px-6.5 py-3.5;
-    }
+	&--large {
+		@apply py-3 pl-4.5 pr-3.5;
+	}
 }
 
 .cta-contained__icon {
-    &--small {
-        @apply size-5;
-    }
+	&--small {
+		@apply size-5;
+	}
 
-    &--default {
-        @apply size-5;
-    }
+	&--default {
+		@apply size-5;
+	}
 
-    &--large {
-        @apply size-6;
-    }
+	&--large {
+		@apply size-6;
+	}
 
-    &--primary {
-    }
+	&--primary {
+	}
 
-    &--secondary {
-    }
+	&--secondary {
+	}
 }
 
 .cta-contained__label {
-    @apply text-nowrap;
+	@apply text-nowrap;
 
-    &--small {
-        @apply text-smallBodyMobile sm:text-smallBodyTablet lg:text-smallBodyDesktop;
-    }
+	&--small {
+		@apply text-smallBodyMobile sm:text-smallBodyTablet lg:text-smallBodyDesktop;
+	}
 
-    &--default {
-        @apply text-bodyMobile sm:text-bodyTablet lg:text-bodyDesktop;
-    }
+	&--default {
+		@apply text-smallBodyMobile leading-6 sm:text-smallBodyDesktop lg:text-bodyDesktop;
+	}
 
-    &--large {
-        @apply text-bodyMobile sm:text-bodyTablet lg:text-bodyDesktop;
-    }
+	&--large {
+		@apply text-bodyMobile sm:text-bodyTablet lg:text-bodyDesktop;
+	}
 
-    &--primary {
-    }
+	&--primary {
+	}
 
-    &--secondary {
-    }
+	&--secondary {
+	}
 }
 
 .jw-cta {
-    &:hover,
-    &:focus {
-        .cta-contained {
-            &--primary {
-                @apply bg-theme-cta-primary-surface-hover;
-            }
+	&:hover,
+	&:focus {
+		.cta-contained {
+			&--primary {
+				@apply border-theme-cta-primary-surface-hover bg-theme-cta-primary-surface-hover;
+			}
 
-            &--secondary {
-                @apply bg-theme-cta-secondary-surface-hover text-theme-cta-secondary-text-hover;
-            }
-        }
-    }
+			&--secondary {
+				@apply bg-theme-cta-secondary-surface-hover text-theme-cta-secondary-text-hover;
+			}
+		}
+	}
 }
 
 .dark {
-    .cta-contained {
-        &--primary {
-            // Not used
-        }
+	.cta-contained {
+		&--primary {
+			// Not used
+		}
 
-        &--secondary {
-            @apply border-theme-cta-secondary-invert-border bg-transparent text-theme-cta-secondary-invert-text;
-        }
-    }
+		&--secondary {
+			@apply border-theme-cta-secondary-invert-border bg-transparent text-theme-cta-secondary-invert-text;
+		}
+	}
 
-    .jw-cta {
-        &:hover,
-        &:focus {
-            .cta-contained {
-                &--primary {
-                    // Not used
-                }
+	.jw-cta {
+		&:hover,
+		&:focus {
+			.cta-contained {
+				&--primary {
+					// Not used
+				}
 
-                &--secondary {
-                    @apply bg-theme-cta-secondary-invert-surface-hover text-theme-cta-secondary-invert-text-hover;
-                }
-            }
-        }
-    }
+				&--secondary {
+					@apply bg-theme-cta-secondary-invert-surface-hover text-theme-cta-secondary-invert-text-hover;
+				}
+			}
+		}
+	}
 }

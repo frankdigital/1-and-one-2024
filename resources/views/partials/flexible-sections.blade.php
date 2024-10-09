@@ -28,6 +28,7 @@
 	@foreach ($sections as $item)
 		@includeIf("flexible-sections.{$componentMap[$item['acf_fc_layout']]}", [
 			'section' => $item,
+			'last' => $loop->last,
 		])
 	@endforeach
 @endif

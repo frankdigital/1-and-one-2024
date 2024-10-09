@@ -3,7 +3,7 @@
 	$showCta = is_cta_enabled($content['primary_cta']) || is_cta_enabled($content['secondary_cta']);
 @endphp
 
-<x-section :contain="false" :dark="true" @class([ccn($baseClass)])>
+<x-section :contain="false" :dark="true" @class([ccn($baseClass), $last => ccn($baseClass . '--last')])>
 	<x-container @class([ccn($baseClass, 'container')])>
 		<div @class([ccn($baseClass, 'margin')])>
 			<div @class([ccn($baseClass, 'gradient')])></div>
@@ -16,7 +16,7 @@
 
 			<div @class([ccn($baseClass, 'content-container')])>
 				<div @class([ccn($baseClass, 'content')])>
-					@if (isset($content['eyebrow']))
+					@if (isset($content['eyebrow']) && !empty($content['eyebrow']))
 						<x-text as="eyebrow">
 							{{ $content['eyebrow'] }}
 						</x-text>
@@ -29,7 +29,7 @@
 					@endif
 
 					@if (isset($content['description']))
-						<x-text as="body" :isHTML="true">
+						<x-text as="bodyLarge" :isHTML="true">
 							{!! $content['description'] !!}
 						</x-text>
 					@endif
@@ -37,8 +37,8 @@
 
 				@if ($showCta)
 					<x-cta-container @class([ccn($baseClass, 'cta-container')])>
-						<x-cta classes="" priority="primary" :cta="$content['primary_cta']" />
-						<x-cta classes="" priority="secondary" :cta="$content['secondary_cta']" />
+						<x-cta priority="primary" :cta="$content['primary_cta']" />
+						<x-cta priority="text-link" :cta="$content['secondary_cta']" />
 					</x-cta-container>
 				@endif
 			</div>

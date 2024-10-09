@@ -5,14 +5,20 @@
 		@apply rounded-card vertical-lg relative overflow-hidden;
 	}
 
-	&__overlay {
-		@apply absolute left-0 top-0 z-1 h-full w-full bg-black opacity-50;
-	}
-
 	&__gradient {
 		@apply absolute left-0 top-0 z-1 h-full w-full;
 
-		background: linear-gradient(180deg, rgba(0, 0, 0, 0) -17.79%, rgba(0, 0, 0, 0.6) 80%);
+		background: linear-gradient(215deg, rgba(0, 0, 0, 0.55) 2.17%, rgba(0, 0, 0, 0.8) 60.29%, #000 92.55%);
+
+		@screen lg {
+			background: linear-gradient(
+				267deg,
+				rgba(0, 0, 0, 0) 1.82%,
+				rgba(0, 0, 0, 0.55) 37.36%,
+				rgba(0, 0, 0, 0.8) 63.44%,
+				#000 97.62%
+			);
+		}
 	}
 
 	&__image-container {
@@ -26,7 +32,7 @@
 	}
 
 	&__content-container {
-		@apply gap-y-500 relative z-10 flex w-full flex-col px-6 md:max-w-150 lg:mx-24 lg:max-w-150 lg:px-0;
+		@apply gap-y-500 relative z-10 flex w-full flex-col px-spacing-500 md:max-w-150 lg:mx-24 lg:max-w-150 lg:px-0;
 	}
 
 	&__content {
@@ -35,5 +41,12 @@
 
 	&__cta-container {
 		@apply flex-col gap-spacing-300 md:flex-row;
+	}
+}
+
+.jw-cta-block-contained--last {
+	&:before {
+		content: '';
+		@apply bg-shell-50 absolute bottom-0 left-0 z-0 h-1/2 w-full;
 	}
 }

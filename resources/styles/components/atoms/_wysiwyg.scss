@@ -1,5 +1,6 @@
 .jw-wysiwyg {
-	@apply gap-y-300 flex flex-col;
+	@apply gap-y-300 flex flex-col leading-6 text-theme-text-secondary;
+
 	h1 {
 		@apply typography-h1;
 	}

@@ -3,7 +3,7 @@
 	$showCta = is_cta_enabled($content['primary_cta']) || is_cta_enabled($content['secondary_cta']);
 @endphp
 
-<x-section @class([
+<x-section :contain="false" @class([
 	ccn($baseClass),
 	ccn($baseClass . '--image-right') => $orientation === 'image-right',
 ])>

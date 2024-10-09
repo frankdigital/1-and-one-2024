@@ -1,7 +1,7 @@
 @php
-    $baseClass = 'wysiwyg';
+	$baseClass = 'wysiwyg';
 @endphp
 
 <div {{ $attributes->merge(['class' => ccn($baseClass)]) }}>
-    {!! $wysiwyg !!}
+	{!! $wysiwyg !!}
 </div>

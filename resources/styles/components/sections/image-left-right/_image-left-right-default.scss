@@ -1,10 +1,14 @@
 .jw-image-lr-default {
 	&__container {
 		@apply gap-y-600 flex flex-col lg:grid lg:grid-cols-2;
+
+		@screen lg {
+			grid-template-columns: pxToRem(652) 1fr;
+		}
 	}
 
 	&__image-container {
-		@apply relative h-60 sm:h-70 md:h-135 lg:h-130;
+		@apply lg:h-150 relative h-60 sm:h-70 md:h-135;
 	}
 
 	&__image {
@@ -16,7 +20,7 @@
 	}
 
 	&__content {
-		@apply gap-y-300 flex flex-col;
+		@apply gap-y-300 flex flex-col text-theme-text-secondary;
 	}
 
 	&__cta-container {

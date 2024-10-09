@@ -3,7 +3,7 @@
 	$showCta = is_cta_enabled($content['primary_cta']);
 @endphp
 
-<x-section @class([ccn($baseClass)])>
+<x-section :contain="false" @class([ccn($baseClass)])>
 	<x-container @class([ccn($baseClass, 'container')])>
 		<div @class([ccn($baseClass, 'content-container')])>
 			<div @class([ccn($baseClass, 'content')])>

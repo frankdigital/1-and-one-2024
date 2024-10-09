@@ -44,6 +44,7 @@ const config = {
 				85: pxToRem(340),
 				95: pxToRem(380),
 				105: pxToRem(420),
+				163: pxToRem(652),
 			},
 			maxWidth: {
 				35: pxToRem(140),
@@ -84,6 +85,7 @@ const config = {
 				130: pxToRem(520),
 				135: pxToRem(540),
 				145: pxToRem(580),
+				150: pxToRem(600),
 				160: pxToRem(640),
 				170: pxToRem(680),
 				'9/10': '90%',

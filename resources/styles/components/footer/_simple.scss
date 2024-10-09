@@ -5,8 +5,9 @@
 		@apply flex flex-col gap-spacing-800;
 
 		@screen lg {
-			@apply gap-x-300 gap-y-0;
+			@apply gap-x-spacing-300 gap-y-0;
 			display: grid;
+			grid-template-columns: 384px 1fr 1fr;
 			grid-template-areas:
 				'a b b'
 				'a c c'
@@ -15,6 +16,7 @@
 	}
 
 	&__logo-container {
+		@apply flex flex-grow items-center;
 	}
 
 	&__logo-link {
@@ -22,13 +24,44 @@
 	}
 
 	&__logo {
-		@apply w-39 h-auto;
+		@apply h-auto w-64;
 	}
 
-	&__socials-container {
-		@apply flex justify-between lg:flex lg:flex-col;
+	&__sidebar-container {
+		@apply flex w-full justify-between lg:flex lg:w-96 lg:flex-col;
 
 		grid-area: a;
+	}
+
+	&__sidebar {
+		@apply flex w-full flex-row flex-wrap;
+	}
+
+	&__content-container {
+		@apply flex-grow-2 md:pt-13 flex basis-full flex-col gap-spacing-400 pt-spacing-800 lg:pr-spacing-600;
+	}
+
+	&__content {
+		@apply flex flex-col gap-spacing-200;
+	}
+
+	&__cta-container {
+		@apply flex flex-col gap-spacing-150 md:flex-row;
+
+		.jw-cta {
+			@apply w-full md:w-auto;
+		}
+	}
+
+	&__socials {
+	}
+
+	&__socials--mobile {
+		@apply lg:hidden;
+	}
+
+	&__socials--desktop {
+		@apply hidden lg:block;
 	}
 
 	&__featured-links {
@@ -59,7 +92,7 @@
 	}
 
 	&__locations {
-		@apply gap-x-300 gap-y-700 flex flex-col md:flex-row;
+		@apply lg:gap-9.5 gap-x-300 gap-y-700 hidden flex-col md:flex-row lg:flex;
 
 		grid-area: b;
 	}
@@ -69,7 +102,7 @@
 	}
 
 	&__legal-container {
-		@apply flex flex-wrap items-center justify-between gap-spacing-150 border-b border-theme-border-secondary pb-6 lg:mt-spacing-800;
+		@apply flex flex-col flex-wrap items-start justify-start gap-spacing-150 border-b border-theme-border-secondary pb-6 lg:mt-spacing-800 lg:flex-row lg:justify-between;
 
 		grid-area: d;
 	}

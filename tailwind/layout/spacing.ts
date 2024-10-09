@@ -17,4 +17,5 @@ export const space = {
 	'spacing-950': 'var(--spacing-950)',
 
 	'header-height': 'calc(var(--header-height) + 1rem)',
+	9.5: pxToRem(38),
 };

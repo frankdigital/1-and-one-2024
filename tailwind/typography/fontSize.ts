@@ -37,17 +37,17 @@ export const fontSize = {
 	introTablet: [pxToRem(20), { lineHeight: pxToRem(28) }],
 	introMobile: [pxToRem(20), { lineHeight: pxToRem(28) }],
 
-	largeBodyDesktop: [pxToRem(20), { lineHeight: pxToRem(28) }],
-	largeBodyTablet: [pxToRem(18), { lineHeight: pxToRem(26) }],
-	largeBodyMobile: [pxToRem(18), { lineHeight: pxToRem(26) }],
+	largeBodyDesktop: [pxToRem(20), { lineHeight: pxToRem(28), fontWeight: 400 }],
+	largeBodyTablet: [pxToRem(18), { lineHeight: pxToRem(26), fontWeight: 400 }],
+	largeBodyMobile: [pxToRem(18), { lineHeight: pxToRem(26), fontWeight: 400 }],
 
-	bodyDesktop: [pxToRem(18), { lineHeight: pxToRem(28) }],
-	bodyTablet: [pxToRem(16), { lineHeight: pxToRem(24) }],
-	bodyMobile: [pxToRem(16), { lineHeight: pxToRem(24) }],
+	bodyDesktop: [pxToRem(18), { lineHeight: pxToRem(28), fontWeight: 400 }],
+	bodyTablet: [pxToRem(16), { lineHeight: pxToRem(24), fontWeight: 400 }],
+	bodyMobile: [pxToRem(16), { lineHeight: pxToRem(24), fontWeight: 400 }],
 
-	smallBodyDesktop: [pxToRem(16), { lineHeight: pxToRem(24) }],
-	smallBodyTablet: [pxToRem(14), { lineHeight: pxToRem(24) }],
-	smallBodyMobile: [pxToRem(14), { lineHeight: pxToRem(24) }],
+	smallBodyDesktop: [pxToRem(16), { lineHeight: pxToRem(24), fontWeight: 400 }],
+	smallBodyTablet: [pxToRem(14), { lineHeight: pxToRem(24), fontWeight: 400 }],
+	smallBodyMobile: [pxToRem(14), { lineHeight: pxToRem(24), fontWeight: 400 }],
 
 	captionDesktop: [pxToRem(14), { lineHeight: pxToRem(20) }],
 	captionTablet: [pxToRem(12), { lineHeight: pxToRem(20) }],

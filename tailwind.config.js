@@ -58,6 +58,8 @@ const config = {
 				294: pxToRem(1176),
 				300: pxToRem(1200),
 				312: pxToRem(1248),
+				315: pxToRem(1260),
+				327: pxToRem(1308),
 				328: pxToRem(1312),
 				360: pxToRem(1440),
 				450: pxToRem(1800),
@@ -94,6 +96,9 @@ const config = {
 			maxHeight: { 180: pxToRem(720) },
 			flexBasis: {
 				'1/2-gap-3': 'calc(50% - (1/2 * 1rem))',
+			},
+			flexGrow: {
+				2: '2',
 			},
 			zIndex: {
 				1: 1,

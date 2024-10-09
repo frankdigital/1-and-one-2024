@@ -1,19 +1,64 @@
 @php
 	$baseClass = 'footer-simple';
 @endphp
+
 <footer @class([ccn($baseClass)])>
 	<x-container @class([ccn($baseClass, 'container')])>
-		<div @class([ccn($baseClass, 'socials-container')])>
-			<div @class([ccn($baseClass, 'logo-container')])>
-				<a href="{{ url('/') }}" @class([ccn($baseClass, 'logo-link')])>
-					@svg('icons.brand.LogoDark', ccn($baseClass, 'logo'))
-				</a>
+
+		<div @class([ccn($baseClass, 'sidebar-container')])>
+			<div @class([ccn($baseClass, 'sidebar')])>
+				<div @class([ccn($baseClass, 'logo-container')])>
+					<a href="{{ url('/') }}" @class([ccn($baseClass, 'logo-link')])>
+						@svg('icons.brand.LogoDark', ccn($baseClass, 'logo'))
+					</a>
+				</div>
+
+				@if (sizeof($socials) > 0)
+					<div @class([
+						ccn($baseClass, 'socials'),
+						ccn($baseClass, 'socials--mobile'),
+					])>
+						<x-socials :socials="$socials" @class([ccn($baseClass, 'socials')]) />
+					</div>
+				@endif
+
+				<div @class([ccn($baseClass, 'content-container')])>
+					@php
+						$showCta = is_cta_enabled($cta['primary_cta']) || is_cta_enabled($cta['secondary_cta']);
+					@endphp
+
+					<div @class([ccn($baseClass, 'content')])>
+						@if (isset($cta['heading']))
+							<x-text as="span" textStyle="h5">
+								{{ $cta['heading'] }}
+							</x-text>
+						@endif
+
+						@if (isset($cta['content']))
+							<x-text as="bodySmall" textStyle="span">
+								{{ $cta['content'] }}
+							</x-text>
+						@endif
+					</div>
+
+					@if ($showCta)
+						<x-cta-container :fullWidth="true" @class([ccn($baseClass, 'cta-container')])>
+							<x-cta size="small" priority="primary" :cta="$cta['primary_cta']" />
+							<x-cta size="small" priority="secondary" :cta="$cta['secondary_cta']" />
+						</x-cta-container>
+					@endif
+				</div>
+
 			</div>
 
 			@if (sizeof($socials) > 0)
-				<x-socials :socials="$socials" @class([ccn($baseClass, 'socials')]) />
+				<div @class([
+					ccn($baseClass, 'socials'),
+					ccn($baseClass, 'socials--desktop'),
+				])>
+					<x-socials :socials="$socials" @class([ccn($baseClass, 'socials')]) />
+				</div>
 			@endif
-
 		</div>
 
 		<div @class([ccn($baseClass, 'featured-links')])>

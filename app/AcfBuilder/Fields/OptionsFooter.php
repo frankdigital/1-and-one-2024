@@ -16,6 +16,20 @@ $builder
 	->addGroup('options_footer', [
 		'label' => ''
 	])
+		->addGroup('content', [
+			'label' => 'Call to Action'
+		])
+			->addText('heading', ['label' => 'Heading'])
+			->addTextarea('content', ['label' => 'Content'])
+			
+			->addAccordion('ctas', [
+				'label' => 'Call to Actions'
+			])
+				->addFields(get_field_partial('Fields.Components.CtaPrimary'))
+				->addFields(get_field_partial('Fields.Components.CtaSecondary'))
+			->addAccordion('ctas_end')->endpoint()
+		->endGroup()
+
 		->addRelationship('locations', [
 			'label' => 'Locations', 
 			'max' => 4,

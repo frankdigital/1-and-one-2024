@@ -16,9 +16,7 @@
 		@endif
 
 		@if ($description)
-			<x-text as="body" :isHTML="true" @class([ccn($baseClass, 'description')])>
-				{!! $description !!}
-			</x-text>
+			<x-wysiwyg @class([ccn($baseClass), $class]) :wysiwyg="$description" />
 		@endif
 		@if ($cta && $cta['enable_cta'])
 			<x-cta @class([ccn($baseClass, 'cta')]) priority="text-link" :cta="$cta" />

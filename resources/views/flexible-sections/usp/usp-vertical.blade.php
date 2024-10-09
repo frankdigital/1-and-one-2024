@@ -15,9 +15,7 @@
 					@endif
 
 					@if ($content['description'])
-						<x-text as="body" :isHTML="true">
-							{!! $content['description'] !!}
-						</x-text>
+						<x-wysiwyg @class([ccn($baseClass), $class]) :wysiwyg="$content['description']" />
 					@endif
 				</div>
 

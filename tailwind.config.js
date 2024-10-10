@@ -42,8 +42,10 @@ const config = {
 				50: pxToRem(200),
 				80: pxToRem(320),
 				85: pxToRem(340),
+				90: pxToRem(360),
 				95: pxToRem(380),
 				105: pxToRem(420),
+				120: pxToRem(480),
 				163: pxToRem(652),
 			},
 			maxWidth: {
@@ -71,6 +73,7 @@ const config = {
 				16: pxToRem(64),
 				35: pxToRem(140),
 				45: pxToRem(180),
+				50: pxToRem(200),
 				60: pxToRem(240),
 				70: pxToRem(280),
 				71: pxToRem(284),
@@ -90,6 +93,11 @@ const config = {
 				160: pxToRem(640),
 				170: pxToRem(680),
 				'9/10': '90%',
+			},
+			inset: {
+				20: pxToRem(80),
+				22: pxToRem(88),
+				30: pxToRem(120),
 			},
 			minHeight: {
 				35: pxToRem(140),

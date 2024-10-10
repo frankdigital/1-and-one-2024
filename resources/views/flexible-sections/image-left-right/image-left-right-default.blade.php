@@ -17,23 +17,21 @@
 
 		<div @class([ccn($baseClass, 'content-container')])>
 			<div @class([ccn($baseClass, 'content')])>
-
-				@if ($content['eyebrow'])
+				@if (isset($content['eyebrow']) && !empty($content['eyebrow']))
 					<x-text as="eyebrow">
 						{{ $content['eyebrow'] }}
 					</x-text>
 				@endif
 
-				@if ($content['heading'])
+				@if (isset($content['heading']) && !empty($content['heading']))
 					<x-text as="h3">
 						{{ $content['heading'] }}
 					</x-text>
 				@endif
 
-				@if ($content['description'])
+				@if (isset($content['description']) && !empty($content['description']))
 					<x-wysiwyg @class([ccn($baseClass), $class]) :wysiwyg="$content['description']" />
 				@endif
-
 			</div>
 
 			@if ($showCta)

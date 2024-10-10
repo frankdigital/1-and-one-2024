@@ -6,11 +6,11 @@
 	}
 
 	&__content-container {
-		@apply gap-x-400 gap-y-400 flex shrink-0 flex-col justify-between sm:flex-row sm:items-end lg:w-95 lg:flex-col lg:items-start lg:justify-normal;
+		@apply gap-x-400 gap-y-400 relative z-10 flex shrink-0 flex-col justify-between sm:flex-row sm:items-end lg:w-95 lg:flex-col lg:items-start lg:justify-normal;
 	}
 
 	&__watermark {
-		@apply w-90 lg:w-120 lg:-left-22 lg:-top-30 absolute -top-10 left-0 h-auto;
+		@apply w-90 lg:w-120 lg:-left-22 lg:-top-30 absolute -top-10 left-0 z-0 h-auto;
 	}
 
 	&__content {

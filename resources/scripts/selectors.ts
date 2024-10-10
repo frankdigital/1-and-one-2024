@@ -30,3 +30,5 @@ export const MODAL_TRIGGER = '[data-modal-trigger]';
 export const MODAL_PORTAL = '[data-modal-portal]';
 
 export const ACCORDION_CONTAINER = '[data-accordion-container]';
+
+export const CTA_BLOCK_CONTAINED = '[data-cta-block-containded]';

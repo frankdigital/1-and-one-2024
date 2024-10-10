@@ -9,6 +9,7 @@ import {
 	ACCORDION_CONTAINER,
 	ANIMATE_HEIGHT,
 	BLOG_LISTING,
+	CTA_BLOCK_CONTAINED,
 	LOGOS_CAROUSEL,
 	SERVICE_TILES,
 	TABS_LIST,
@@ -24,6 +25,7 @@ import { initBlogListing } from './components/blogListing';
 import { initTabs } from './components/tabs';
 import { initAccordions } from './components/accordion';
 import { initAnimateHeight } from './core/animateHeight';
+import { initCtaBlockContained } from './components/ctaBlock/initCtaBlockContained';
 
 /**
  * Application entrypoint
@@ -96,6 +98,13 @@ domReady(async () => {
 	if (accordion) {
 		accordion.forEach((element) => {
 			initAccordions(element as HTMLElement);
+		});
+	}
+
+	const ctaBlockConbtained = document.querySelectorAll(CTA_BLOCK_CONTAINED);
+	if (ctaBlockConbtained) {
+		ctaBlockConbtained.forEach((element) => {
+			initCtaBlockContained(element as HTMLElement);
 		});
 	}
 });

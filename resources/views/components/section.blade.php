@@ -2,13 +2,20 @@
 	$baseClass = 'section';
 @endphp
 
-<section @class([
-	ccn($baseClass),
-	ccn($baseClass . '--darker') => $darkerBg,
-	$class,
-	$paddingClass,
-	'dark' => $dark,
-	ccn($baseClass, 'contain') => $contain,
-])>
+<section
+	{{ $attributes->merge([
+	    'class' =>
+	        ccn($baseClass) .
+	        ' ' .
+	        ($darkerBg ? ccn($baseClass . '--darker') : '') .
+	        ' ' .
+	        $class .
+	        ' ' .
+	        $paddingClass .
+	        ' ' .
+	        ($dark ? 'dark' : '') .
+	        ' ' .
+	        ($contain ? ccn($baseClass, 'contain') : ''),
+	]) }}>
 	{{ $slot }}
 </section>

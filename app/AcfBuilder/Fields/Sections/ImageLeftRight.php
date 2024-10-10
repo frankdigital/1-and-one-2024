@@ -15,8 +15,8 @@ $builder
         ->addButtonGroup('orientation', [
             'required' => true,
             'choices' => [
+                'image-left' => 'Image Left',
                 'image-right' => 'Image Right',
-                'image-left' => 'Image Left'
             ],
         ])
 

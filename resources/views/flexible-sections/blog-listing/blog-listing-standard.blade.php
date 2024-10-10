@@ -2,7 +2,7 @@
 	$baseClass = 'blog-listing-standard';
 @endphp
 
-<x-section :contain="false" @class([ccn($baseClass)])>
+<x-section :darkerBg="$darkerBg" :contain="false" @class([ccn($baseClass), ccn($baseClass . '--' . $columnsCount)])>
 	<x-container @class([ccn($baseClass, 'container')])>
 		<div data-blog-listing>
 			<x-section-wrap :content="$content">

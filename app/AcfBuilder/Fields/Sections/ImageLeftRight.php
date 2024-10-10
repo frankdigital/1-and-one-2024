@@ -3,7 +3,7 @@
 use StoutLogic\AcfBuilder\FieldsBuilder;
 
 $builder = new FieldsBuilder('image_left_right', [
-	'label' => 'Image Left Right',
+    'label' => 'Image Left Right',
 ]);
 
 // prettier-ignore

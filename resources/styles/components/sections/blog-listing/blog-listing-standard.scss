@@ -64,3 +64,9 @@
 		}
 	}
 }
+
+.jw-blog-listing-standard--two_columns {
+	.jw-blog-listing-standard__grid-group {
+		@apply lg:grid-cols-2;
+	}
+}

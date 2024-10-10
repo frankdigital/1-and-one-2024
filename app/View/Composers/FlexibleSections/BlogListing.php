@@ -39,6 +39,8 @@ class BlogListing extends Composer {
 
 		return [
 			'content' => $section['content'],
+			'columnsCount' => $this->pathOr('three_columns', ['content', 'columns'], $section),
+			'darkerBg' => $this->pathOr('lighter', ['content', 'bg_color'], $section) === 'darker',
 		];
 	}
 }

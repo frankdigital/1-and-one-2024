@@ -3,82 +3,73 @@
 namespace App\View\Composers;
 
 use Roots\Acorn\View\Composer;
+use Roots\Acorn\View\Composers\Concerns\AcfFields;
+use App\Traits\UseHelpers;
 
-class Post extends Composer
-{
-    /**
-     * List of views served by this composer.
-     *
-     * @var array
-     */
-    protected static $views = [
-        'partials.page-header',
-        'partials.content',
-        'partials.content-*',
-    ];
+class Post extends Composer {
+    use AcfFields;
+	use UseHelpers;
 
-    /**
-     * Data to be passed to view before rendering, but after merging.
-     *
-     * @return array
-     */
-    public function override()
-    {
+	protected static $views = ['single-post'];
+
+	/**
+	 * Data to be passed to view before rendering.
+	 *
+	 * @return array
+	 */
+	public function with() {
+		return [
+			'flexibleSections' => $this->flexibleSections(),
+			'hero' => $this->hero(),
+			'footer' => $this->footer(),
+		];
+	}
+
+	/**
+	 * Returns the ACF Flexible section on the template.
+	 *
+	 * @return string
+	 */
+	public function flexibleSections() {
+		$data = get_field('flexible_sections') ?? [];
+
+        return $data;
+	}
+
+	public function header() {
+		$optionsHeader = $this->getAcfFieldFromOptions('options_header');
+
+		return $optionsHeader;
+	}
+
+
+		/**
+	 * Returns the ACF Flexible section on the template.
+	 *
+	 * @return string
+	 */
+	public function hero() {
+		$data = get_field('hero') ?? [];
+
+        
+
+        return $data;
+	}
+
+	/**		
+	 * Returns the ACF Flexible section on the template.
+	 *
+	 * @return string
+	 */
+	public function footer() {
+		$optionsGeneral = $this->getAcfFieldFromOptions('options_general_socials') ?? [];
+		$optionsFooter = $this->getAcfFieldFromOptions('options_footer') ??  [];
+
+		$mergedArray = array_merge($optionsGeneral, $optionsFooter);
+
         return [
-            'title' => $this->title(),
-            'pagination' => $this->pagination(),
-        ];
-    }
-
-    /**
-     * Retrieve the post title.
-     *
-     * @return string
-     */
-    public function title()
-    {
-        if ($this->view->name() !== 'partials.page-header') {
-            return get_the_title();
-        }
-
-        if (is_home()) {
-            if ($home = get_option('page_for_posts', true)) {
-                return get_the_title($home);
-            }
-
-            return __('Latest Posts', 'sage');
-        }
-
-        if (is_archive()) {
-            return get_the_archive_title();
-        }
-
-        if (is_search()) {
-            return sprintf(
-                /* translators: %s is replaced with the search query */
-                __('Search Results for %s', 'sage'),
-                get_search_query()
-            );
-        }
-
-        if (is_404()) {
-            return __('Not Found', 'sage');
-        }
-
-        return get_the_title();
-    }
-
-    /**
-     * Retrieve the pagination links.
-     *
-     * @return string
-     */
-    public function pagination()
-    {
-        return wp_link_pages([
-            'echo' => 0,
-            'before' => '<p>'.__('Pages:', 'sage'),
-            'after' => '</p>',
-        ]);
-    }
+			'socials' => $optionsGeneral,
+			'footer' => $optionsFooter,
+		];
+	}
 }

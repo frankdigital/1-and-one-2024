@@ -2,8 +2,8 @@
 
 use StoutLogic\AcfBuilder\FieldsBuilder;
 
-$builder = new FieldsBuilder('standard_hero', [
-	'label' => 'Standard Hero',
+$builder = new FieldsBuilder('blog_hero', [
+	'label' => 'Blog Hero',
 ]);
 
 // prettier-ignore
@@ -17,6 +17,11 @@ $builder
 		'new_lines' => 'br',
 	])
 
+	->addTextarea('supporting_text', [
+		'label' => 'Supporting Text',
+		'rows' => 2,
+		'new_lines' => 'br',
+	])
 
 	->addImage('image', [
 		'label' => 'Image',
@@ -58,6 +63,13 @@ $builder
 				'width' => '33',
 			],
 		])
-	->endGroup();;
+	->endGroup()
+
+	->addAccordion('ctas', [
+		'label' => 'Call to Actions'
+	])
+		->addFields(get_field_partial('Fields.Components.CtaPrimary'))
+		->addFields(get_field_partial('Fields.Components.CtaSecondary'))
+	->addAccordion('ctas_end')->endpoint();
 
 return $builder;

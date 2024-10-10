@@ -26,12 +26,12 @@
 		</div>
 	@endif
 	@if (!$wrapCtaOnMobile && $showCta)
-		<x-cta @class([ccn($baseClass, 'cta')]) priority="primary" :cta="$content['primary_cta']" />
+		<x-cta @class([ccn($baseClass, 'cta')]) :priority="$priority" :cta="$content['primary_cta']" />
 	@endif
 	<div @class([ccn($baseClass, 'body')])>
 		{!! $slot !!}
 	</div>
 	@if ($wrapCtaOnMobile && $showCta)
-		<x-cta @class([ccn($baseClass, 'cta')]) priority="primary" :cta="$content['primary_cta']" />
+		<x-cta @class([ccn($baseClass, 'cta')]) :priority="$priority" :cta="$content['primary_cta']" />
 	@endif
 </div>

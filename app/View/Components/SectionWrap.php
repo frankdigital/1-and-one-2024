@@ -8,11 +8,12 @@ class SectionWrap extends Component {
 
 	public $content;
 	public $wrapCtaOnMobile = true;
+	public $priority;
 
-	public function __construct($content = null, $wrapCtaOnMobile = true)
-    {
+	public function __construct($content = null, $wrapCtaOnMobile = true, $priority = 'primary') {
         $this->content = $content;
 		$this->wrapCtaOnMobile = $wrapCtaOnMobile;
+		$this->priority = $priority;
     }
 	/**
 	 * Get the view / contents that represent the component.

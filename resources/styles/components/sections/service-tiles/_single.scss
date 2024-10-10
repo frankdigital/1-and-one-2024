@@ -3,7 +3,7 @@
 	@apply gap-y-250 relative flex flex-col;
 
 	&__image-container {
-		@apply rounded-card relative h-95 overflow-hidden bg-theme-surface-invert lg:h-120;
+		@apply lg:h-108 rounded-card relative h-95 overflow-hidden bg-theme-surface-invert;
 	}
 
 	&__image {

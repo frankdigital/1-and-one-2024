@@ -4,7 +4,7 @@
 
 <x-section :contain="false" @class([ccn($baseClass)])>
 	<x-container @class([ccn($baseClass, 'container')])>
-		<x-section-wrap :content="$content">
+		<x-section-wrap :content="$content" priority="secondary">
 			<div @class([ccn($baseClass, 'carousel')]) data-service-tiles>
 				<div @class([ccn($baseClass, 'tiles')])>
 					@isset($content['pages'])

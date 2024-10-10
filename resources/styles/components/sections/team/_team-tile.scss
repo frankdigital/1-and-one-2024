@@ -2,7 +2,7 @@
 	@apply relative flex flex-col gap-spacing-250;
 
 	&__image-container {
-		@apply h-105 relative overflow-hidden rounded will-change-transform lg:rounded-lg;
+		@apply h-45 relative overflow-hidden rounded will-change-transform md:h-105 lg:rounded-lg;
 	}
 
 	&__image {

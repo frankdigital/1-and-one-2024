@@ -70,6 +70,7 @@ const config = {
 				0.25: pxToRem(1),
 				16: pxToRem(64),
 				35: pxToRem(140),
+				45: pxToRem(180),
 				60: pxToRem(240),
 				70: pxToRem(280),
 				71: pxToRem(284),

@@ -1,7 +1,7 @@
 .jw-pill {
-	@apply flex rounded bg-theme-surface-tertiary px-spacing-200 py-spacing-100 text-theme-text-primary;
+	@apply flex rounded bg-black/60 px-spacing-150 py-spacing-50;
 
 	&__label {
-		@apply text-theme-text-primary;
+		@apply text-white;
 	}
 }

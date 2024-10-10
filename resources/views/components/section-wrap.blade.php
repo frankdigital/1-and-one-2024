@@ -1,37 +1,37 @@
 @php
 	$baseClass = 'section-wrap';
-	$showCta = is_cta_enabled($content['primary_cta']);
+	$showCta = isset($content['primary_cta']) && is_cta_enabled($content['primary_cta']);
 @endphp
 
 <div {{ $attributes->merge(['class' => ccn($baseClass)]) }}>
 	@if (isset($content['eyebrow']) || isset($content['heading']) || isset($content['description']))
 		<div @class([ccn($baseClass, 'header')])>
-			@isset($content['eyebrow'])
+			@if (isset($content['eyebrow']) && !empty($content['eyebrow']))
 				<x-text as="eyebrow">
 					{{ $content['eyebrow'] }}
 				</x-text>
-			@endisset
+			@endif
 
-			@isset($content['heading'])
+			@if (isset($content['heading']) && !empty($content['heading']))
 				<x-text as="h2">
 					{!! $content['heading'] !!}
 				</x-text>
-			@endisset
+			@endif
 
-			@isset($content['description'])
+			@if (isset($content['description']) && !empty($content['description']))
 				<x-text as="body" :isHTML="true">
 					{!! $content['description'] !!}
 				</x-text>
-			@endisset
+			@endif
 		</div>
 	@endif
 	@if (!$wrapCtaOnMobile && $showCta)
 		<x-cta @class([ccn($baseClass, 'cta')]) priority="primary" :cta="$content['primary_cta']" />
-	@endisset
+	@endif
 	<div @class([ccn($baseClass, 'body')])>
 		{!! $slot !!}
 	</div>
 	@if ($wrapCtaOnMobile && $showCta)
 		<x-cta @class([ccn($baseClass, 'cta')]) priority="primary" :cta="$content['primary_cta']" />
-	@endisset
+	@endif
 </div>

@@ -2,22 +2,24 @@
 	$baseClass = 'blog-listing-standard';
 @endphp
 
-<x-section @class([ccn($baseClass)])>
+<x-section :contain="false" @class([ccn($baseClass)])>
 	<x-container @class([ccn($baseClass, 'container')])>
 		<div data-blog-listing>
-			@if (isset($content['posts']) && sizeof($content['posts']))
-				<div @class([ccn($baseClass, 'grid')])>
-					@foreach ($content['posts'] as $key => $postGroup)
-						<div data-blog-listing-pagination-target="{{ $key }}" @class([ccn($baseClass, 'grid-group')])>
-							@foreach ($postGroup as $post)
-								<x-card-blog :id="$post->ID" />
-							@endforeach
-						</div>
-					@endforeach
-				</div>
-			@endif
+			<x-section-wrap :content="$content">
+				@if (isset($content['posts']) && sizeof($content['posts']))
+					<div @class([ccn($baseClass, 'grid')])>
+						@foreach ($content['posts'] as $key => $postGroup)
+							<div data-blog-listing-pagination-target="{{ $key }}" @class([ccn($baseClass, 'grid-group')])>
+								@foreach ($postGroup as $post)
+									<x-card-blog :id="$post->ID" />
+								@endforeach
+							</div>
+						@endforeach
+					</div>
+				@endif
+			</x-section-wrap>
 
-			@if (isset($content['toggle_pagination']))
+			@if (isset($content['toggle_pagination']) && sizeof($content['posts']) > 1)
 				<div @class([ccn($baseClass, 'pagination-container')])>
 					<nav @class([ccn($baseClass, 'pagination')])>
 						@foreach ($content['posts'] as $key => $postGroup)

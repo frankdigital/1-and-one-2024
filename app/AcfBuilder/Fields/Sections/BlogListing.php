@@ -12,6 +12,10 @@ $builder
         'label' => '',
         'graphql_field_name' => 'contentBlogListing',
     ])
+        ->addFields(get_field_partial('Fields.Atoms.Eyebrow'))
+
+        ->addFields(get_field_partial('Fields.Atoms.Heading'))
+
         ->addRelationship('posts', [
             'label' => 'Posts',
             'instructions' => 'Select the posts you would like to display.',

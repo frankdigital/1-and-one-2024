@@ -41,14 +41,6 @@
 		@apply rounded-card bg-theme-surface-tertiary;
 	}
 
-	// &__image {
-	// 	@apply h-50 flex items-center justify-center;
-
-	// 	img {
-	// 		@apply object-contain;
-	// 	}
-	// }
-
 	&__cta-container {
 		&--mobile {
 			@apply block md:hidden;

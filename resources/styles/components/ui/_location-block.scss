@@ -13,6 +13,10 @@
 		@apply font-medium text-theme-text-primary;
 	}
 
+	&__address {
+		@apply text-theme-text-secondary;
+	}
+
 	&__cta-container {
 		@apply w-full;
 

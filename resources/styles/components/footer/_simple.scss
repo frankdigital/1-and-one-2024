@@ -24,7 +24,7 @@
 	}
 
 	&__logo {
-		@apply h-auto w-64;
+		@apply h-auto w-44 lg:w-64;
 	}
 
 	&__sidebar-container {

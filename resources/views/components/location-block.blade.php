@@ -18,7 +18,7 @@
 		</x-text>
 
 		@if (isset($address))
-			<x-text textStyle="bodySmall" as="span">
+			<x-text textStyle="bodySmall" as="span" @class([ccn($baseClass, 'address')])>
 				{!! $address !!}
 			</x-text>
 		@endif

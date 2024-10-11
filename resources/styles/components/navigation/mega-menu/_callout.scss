@@ -1,4 +1,6 @@
 .jw-megamenu-callout {
+	@apply border border-t border-theme-surface-tertiary;
+
 	&__background {
 		@apply absolute right-0 top-0 z-10 h-full w-1/2 bg-theme-surface-tertiary;
 	}
@@ -15,6 +17,7 @@
 	}
 
 	&__menu {
+		@apply grid grid-cols-2 gap-x-16 gap-y-spacing-300;
 	}
 
 	&__featured-container {

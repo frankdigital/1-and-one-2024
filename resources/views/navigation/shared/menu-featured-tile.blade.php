@@ -7,6 +7,8 @@
 		<x-image :fill="true" :image="$content['image']" :size="[600, 518]" @class([ccn($baseClass, 'image')]) />
 	</div>
 
+	<div @class([ccn($baseClass, 'gradient')])></div>
+
 	<div @class([ccn($baseClass, 'content-container')])>
 		<div @class([ccn($baseClass, 'content')])>
 			<x-text textStyle="body" as="span" @class([ccn($baseClass, 'heading')])>
@@ -22,6 +24,6 @@
 		<x-cta-container @class([ccn($baseClass, 'cta-container')])>
 			<x-cta classes="" priority="primary" size="small" :cta="$content['cta']" />
 		</x-cta-container>
-
 	</div>
+
 </article>

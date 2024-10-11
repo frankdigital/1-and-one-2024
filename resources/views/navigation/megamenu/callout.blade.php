@@ -11,14 +11,24 @@
 						<div @class([ccn($baseClass, 'background')])></div>
 					@endif
 
-					<div @class([ccn($baseClass, 'menu-container')])>
-						@foreach ($item['children'] as $key => $children)
-							@include('navigation.shared.menu-expanded-link-list', [
-								'label' => $children['label'],
-								'links' => $children['children'],
-							])
-						@endforeach
-					</div>
+					<nav @class([ccn($baseClass, 'menu-container')])>
+						<div>
+							<ul @class([ccn($baseClass, 'menu')])>
+								@foreach ($item['children'] as $key => $child)
+									@if (isset($child) && sizeof($child) > 0)
+										<li>
+											@include('navigation.shared.menu-expanded-link', [
+												'href' => $child['uri'],
+												'label' => $child['label'],
+												'icon' => isset($child['icon']) && !empty($child['icon']) ? $child['icon'] : null,
+												'excerpt' => isset($child['excerpt']) && !empty($child['excerpt']) ? $child['excerpt'] : null,
+											])
+										</li>
+									@endif
+								@endforeach
+							</ul>
+						</div>
+					</nav>
 
 					@if (isset($item['featured']) && is_array($item['featured']))
 						<div @class([ccn($baseClass, 'featured-container')])>

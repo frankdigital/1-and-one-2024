@@ -47,6 +47,13 @@ $builder
                 'ui' => 1,
             ])
 
+            ->addTrueFalse('hide_date', [
+                'label' => 'Hide Date',
+                'instructions' => 'Hide the date for the posts.',
+                'default_value' => 0,
+                'ui' => 1,
+            ])
+
             ->addButtonGroup('bg_color', [
                 'label' => 'Background Color',
                 'instructions' => 'Choose the background color for the section',

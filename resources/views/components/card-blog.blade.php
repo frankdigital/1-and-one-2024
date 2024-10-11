@@ -20,14 +20,16 @@
 	</div>
 
 	<div @class([ccn($baseClass, 'content-container')])>
-		<div @class([ccn($baseClass, 'post-data')])>
-			<x-text textStyle="caption" as="span">{{ $date }}</x-text>
+		@if (!isset($hideDate) || !$hideDate)
+			<div @class([ccn($baseClass, 'post-data')])>
+				<x-text textStyle="caption" as="span">{{ $date }}</x-text>
 
-			@if (isset($readTime))
-				<div @class([ccn($baseClass, 'divider')])></div>
-				<x-text textStyle="caption" as="span">{{ $readTime }} min read</x-text>
-			@endif
-		</div>
+				@if (isset($readTime))
+					<div @class([ccn($baseClass, 'divider')])></div>
+					<x-text textStyle="caption" as="span">{{ $readTime }} min read</x-text>
+				@endif
+			</div>
+		@endif
 
 		<div @class([ccn($baseClass, 'content')])>
 			<div @class([ccn($baseClass, 'title')])>

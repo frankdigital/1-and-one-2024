@@ -27,7 +27,7 @@ export function initAnimation() {
 		);
 	});
 
-	scrollBatchAnimation('.jw-logos-standard__logos .jw-logos-standard__image-container', {
+	scrollBatchAnimation('.jw-logos-standard__grid .jw-logos-standard__grid-image-container', {
 		autoAlpha: 0,
 		y: 50,
 		stagger: 0.2,

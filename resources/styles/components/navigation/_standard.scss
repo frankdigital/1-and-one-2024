@@ -1,6 +1,6 @@
 .jw-header {
 	// @apply py-spacing-200 md:py-spacing-250;
-	@apply sticky top-0 z-50 bg-white;
+	@apply fixed top-0 z-50 w-full bg-white;
 
 	&.is-active {
 		@apply border-b border-theme-border-tertiary;

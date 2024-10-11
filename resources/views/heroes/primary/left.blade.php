@@ -43,4 +43,8 @@
 
 		<div @class([ccn($baseClass, 'overlay')])></div>
 	</x-container>
+
+	<div @class([ccn($baseClass, 'watermark')])>
+		@svg('icons.brand.WatermarkPrimary', ccn($baseClass, 'logo'))
+	</div>
 </div>

@@ -57,11 +57,11 @@ function toggleMegaMenu(index: number | null) {
 		}
 	} else {
 		$overlay.removeClass(activeClass);
-		$megamenu.removeClass(activeClass);
 
-		setTimeout(() => {
-			$targetMegamenu.removeClass(activeClass);
-		}, 300);
+		//Commneted out the setTimeout function due to the flickering issue with Animateheight
+		//setTimeout(() => {
+		$targetMegamenu.removeClass(activeClass);
+		//}, 300);
 	}
 
 	$('body').toggleClass('no-scroll', isMenuOpen);

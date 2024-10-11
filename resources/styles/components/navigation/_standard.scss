@@ -1,6 +1,6 @@
 .jw-header {
 	// @apply py-spacing-200 md:py-spacing-250;
-	@apply fixed top-0 z-50 w-full bg-white;
+	@apply sticky top-0 z-50 bg-white;
 
 	&.is-active {
 		@apply border-b border-theme-border-tertiary;
@@ -11,7 +11,7 @@
 	}
 
 	&__navigation--secondary {
-		@apply bg-orange-50 hidden p-spacing-150 lg:flex;
+		@apply hidden bg-theme-surface-tertiary p-spacing-150 lg:flex;
 	}
 
 	&__secondary-links {
@@ -26,7 +26,7 @@
 	}
 
 	&__logo {
-		@apply w-39 h-auto;
+		@apply size-12;
 	}
 
 	&__navigation--primary {
@@ -42,14 +42,13 @@
 	}
 
 	&__cta-container {
-		@apply flex items-center gap-spacing-300;
+		@apply flex items-center gap-spacing-150;
 	}
 
 	&__actions-container {
 		@apply flex shrink-0 items-center gap-spacing-250 lg:flex-row-reverse lg:gap-spacing-400;
 
-		.jw-cta__secondary,
-		.jw-cta__text-link {
+		.jw-cta__secondary {
 			@apply hidden lg:flex;
 		}
 	}
@@ -88,15 +87,14 @@
 	}
 
 	&__mega-menu {
-		@apply absolute left-0 top-full w-full translate-y-5 bg-white opacity-0 transition-all duration-200;
-
+		@apply absolute left-0 top-full w-full overflow-hidden bg-white opacity-0 transition-opacity duration-300;
 		&.is-active {
-			@apply translate-y-0 opacity-100;
+			@apply opacity-100;
 		}
 	}
 
 	&__overlay {
-		@apply pointer-events-none fixed inset-0 z-30 bg-black/40 opacity-0 backdrop-blur-md transition-opacity duration-200;
+		@apply pointer-events-none fixed inset-0 z-30 bg-black/40 opacity-0 backdrop-blur-md transition-opacity duration-300;
 
 		&.is-active {
 			@apply pointer-events-auto opacity-100;

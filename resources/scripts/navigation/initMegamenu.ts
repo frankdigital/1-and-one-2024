@@ -103,11 +103,12 @@ $mobileMenuTrigger.on('click', function () {
 
 $triggers.on('click', function () {
 	const $this = $(this);
+	const index = $triggers.index($this);
+
 	if (!$this.is('button')) {
 		return;
 	}
 
-	const index = $triggers.index($this);
 	$triggers.not($this).removeClass(activeClass);
 
 	if (activeMegamenuIndex === index && isMenuOpen) {

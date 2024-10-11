@@ -2,7 +2,7 @@
 	$baseClass = 'page-cards';
 @endphp
 
-<x-section @class([ccn($baseClass)])>
+<x-section :contain="false" @class([ccn($baseClass), ccn($baseClass . '--' . $columnsCount)])>
 	<x-container @class([ccn($baseClass, 'container')])>
 		<x-section-wrap :content="$content">
 			<div @class([ccn($baseClass, 'cards')])>

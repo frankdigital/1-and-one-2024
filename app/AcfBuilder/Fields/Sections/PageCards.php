@@ -38,6 +38,20 @@ $builder
                 0 => 'search',
             ],
         ])
+
+        ->addAccordion('settings', [
+            'label' => 'Settings'
+        ])
+            ->addButtonGroup('columns', [
+                'label' => 'Columns',
+                'instructions' => 'Choose the number of columns for the posts.',
+                'choices' => [
+                    'two_columns' => '2 Columns',
+                    'three_columns' => '3 Columns',
+                ],
+                'default_value' => 'two_columns',
+            ])
+        ->addAccordion('settings_end')->endpoint()
     ->endGroup()
 
     ->addFields(get_field_partial('Fields.Components.ScrollSettings'));

@@ -27,6 +27,7 @@ class PageCards extends Composer {
 
 		return [
 			'content' => $section['content'],
+			'columnsCount' => $this->pathOr('two_columns', ['content', 'columns'], $section),
 		];
 	}
 }

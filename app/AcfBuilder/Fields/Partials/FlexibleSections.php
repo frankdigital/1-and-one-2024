@@ -14,6 +14,7 @@ $builder
 	])
 		->addLayout(get_field_partial('Fields.Sections.BlogListing'))
 		->addLayout(get_field_partial('Fields.Sections.ContactForm'))
+		->addLayout(get_field_partial('Fields.Sections.ContentTiles'))
 		->addLayout(get_field_partial('Fields.Sections.CtaBlock'))
 		->addLayout(get_field_partial('Fields.Sections.ImageLeftRight'))
 		->addLayout(get_field_partial('Fields.Sections.FullWidthImage'))

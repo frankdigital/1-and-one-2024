@@ -5,7 +5,7 @@
 <article @class([ccn($baseClass), ccn($baseClass . '--' . $variant)])>
 	<div @class([ccn($baseClass, 'image-container')])>
 		@isset($image)
-			<x-image :image="$image" :fill="true" :size="[588, 360]" @class([ccn($baseClass, 'image')]) />
+			<x-image :image="$image" :fill="true" :size="[1176, 720]" @class([ccn($baseClass, 'image')]) />
 		@endisset
 
 		@if (isset($categories) && sizeof($categories) > 0)

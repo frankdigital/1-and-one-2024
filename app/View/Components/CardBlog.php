@@ -35,7 +35,7 @@ class CardBlog extends Component {
         $this->description = $this->getAcfFieldFromID('post_type_data_excerpt', $id);
         
         $this->link = get_the_permalink($id);
-        $this->cta = self::buildButtonFromLink($this->link, 'Learn More');
+        $this->cta = self::buildButtonFromLink($this->link, 'Read More');
 		$this->variant = $variant;
 	}
 

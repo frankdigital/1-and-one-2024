@@ -12,7 +12,7 @@
 							@class(ccn($baseClass, 'item-text'))>{!! $item['label'] !!}</x-text>
 					</button>
 				@else
-					<a href="{{ $item['uri'] }}">
+					<a href="{{ $item['uri'] }}" data-responsive-menu-trigger>
 						<x-text as="span" textStyle="bodySmall" :strong="true"
 							@class(ccn($baseClass, 'item-text'))>{!! $item['label'] !!}</x-text>
 					</a>

@@ -1,6 +1,6 @@
 .jw-header {
 	// @apply py-spacing-200 md:py-spacing-250;
-	@apply sticky top-0 z-50 bg-white;
+	@apply fixed top-0 z-50 w-full bg-white;
 
 	&.is-active {
 		@apply border-b border-theme-border-tertiary;
@@ -26,7 +26,7 @@
 	}
 
 	&__logo {
-		@apply size-12;
+		@apply w-39 h-auto;
 	}
 
 	&__navigation--primary {
@@ -42,13 +42,14 @@
 	}
 
 	&__cta-container {
-		@apply flex items-center gap-spacing-150;
+		@apply flex items-center gap-spacing-300;
 	}
 
 	&__actions-container {
 		@apply flex shrink-0 items-center gap-spacing-250 lg:flex-row-reverse lg:gap-spacing-400;
 
-		.jw-cta__secondary {
+		.jw-cta__secondary,
+		.jw-cta__text-link {
 			@apply hidden lg:flex;
 		}
 	}

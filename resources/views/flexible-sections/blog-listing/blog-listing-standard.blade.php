@@ -11,7 +11,7 @@
 						@foreach ($content['posts'] as $key => $postGroup)
 							<div data-blog-listing-pagination-target="{{ $key }}" @class([ccn($baseClass, 'grid-group')])>
 								@foreach ($postGroup as $post)
-									<x-card-blog :id="$post->ID" />
+									<x-card-blog :id="$post->ID" :variant="$columnsCount === 'two_columns' ? 'large' : 'default'" />
 								@endforeach
 							</div>
 						@endforeach

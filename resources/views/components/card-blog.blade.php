@@ -2,7 +2,7 @@
 	$baseClass = 'card-blog';
 @endphp
 
-<article @class([ccn($baseClass)])>
+<article @class([ccn($baseClass), ccn($baseClass . '--' . $variant)])>
 	<div @class([ccn($baseClass, 'image-container')])>
 		@isset($image)
 			<x-image :image="$image" :fill="true" :size="[588, 360]" @class([ccn($baseClass, 'image')]) />
@@ -32,7 +32,7 @@
 		<div @class([ccn($baseClass, 'content')])>
 			<div @class([ccn($baseClass, 'title')])>
 				@isset($heading)
-					<x-text as="h6" @class([ccn($baseClass, 'heading')])>
+					<x-text as="h5" @class([ccn($baseClass, 'heading')])>
 						{!! $heading !!}
 					</x-text>
 				@endisset

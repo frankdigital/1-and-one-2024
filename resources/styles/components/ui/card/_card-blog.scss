@@ -70,3 +70,9 @@
 		@apply underline;
 	}
 }
+
+.jw-card-blog--large {
+	.jw-card-blog__image-container {
+		@apply lg:h-90;
+	}
+}

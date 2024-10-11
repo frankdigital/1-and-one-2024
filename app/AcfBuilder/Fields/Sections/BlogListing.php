@@ -27,7 +27,7 @@ $builder
             'label' => 'Posts',
             'instructions' => 'Select the posts you would like to display.',
             'post_type' => ['post'],
-            'min' => 3,
+            'min' => 2,
             'return_format' => 'object',
         ])
 

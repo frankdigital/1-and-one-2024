@@ -26,9 +26,13 @@
 
 @if ($sections && is_array($sections) && sizeof($sections))
 	@foreach ($sections as $item)
-		@includeIf("flexible-sections.{$componentMap[$item['acf_fc_layout']]}", [
-			'section' => $item,
-			'last' => $loop->last,
-		])
+		@if (isset($componentMap[$item['acf_fc_layout']]))
+			@includeIf("flexible-sections.{$componentMap[$item['acf_fc_layout']]}", [
+				'section' => $item,
+				'last' => $loop->last,
+			])
+		@else
+			<p>Missing component: {{ $item['acf_fc_layout'] }}</p>
+		@endif
 	@endforeach
 @endif

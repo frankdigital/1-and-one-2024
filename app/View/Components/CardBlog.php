@@ -17,13 +17,15 @@ class CardBlog extends Component {
 	public $link;
 	public $cta;
 
+	public $variant = 'default';
+
 	/**
 	 * Create the component instance.
 	 *
      * @param  int  $id
 	 * @return void
 	 */
-	public function __construct($id = null) {
+	public function __construct($id = null, $variant = 'default') {
         $this->categories = get_the_category($id);
         $this->date = get_the_date('j F Y', $id);
         $this->readTime = get_field('post_type_data_read_time', $id);
@@ -34,6 +36,7 @@ class CardBlog extends Component {
         
         $this->link = get_the_permalink($id);
         $this->cta = self::buildButtonFromLink($this->link, 'Learn More');
+		$this->variant = $variant;
 	}
 
 	/**

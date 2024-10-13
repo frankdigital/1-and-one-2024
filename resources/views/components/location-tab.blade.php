@@ -6,7 +6,7 @@
 <div @class([ccn($baseClass)]) tabindex="0" role="tabpanel" id='tabpanel-{{ sanitize_title($title) }}'>
 	@if ($image)
 		<div @class([ccn($baseClass, 'image-container')])>
-			<x-image :image="$image" :crop='true' :rounded='true' :fill="true" :size="[976, 440]"
+			<x-image :image="$image" :crop='true' :rounded='true' :fill="true" :size="[1196, 1000]"
 				@class([ccn($baseClass, 'image')]) />
 		</div>
 	@endif

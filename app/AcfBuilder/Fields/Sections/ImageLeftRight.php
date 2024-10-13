@@ -58,7 +58,6 @@ $builder
                 ],
                 'default_value' => 'lighter',
             ])
-            
         ->addAccordion('settings_end')->endpoint()
     ->endGroup()
 

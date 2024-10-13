@@ -27,9 +27,11 @@ class LocationsTabbed extends Composer {
 		$customSelection = $this->pathOr(false, ['content', 'custom_locations_select'], $section);
 		$locations = $customSelection ? $this->pathOr([], ['content', 'locations'], $section) : $this->getLocations();
 		
+		
 		return [
 			'content' => $section['content'],
 			'locations' => $locations,
+			'darkerBg' => $this->pathOr('lighter', ['content', 'bg_color'], $section) === 'darker',
 		];
 	}
 

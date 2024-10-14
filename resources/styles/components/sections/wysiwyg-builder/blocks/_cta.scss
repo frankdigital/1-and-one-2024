@@ -1,5 +1,5 @@
 .jw-wysiwyg-cta-block {
-	@apply bg-orange-50 rounded-card gap-x-700 gap-y-400 flex w-full flex-col px-horizontal-md py-spacing-600 md:flex-row md:items-center md:justify-between;
+	@apply rounded-card gap-x-700 gap-y-400 flex w-full flex-col bg-theme-surface-tertiary px-horizontal-md py-spacing-600 md:flex-row md:items-center md:justify-between;
 
 	&__content-container {
 		@apply gap-y-150 flex max-w-180 flex-col;

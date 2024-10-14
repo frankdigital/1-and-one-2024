@@ -13,11 +13,12 @@ $builder
 
     ->addText('name', [
         'label' => 'Name',
-        'required' => true
+        'required' => false
     ])
 
     ->addText('position', [
-        'label' => 'Position'
+        'label' => 'Position',
+        'required' => false,
     ]);
 
 return $builder;

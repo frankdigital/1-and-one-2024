@@ -1,5 +1,5 @@
 .jw-wysiwyg-testimonial-block {
-	@apply gap-y-250 flex flex-col border-l-4 border-theme-surface-accent px-spacing-500 py-spacing-300;
+	@apply gap-y-250 flex w-full max-w-205 flex-col border-l-4 border-theme-surface-accent px-spacing-500 py-spacing-300;
 
 	&__testimonial {
 		@apply text-theme-text-primary;

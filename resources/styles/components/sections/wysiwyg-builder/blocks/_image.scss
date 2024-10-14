@@ -2,7 +2,7 @@
 	@apply w-full max-w-full text-center;
 
 	&--narrow {
-		@apply w-full max-w-205;
+		@apply max-w-198 w-full;
 	}
 
 	&__image-container {

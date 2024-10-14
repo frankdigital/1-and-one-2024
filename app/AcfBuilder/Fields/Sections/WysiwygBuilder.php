@@ -26,7 +26,7 @@ $builder
             ->addLayout(get_field_partial('Fields.Components.Wysiwyg.ImageBlock'))
             ->addLayout(get_field_partial('Fields.Components.Wysiwyg.TestimonialBlock'))
             ->addLayout(get_field_partial('Fields.Components.Wysiwyg.TextBlock'))
-            ->addLayout(get_field_partial('Fields.Components.Wysiwyg.VideoBlock'))
+            // ->addLayout(get_field_partial('Fields.Components.Wysiwyg.VideoBlock'))
         ->endFlexibleContent()
     ->endGroup()
 

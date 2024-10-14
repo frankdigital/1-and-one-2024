@@ -116,4 +116,8 @@
 	&__legal-links {
 		@apply flex gap-spacing-400;
 	}
+
+	&__copyright {
+		@apply text-theme-text-secondary;
+	}
 }

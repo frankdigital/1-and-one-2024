@@ -1,7 +1,11 @@
 .jw-default-mobile-menu {
-	@apply bg-white pb-spacing-600;
+	@apply flex h-full flex-col bg-white;
 
 	&__menu-container {
+	}
+
+	&__menu-container--primary {
+		@apply flex-grow;
 	}
 
 	&__menu-container--secondary {
@@ -17,7 +21,7 @@
 	}
 
 	&__action {
-		@apply flex w-full flex-row items-center px-spacing-400 py-spacing-400 text-left;
+		@apply flex w-full flex-row items-center px-spacing-400 py-spacing-400 text-left font-medium;
 
 		&:hover {
 			@apply text-theme-surface-accent;

@@ -4,6 +4,10 @@
 
 	&.is-active {
 		@apply border-b border-theme-border-tertiary;
+
+		.jw-header__cta-container {
+			@apply opacity-0;
+		}
 	}
 
 	&__container {
@@ -19,14 +23,14 @@
 	}
 
 	&__wrapper {
-		@apply flex flex-grow items-center gap-spacing-600;
+		@apply flex min-h-10 flex-grow items-center gap-spacing-600;
 	}
 
 	&__logo-container {
 	}
 
 	&__logo {
-		@apply w-39 h-auto;
+		@apply w-30 lg:w-39 h-auto;
 	}
 
 	&__navigation--primary {
@@ -42,7 +46,7 @@
 	}
 
 	&__cta-container {
-		@apply flex items-center gap-spacing-300;
+		@apply items-center gap-spacing-300 opacity-100 transition-opacity duration-200 will-change-auto lg:flex;
 	}
 
 	&__actions-container {

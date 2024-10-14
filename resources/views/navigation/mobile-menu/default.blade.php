@@ -33,12 +33,20 @@
 
 								@if (isset($item['children']) && sizeof($item['children']) > 0)
 									<div @class([ccn($baseClass, 'menus')])>
-										@foreach ($item['children'] as $child)
-											@include('navigation.shared.menu-expanded-link-list', [
-												'label' => $child['label'],
-												'links' => $child['children'],
-											])
-										@endforeach
+										<ul @class([ccn($baseClass, 'menu')])>
+											@foreach ($item['children'] as $key => $child)
+												@if (isset($child) && sizeof($child) > 0)
+													<li>
+														@include('navigation.shared.menu-expanded-link', [
+															'href' => $child['uri'],
+															'label' => $child['label'],
+															'icon' => isset($child['icon']) && !empty($child['icon']) ? $child['icon'] : null,
+															'excerpt' => isset($child['excerpt']) && !empty($child['excerpt']) ? $child['excerpt'] : null,
+														])
+													</li>
+												@endif
+											@endforeach
+										</ul>
 									</div>
 								@endif
 							</div>
@@ -60,7 +68,7 @@
 			@endif
 
 			@if (is_cta_enabled($content['secondary_cta']))
-				<x-cta classes="" size="small" priority="secondary" :cta="$content['secondary_cta']" />
+				<x-cta classes="" size="small" priority="text-link" :cta="$content['secondary_cta']" />
 			@endif
 		</div>
 	</div>

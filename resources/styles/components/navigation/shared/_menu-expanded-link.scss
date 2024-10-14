@@ -35,7 +35,7 @@
 		}
 
 		.jw-menu-expanded-link__label::after {
-			@apply w-full;
+			@apply lg:w-full;
 		}
 	}
 }

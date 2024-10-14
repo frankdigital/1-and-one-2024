@@ -9,6 +9,10 @@
 		@apply grow;
 	}
 
+	&__icon-container {
+		font-size: 0;
+	}
+
 	&__icon.jw-contained-icon {
 		@apply rounded-usp-icon box-border inline-block bg-theme-surface-tertiary p-4 text-theme-border-accent;
 

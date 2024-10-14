@@ -6,7 +6,7 @@
 <x-section :contain="false" @class([ccn($baseClass)])>
 	<x-container @class([ccn($baseClass, 'container')])>
 		<div @class([ccn($baseClass, 'watermark')])>
-			@svg('icons.brand.watermark', ccn($baseClass, 'logo'))
+			@svg('icons.brand.Watermark', ccn($baseClass, 'logo'))
 		</div>
 
 		<div @class([ccn($baseClass, 'content-container')])>

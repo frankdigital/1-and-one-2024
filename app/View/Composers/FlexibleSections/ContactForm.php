@@ -26,8 +26,10 @@ class ContactForm extends Composer {
 		$section = $this->data->get('section');
 		$contact = $this->getAcfFieldFromOptions('options_general_contact');
 		$socials = $this->getAcfFieldFromOptions('options_general_socials');
+
 		return [
 			'content' => $section['content'],
+			'scrollId' => $this->pathOr(null, ['scroll_id'], $section),
 			'socials' => $socials,
 			'email' => $this->pathOr(null, ['email'], $contact),
 			'address' => $this->getLocationAddress($contact['location']),

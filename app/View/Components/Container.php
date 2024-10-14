@@ -12,6 +12,7 @@ class Container extends Component {
 	 */
 	public $width;
 	public $class;
+	public $scrollId;
 
 	/**
 	 * The available width types.
@@ -32,9 +33,13 @@ class Container extends Component {
 	 * @param  string|null  $class
 	 * @return void
 	 */
-	public function __construct($width = 'default', $class = null) {
+	public function __construct($width = 'default', $scrollId = null, $class = null) {
 		$this->width = $this->widths[$width] ?? $this->widths['default'];
 		$this->class = $class;
+
+		if ($scrollId) {
+			$this->scrollId = $scrollId;
+		}
 	}
 
 	/**

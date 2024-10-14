@@ -137,6 +137,10 @@
 
 		/* Open state styles */
 		&.is-open {
+			span {
+				@apply bg-theme-surface-accent;
+			}
+
 			.top {
 				transform: scaleX(0) translateY(4px);
 			}

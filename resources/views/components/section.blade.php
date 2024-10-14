@@ -4,6 +4,7 @@
 
 <section
 	{{ $attributes->merge([
+	    'id' => isset($scrollId) ? $scrollId : null,
 	    'class' =>
 	        ccn($baseClass) .
 	        ' ' .

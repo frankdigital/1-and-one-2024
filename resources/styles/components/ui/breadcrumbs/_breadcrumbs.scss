@@ -1,0 +1,7 @@
+.jw-breadcrumbs {
+	@apply relative overflow-visible;
+
+	&__list {
+		@apply no-scrollbar relative flex flex-row flex-nowrap divide-x divide-white divide-opacity-20 overflow-visible whitespace-nowrap border-opacity-20;
+	}
+}

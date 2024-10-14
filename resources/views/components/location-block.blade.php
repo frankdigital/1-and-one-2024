@@ -13,7 +13,7 @@
 			@endif
 		</div>
 
-		<x-text as="span" textStyle="body" @class([ccn($baseClass, 'heading')])>
+		<x-text as="h5" @class([ccn($baseClass, 'heading')])>
 			{!! $title !!}
 		</x-text>
 

@@ -11,13 +11,17 @@
 
 	<div @class([ccn($baseClass, 'content-container')])>
 		<div @class([ccn($baseClass, 'content')])>
-			<x-text textStyle="body" as="span" @class([ccn($baseClass, 'heading')])>
-				{!! $content['heading'] !!}
-			</x-text>
+			@if (isset($content['heading']) && !empty($content['heading']))
+				<x-text textStyle="body" as="span" @class([ccn($baseClass, 'heading')]) :strong="true">
+					{!! $content['heading'] !!}
+				</x-text>
+			@endif
 
-			<x-text textStyle="caption" as="span" @class([ccn($baseClass, 'caption')])>
-				{!! $content['supportingText'] !!}
-			</x-text>
+			@if (isset($content['supportingText']) && !empty($content['supportingText']))
+				<x-text textStyle="caption" as="span" @class([ccn($baseClass, 'caption')])>
+					{!! $content['supportingText'] !!}
+				</x-text>
+			@endif
 
 		</div>
 

@@ -5,6 +5,10 @@
 		@apply gap-y-150 flex max-w-180 flex-col;
 	}
 
+	&__description {
+		@apply text-theme-text-secondary;
+	}
+
 	&__cta {
 		@apply shrink-0;
 	}

@@ -9,7 +9,7 @@
 			</x-text>
 		@endif
 		@if (isset($block['description']) && !empty($block['description']))
-			<x-text as="body" :isHTML="true">
+			<x-text as="body" :isHTML="true" @class([ccn($baseClass, 'description')])>
 				{!! $block['description'] !!}
 			</x-text>
 		@endif

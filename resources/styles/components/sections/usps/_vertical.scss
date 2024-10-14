@@ -15,6 +15,10 @@
 		@apply gap-y-300 flex flex-col;
 	}
 
+	&__description {
+		@apply text-theme-text-secondary;
+	}
+
 	&__usps {
 		@apply gap-y-400 grid grid-cols-1 lg:col-span-2;
 	}

@@ -1,7 +1,7 @@
 .jw-menu-featured-tile {
 	$this: &;
 
-	@apply rounded-card relative z-10 flex h-101 w-80 overflow-hidden;
+	@apply rounded-card relative z-10 flex h-95 w-80 overflow-hidden;
 
 	&__gradient {
 		@apply absolute z-20 h-full w-full;

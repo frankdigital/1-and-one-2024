@@ -11,6 +11,10 @@
 		}
 	}
 
+	&__content {
+		@apply flex flex-col gap-spacing-50;
+	}
+
 	&__content-container {
 		@apply flex flex-col gap-spacing-200 pr-spacing-300;
 	}

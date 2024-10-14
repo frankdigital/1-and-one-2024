@@ -10,7 +10,7 @@
 	}
 
 	&__watermark {
-		@apply w-90 lg:w-120 lg:-left-22 lg:-top-30 absolute -top-10 left-0 z-0 h-auto;
+		@apply w-90 lg:w-120 lg:-top-30 absolute -top-10 left-0 z-0 h-auto lg:-left-20;
 	}
 
 	&__content {
@@ -38,7 +38,7 @@
 	}
 
 	&__grid-image-container {
-		@apply rounded-card bg-theme-surface-tertiary;
+		@apply max-w-49 rounded-card bg-theme-surface-tertiary;
 	}
 
 	&__cta-container {

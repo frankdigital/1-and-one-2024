@@ -52,6 +52,7 @@ const config = {
 			},
 			maxWidth: {
 				35: pxToRem(140),
+				49: pxToRem(196),
 				95: pxToRem(380),
 				105: pxToRem(420),
 				120: pxToRem(480),

@@ -10,6 +10,8 @@ $builder = new FieldsBuilder('standard_hero', [
 $builder
 	->addMessage('Breadcrumbs', 'Breadcrumbs are built automatically based on the page hierarchy.')
 
+	->addFields(get_field_partial('Fields.Atoms.Eyebrow'))
+
 	->addTextarea('heading', [
 		'instructions' =>
 			'If no value is used then the Page Title will be used instead.',

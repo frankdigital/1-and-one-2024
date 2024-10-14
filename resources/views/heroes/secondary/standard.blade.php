@@ -20,13 +20,19 @@
 		<div @class([ccn($baseClass, 'content-container')])>
 			<div @class([ccn($baseClass, 'content')])>
 
-				@if ($content['heading'])
+				@if (isset($content['eyebrow']) && !empty($content['eyebrow']))
+					<x-text as="eyebrow">
+						{{ $content['eyebrow'] }}
+					</x-text>
+				@endif
+
+				@if (isset($content['heading']) && !empty($content['heading']))
 					<x-text as="h1">
 						{!! $content['heading'] !!}
 					</x-text>
 				@endif
 
-				@if ($content['supporting_text'])
+				@if (isset($content['supporting_text']) && !empty($content['supporting_text']))
 					<x-text as="span" textStyle="bodyLarge" :isHTML="true">
 						{!! $content['supporting_text'] !!}
 					</x-text>

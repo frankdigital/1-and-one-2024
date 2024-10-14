@@ -72,6 +72,12 @@
 
 	&__featured-link-container {
 		@apply border-b border-theme-border-secondary;
+
+		&:first-child {
+			.jw-footer-simple__featured-link {
+				@apply pt-0;
+			}
+		}
 	}
 
 	&__featured-link {

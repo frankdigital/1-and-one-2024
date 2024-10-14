@@ -69,7 +69,7 @@
 					@endphp
 					<div @class([ccn($baseClass, 'featured-link-container')])>
 						<a href="{{ $link['url'] }}" @class([ccn($baseClass, 'featured-link')])>
-							<x-text as="span" textStyle="h5">
+							<x-text as="span" textStyle="h4">
 								{{ $link['title'] }}
 							</x-text>
 						</a>

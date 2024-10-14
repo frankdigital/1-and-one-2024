@@ -2,15 +2,15 @@
 	@apply gap-y-300 flex flex-col;
 
 	&__label {
-		@apply min-h-6;
+		@apply mb-2 min-h-6;
 	}
 
 	&__container {
-		@apply gap-y-200 flex flex-col;
+		@apply flex flex-col;
 	}
 
 	&__heading {
-		@apply font-medium text-theme-text-primary;
+		@apply mb-4 font-medium text-theme-text-primary;
 	}
 
 	&__address {

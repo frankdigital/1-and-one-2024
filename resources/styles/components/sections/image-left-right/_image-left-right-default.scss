@@ -16,7 +16,7 @@
 	}
 
 	&__content-container {
-		@apply lg:max-w-128 gap-y-400 flex flex-col lg:justify-center lg:pl-spacing-800 xl:max-w-none;
+		@apply lg:max-w-128 gap-y-400 flex flex-col lg:justify-center lg:pl-spacing-900 xl:max-w-none;
 	}
 
 	&__content {
@@ -35,7 +35,7 @@
 		}
 
 		.jw-image-lr-default__content-container {
-			@apply lg:pl-0 lg:pr-spacing-800;
+			@apply lg:pl-0 lg:pr-spacing-900;
 		}
 	}
 }

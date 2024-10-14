@@ -2,7 +2,7 @@
 	@apply relative;
 
 	&__margin {
-		@apply rounded-card vertical-lg relative overflow-hidden;
+		@apply py-15 rounded-card relative overflow-hidden lg:py-20;
 	}
 
 	&__gradient {

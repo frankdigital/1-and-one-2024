@@ -1,5 +1,5 @@
 .jw-secondary-hero-standard {
-	@apply pb-15 pt-26 lg:pt-35 lg:pb-30 relative mx-auto bg-theme-surface-invert;
+	@apply pb-15 pt-26 lg:py-30 relative mx-auto bg-theme-surface-invert;
 
 	&__overlay {
 		@apply absolute left-0 top-0 z-10 h-full w-full;

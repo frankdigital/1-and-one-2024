@@ -2,11 +2,31 @@
 	// @apply py-spacing-200 md:py-spacing-250;
 	@apply fixed top-0 z-50 w-full bg-white;
 
+	&.dark {
+		@apply bg-black/75 backdrop-blur-md;
+
+		.jw-header__navigation {
+			.jw-responsive-menu__item-text {
+				@apply text-theme-text-primary-invert;
+			}
+		}
+
+		.jw-header__logo {
+			@apply text-theme-text-primary-invert;
+		}
+
+		.jw-header__hamburger {
+			span {
+				@apply bg-theme-text-primary-invert;
+			}
+		}
+	}
+
 	&.is-active {
 		@apply border-b border-theme-border-tertiary;
 
 		.jw-header__cta-container {
-			@apply opacity-0;
+			@apply opacity-0 lg:opacity-100;
 		}
 	}
 
@@ -30,7 +50,7 @@
 	}
 
 	&__logo {
-		@apply w-30 lg:w-39 h-auto;
+		@apply w-30 lg:w-39 text-black-900 h-auto;
 	}
 
 	&__navigation--primary {
@@ -47,6 +67,10 @@
 
 	&__cta-container {
 		@apply items-center gap-spacing-300 opacity-100 transition-opacity duration-200 will-change-auto lg:flex;
+
+		.cta-contained__icon {
+			@apply hidden lg:block;
+		}
 	}
 
 	&__actions-container {
@@ -110,7 +134,7 @@
 		@apply pointer-events-auto relative size-6 cursor-pointer;
 
 		span {
-			@apply absolute left-[3px] block h-0.25 w-[18px] bg-theme-surface-invert;
+			@apply absolute left-[3px] block h-0.5 w-[18px] bg-theme-surface-invert;
 
 			transition:
 				transform 0.25s ease-in-out,
@@ -132,7 +156,7 @@
 		}
 
 		.bottom {
-			top: 19px;
+			top: 18px;
 		}
 
 		/* Open state styles */

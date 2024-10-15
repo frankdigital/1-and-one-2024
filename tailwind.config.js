@@ -110,6 +110,7 @@ const config = {
 			minHeight: {
 				35: pxToRem(140),
 				110: pxToRem(440),
+				156: pxToRem(624),
 				input: 'calc(var(--spacing-200) * 2 + var(--spacing-400))',
 			},
 			maxHeight: { 180: pxToRem(720) },

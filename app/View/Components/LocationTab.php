@@ -35,6 +35,8 @@ class LocationTab extends Component {
      * Initialize all necessary fields for the component
      */
     private function initializeFields() {
+        $isHeadOffice = $this->getAcfFieldFromID('post_type_data_enable_head_office', $this->id);
+
         $this->title = get_the_title($this->id);
         $this->heading = $this->getAcfFieldFromID('hero_heading', $this->id) ?: $this->title;
         $this->description = $this->getAcfFieldFromID('hero_supporting_text', $this->id);
@@ -44,6 +46,10 @@ class LocationTab extends Component {
         $this->email = $this->getAcfFieldFromID('post_type_data_contact_email', $this->id);
         $this->image = $this->getAcfFieldFromID('hero_image', $this->id);
         $this->directionsCta = $this->buildDirectionsLink();
+
+        if ($isHeadOffice) {
+            $this->heading = 'Head Office (' . $this->heading . ')';
+        }
     }
 
     /**

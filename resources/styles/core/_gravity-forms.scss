@@ -18,7 +18,9 @@
 .gform_heading {
 	@apply hidden;
 }
-
+.gform_wrapper form {
+	@apply gap-y-500 flex flex-col;
+}
 .gform_body {
 	textarea,
 	select,
@@ -36,6 +38,11 @@
 		@apply form-input;
 	}
 }
+.gform_ajax_spinner {
+}
+.gform_confirmation_message {
+	@apply jw-wysiwyg;
+}
 .ginput_container_fileupload {
 	@apply relative;
 
@@ -49,13 +56,13 @@
 		}
 	}
 	&::before {
-		@apply min-h-input absolute left-spacing-200 top-0 block w-spacing-250 bg-contain bg-center bg-no-repeat;
+		@apply absolute left-spacing-200 top-0 block min-h-input w-spacing-250 bg-contain bg-center bg-no-repeat;
 		content: '';
 		background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M9.16536 15.8334H10.832V12.3542L12.1654 13.6876L13.332 12.5001L9.9987 9.16675L6.66536 12.5001L7.85286 13.6667L9.16536 12.3542V15.8334ZM4.9987 18.3334C4.54036 18.3334 4.148 18.1702 3.82161 17.8438C3.49523 17.5174 3.33203 17.1251 3.33203 16.6667V3.33341C3.33203 2.87508 3.49523 2.48272 3.82161 2.15633C4.148 1.82994 4.54036 1.66675 4.9987 1.66675H11.6654L16.6654 6.66675V16.6667C16.6654 17.1251 16.5022 17.5174 16.1758 17.8438C15.8494 18.1702 15.457 18.3334 14.9987 18.3334H4.9987ZM10.832 7.50008V3.33341H4.9987V16.6667H14.9987V7.50008H10.832Z" fill="%23090909"/></svg>');
 	}
 }
 .gform_button_select_files {
-	@apply cta-contained cta-contained--primary cta-contained--small cta-contained__label cta-contained__label--small;
+	//@apply cta-contained cta-contained--primary cta-contained--small cta-contained__label cta-contained__label--small;
 	width: auto !important;
 }
 .hidden_label .gfield_label,
@@ -102,7 +109,7 @@
 	@apply mb-2;
 }
 .gform_fields {
-	@apply grid w-full grid-cols-12 gap-y-spacing-300;
+	@apply grid w-full grid-cols-12 gap-x-spacing-300 gap-y-spacing-300;
 }
 .gfield {
 	grid-column: 1 / -1;
@@ -122,6 +129,9 @@
 			) {
 			@apply border-feedback-error;
 		}
+	}
+	&--type-consent {
+		@apply mt-spacing-200;
 	}
 }
 .gfield--type-choice {
@@ -301,8 +311,6 @@
 .gform_footer,
 .gform_page_footer {
 	@apply flex flex-wrap;
-	gap: var(--gf-form-footer-gap);
-	margin-block-start: var(--gf-form-footer-margin-y-start);
 }
 
 #field_submit input[type='submit'][id*='gform_submit_button_'].button.gform-button--width-full,
@@ -420,11 +428,6 @@
 }
 
 @media (min-width: 640px) {
-	.gform_fields {
-		-moz-column-gap: var(--gf-form-gap-x);
-		column-gap: var(--gf-form-gap-x);
-	}
-
 	.gfield--width-full {
 		grid-column: span 12;
 	}
@@ -480,7 +483,7 @@
 }
 
 .gform-grid-row {
-	@apply flex flex-wrap gap-x-spacing-300;
+	@apply flex flex-wrap gap-x-spacing-300 gap-y-spacing-300;
 }
 
 .gform-grid-col {

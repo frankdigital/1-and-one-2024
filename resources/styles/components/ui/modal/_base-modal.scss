@@ -114,7 +114,7 @@
 	}
 
 	&__anchor {
-		@apply pointer-events-none fixed inset-0 z-70 mx-auto flex items-start justify-center overflow-auto;
+		@apply fixed inset-0 z-70 mx-auto flex items-start justify-center overflow-auto lg:pointer-events-none;
 	}
 
 	&__container {
@@ -143,6 +143,6 @@
 
 	&__type--team {
 		@apply pointer-events-auto mx-auto max-w-300;
-		@apply my-vertical-sm rounded-card relative flex w-full flex-col gap-spacing-600 bg-theme-surface-primary px-horizontal-lg py-vertical-lg md:gap-6 lg:flex-row lg:gap-spacing-700 lg:py-vertical-sm;
+		@apply rounded-card relative my-vertical-sm flex w-full flex-col gap-spacing-600 bg-theme-surface-primary px-horizontal-lg py-vertical-lg md:gap-6 lg:flex-row lg:gap-spacing-700 lg:py-vertical-sm;
 	}
 }

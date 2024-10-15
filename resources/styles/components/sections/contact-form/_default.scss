@@ -1,20 +1,37 @@
 .jw-contact-form {
-    &__container {
-        @apply gap-x-800 gap-y-600 flex flex-col lg:flex-row;
-    }
-    &__content-container {
-        @apply lg:w-105 gap-y-500 mb-6 flex shrink-0 grow-0 flex-col;
-    }
+	&__container {
+		@apply gap-x-800 gap-y-600 flex flex-col items-start lg:flex-row;
+	}
 
-    &__content {
-        @apply gap-y-250 flex flex-col items-start;
-    }
+	&__content-container {
+		@apply gap-y-500 mb-6 flex shrink-0 grow-0 flex-col lg:w-105;
+	}
 
-    &__contact-item {
-        @apply border-b border-theme-border-secondary py-spacing-250 first:border-t;
-    }
+	&__content {
+		@apply gap-y-250 flex flex-col items-start text-theme-text-secondary;
+	}
 
-    &__form {
-        @apply grow bg-theme-surface-secondary p-spacing-600;
-    }
+	&__contact-item {
+		@apply border-b border-theme-border-secondary py-spacing-250 first:border-t;
+	}
+
+	&__contact-item-heading {
+		@apply mb-3 text-theme-text-primary;
+	}
+
+	&__form {
+		@apply rounded-card gap-y-300 flex grow flex-col bg-theme-surface-secondary px-spacing-300 py-spacing-600 sm:px-spacing-600;
+	}
+
+	&__actions {
+		@apply gap-x-200 gap-y-200 hidden grid-cols-1 sm:grid-cols-2;
+
+		.gform_confirmation_wrapper + & {
+			@apply grid;
+		}
+	}
+
+	.jw-contained-icon {
+		@apply bg-theme-surface-tertiary;
+	}
 }

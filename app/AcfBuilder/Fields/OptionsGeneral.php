@@ -25,19 +25,16 @@ $fields
                 'label' => '',
                 'show_in_graphql' => true
             ])
-                ->addGoogleMap('google_map_data', [
-                    'label' => 'Google Map',
-                    'instructions' => '',
-                    'required' => 0,	
-                    'center_lat' => '',
-                    'center_lng' => '',
-                    'zoom' => '',
-                    'height' => '',
+
+                ->addText('name', [
+                    'label' => 'Location Name',
+                    'instructions' => 'Enter the name of the location.',
+                    'required' => true,
+                    'placeholder' => 'e.g. Sydney CBD',
                 ])
 
                 ->addAccordion('address', [
                     'label' => 'Location Address',
-                
                     'show_in_graphql' => true
                 ])
                     ->addTrueFalse('toggle_override_google_address', [

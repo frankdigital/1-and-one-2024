@@ -12,12 +12,12 @@
 	@endif
 	<div @class([ccn($baseClass, 'content-container')])>
 		<div @class([ccn($baseClass, 'content')])>
-			@if ($heading)
-				<x-text as="h5">
+			@if (isset($heading) && !empty($heading))
+				<x-text as="h4" @class([ccn($baseClass, 'heading')])>
 					{!! $heading !!}
 				</x-text>
 			@endif
-			@if ($description)
+			@if (isset($description) && !empty($description))
 				<x-text :isHTML="true" @class([ccn($baseClass, 'description')])>
 					{!! $description !!}
 				</x-text>

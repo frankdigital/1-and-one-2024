@@ -143,6 +143,9 @@ const config = {
 					to: { height: '0px' },
 				},
 			},
+			boxShadow: {
+				dropdown: '0 4px 20px 0 rgba(0, 0, 0, 0.05)',
+			},
 			animation: {
 				accordionSlideDown: 'accordionSlideDown 400ms cubic-bezier(0.16, 1, 0.3, 1)',
 				accordionSlideUp: 'accordionSlideUp 400ms cubic-bezier(0.16, 1, 0.3, 1)',

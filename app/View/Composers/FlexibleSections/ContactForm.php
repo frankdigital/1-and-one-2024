@@ -26,14 +26,15 @@ class ContactForm extends Composer {
 		$section = $this->data->get('section');
 		$contact = $this->getAcfFieldFromOptions('options_general_contact');
 		$socials = $this->getAcfFieldFromOptions('options_general_socials');
-
 		return [
 			'content' => $section['content'],
-			'scrollId' => $this->pathOr(null, ['scroll_id'], $section),
 			'socials' => $socials,
 			'email' => $this->pathOr(null, ['email'], $contact),
+			'name' => $this->pathOr(null, ['location', 'name'], $contact),
 			'address' => $this->getLocationAddress($contact['location']),
 			'telephone' => $this->pathOr(null, ['phone'], $contact),
+			'homeCta' => $this->buildButtonFromLink(home_url(), 'Take Me Home'),
+			'reloadCta' => $this->buildButtonFromLink(get_permalink( get_queried_object_id() ), 'Submit Another Message')
 		];
 	}
 

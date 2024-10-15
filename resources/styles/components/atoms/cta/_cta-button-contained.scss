@@ -13,7 +13,7 @@
 	}
 
 	&--small {
-		@apply px-4.5 py-2;
+		@apply py-1.75 pl-4.5 pr-4;
 	}
 
 	&--default {
@@ -21,7 +21,7 @@
 	}
 
 	&--large {
-		@apply py-3 pl-4.5 pr-3.5;
+		@apply py-2.75 pl-5.5 pr-5.5;
 	}
 }
 

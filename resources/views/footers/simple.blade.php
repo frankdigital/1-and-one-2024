@@ -35,7 +35,7 @@
 						@endif
 
 						@if (isset($cta['content']))
-							<x-text as="bodySmall" textStyle="span">
+							<x-text as="span" textStyle="bodySmall">
 								{{ $cta['content'] }}
 							</x-text>
 						@endif
@@ -91,7 +91,7 @@
 		<div @class([ccn($baseClass, 'legal-container')])>
 			<div @class([ccn($baseClass, 'copyright')])>
 				<x-text as="span" textStyle="bodySmall">
-					&copy; {{ date('Y') }} 1 and One. All rights reserved.
+					&copy; 1 AND ONE {{ date('Y') }}
 				</x-text>
 			</div>
 

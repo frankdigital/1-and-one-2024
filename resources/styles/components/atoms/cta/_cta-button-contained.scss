@@ -13,11 +13,11 @@
 	}
 
 	&--small {
-		@apply px-4.5 py-3;
+		@apply px-4.5 py-2;
 	}
 
 	&--default {
-		@apply px-5.5 py-2.5 pr-4.5;
+		@apply py-2.25 px-5.5 pr-4.5;
 	}
 
 	&--large {
@@ -49,15 +49,18 @@
 	@apply text-nowrap;
 
 	&--small {
-		@apply text-smallBodyMobile sm:text-smallBodyTablet lg:text-smallBodyDesktop;
+		// @apply text-smallBodyMobile sm:text-smallBodyTablet lg:text-smallBodyDesktop;
+		@apply pointer-events-auto;
 	}
 
 	&--default {
 		// @apply text-smallBodyMobile leading-6 sm:text-smallBodyDesktop lg:text-bodyDesktop;
+		@apply pointer-events-auto;
 	}
 
 	&--large {
-		@apply text-bodyMobile sm:text-bodyTablet lg:text-bodyDesktop;
+		// @apply text-bodyMobile sm:text-bodyTablet lg:text-bodyDesktop;
+		@apply pointer-events-auto;
 	}
 
 	&--primary {

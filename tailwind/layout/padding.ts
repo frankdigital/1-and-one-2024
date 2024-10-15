@@ -50,6 +50,7 @@ export const padding = {
 	'horizontal-lg': 'var(--horizontal-lg)',
 	'horizontal-xl': 'var(--horizontal-xl)',
 
+	2.25: pxToRem(9),
 	3.5: pxToRem(14),
 	4.5: pxToRem(18),
 	5.5: pxToRem(22),

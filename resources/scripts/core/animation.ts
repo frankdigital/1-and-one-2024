@@ -1,8 +1,10 @@
 import { gsap } from 'gsap';
+import { CustomEase } from 'gsap/CustomEase';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 export function initAnimation() {
 	gsap.registerPlugin(ScrollTrigger);
+	gsap.registerPlugin(CustomEase);
 
 	gsap.utils.toArray<HTMLElement>('.jw-parallax').forEach((section) => {
 		const container: HTMLElement | null = section.querySelector('.jw-parallax__content');
@@ -43,6 +45,7 @@ export function initAnimation() {
 	scrollBatchAnimation('.jw-service-tile');
 	scrollBatchAnimation('.jw-usps-vertical .jw-usp', { autoAlpha: 0, x: 50, stagger: 0.2 });
 	scrollBatchAnimation('.jw-usps-horizontal .jw-usp');
+	scrollBatchAnimation('.jw-usps-cards .jw-usp-card');
 	scrollBatchAnimation('.jw-page-card');
 	scrollBatchAnimation('.jw-page-card-overlaid');
 	scrollBatchAnimation('.jw-team-default__tile');
@@ -63,6 +66,7 @@ export const scrollBatchAnimation = (
 };
 
 const splitHeroAnimation = (selector: string) => {
+	if (!document.querySelector(selector)) return;
 	const tl = gsap.timeline();
 	tl.fromTo(
 		`${selector}__image-container`,
@@ -71,46 +75,49 @@ const splitHeroAnimation = (selector: string) => {
 		},
 		{
 			clipPath: 'inset(0% 0% 0% 0%)',
-			duration: 1.5,
-			ease: 'power1.inOut',
+			duration: 1,
+			ease: CustomEase.create('custom', 'M0,0 C0,0 0.86,-0.2 1,1 '),
 		},
 	);
 	const targets: Element[] = gsap.utils.toArray(`${selector}__content > *, ${selector}__cta-container`);
 	targets.forEach((target, index) => {
-		tl.from(target, { opacity: 0, y: (index + 1) * 20, duration: 0.75 }, 1.5);
+		tl.from(target, { opacity: 0, y: (index + 1) * 20, duration: 1 }, 0.5);
 	});
 };
 
 const standardHeroAnimation = (selector: string) => {
+	if (!document.querySelector(selector)) return;
 	const tl = gsap.timeline();
 	tl.from(`${selector}__image`, {
 		scale: 1.2,
-		duration: 3,
+		duration: 2.5,
 		ease: 'power1.inOut',
 	});
 	const targets: Element[] = gsap.utils.toArray(`${selector}__content > *, ${selector}__cta-container`);
 	targets.forEach((target, index) => {
-		tl.from(target, { opacity: 0, y: (index + 1) * 20, duration: 0.75 }, 1.5);
+		tl.from(target, { opacity: 0, y: (index + 1) * 20, duration: 1 }, 1);
 	});
 };
 
 const stackedHeroAnimation = (selector: string) => {
+	if (!document.querySelector(selector)) return;
 	const imageSelector = `${selector}__image-container`;
 	gsap.set(imageSelector, { clipPath: 'inset(0% 0% 100% 0%)' });
-	ScrollTrigger.create({
-		trigger: imageSelector,
-		onEnter: () => {
-			gsap.to(imageSelector, {
-				clipPath: 'inset(0% 0% 0% 0%)',
-				duration: 1,
-				ease: 'power1.inOut',
-			});
-		},
-	});
-
 	const tl = gsap.timeline();
 	const targets: Element[] = gsap.utils.toArray(`${selector}__content > *, ${selector}__cta-container`);
 	targets.forEach((target, index) => {
-		tl.from(target, { opacity: 0, y: (index + 1) * 20, duration: 0.75 }, 0.5);
+		tl.from(target, { opacity: 0, y: (index + 1) * 20, duration: 1 }, 0.5);
 	});
+	setTimeout(() => {
+		ScrollTrigger.create({
+			trigger: imageSelector,
+			onEnter: () => {
+				gsap.to(imageSelector, {
+					clipPath: 'inset(0% 0% 0% 0%)',
+					duration: 0.75,
+					ease: 'power1.inOut',
+				});
+			},
+		});
+	}, 1000);
 };

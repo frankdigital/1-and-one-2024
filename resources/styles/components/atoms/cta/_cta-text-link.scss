@@ -19,7 +19,7 @@
 	}
 
 	&--default {
-		@apply size-6;
+		@apply size-5;
 	}
 
 	&--large {
@@ -31,15 +31,18 @@
 	@apply text-nowrap;
 
 	&--small {
-		@apply text-textLinkSmallMobile sm:text-textLinkSmallTablet lg:text-textLinkSmallDesktop;
+		// @apply text-textLinkSmallMobile sm:text-textLinkSmallTablet lg:text-textLinkSmallDesktop;
+		@apply pointer-events-auto;
 	}
 
 	&--default {
-		@apply text-textLinkLargeMobile sm:text-textLinkLargeTablet lg:text-textLinkLargeDesktop;
+		// @apply text-textLinkLargeMobile sm:text-textLinkLargeTablet lg:text-textLinkLargeDesktop;
+		@apply pointer-events-auto;
 	}
 
 	&--large {
-		@apply text-textLinkLargeMobile sm:text-textLinkLargeTablet lg:text-textLinkLargeDesktop;
+		// @apply text-textLinkLargeMobile sm:text-textLinkLargeTablet lg:text-textLinkLargeDesktop;
+		@apply pointer-events-auto;
 	}
 }
 

@@ -10,6 +10,10 @@
 					<button @class([ccn($baseClass, 'action')]) data-responsive-menu-trigger>
 						<x-text as="span" textStyle="bodySmall" :strong="true"
 							@class(ccn($baseClass, 'item-text'))>{!! $item['label'] !!}</x-text>
+
+						<span @class([ccn($baseClass, 'item-icon-container')])>
+							<x-icon-handler @class([ccn($baseClass, 'icon')]) icon="SharpChevronDown" />
+						</span>
 					</button>
 				@else
 					<a href="{{ $item['uri'] }}" data-responsive-menu-trigger>

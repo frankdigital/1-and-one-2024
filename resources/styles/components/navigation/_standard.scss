@@ -20,6 +20,10 @@
 				@apply bg-theme-text-primary-invert;
 			}
 		}
+
+		.jw-responsive-menu__action {
+			@apply text-theme-text-primary-invert;
+		}
 	}
 
 	&.is-active {

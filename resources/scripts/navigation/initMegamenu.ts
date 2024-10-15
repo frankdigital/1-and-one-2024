@@ -65,8 +65,16 @@ function toggleMegaMenu(index: number | null) {
 	}
 
 	$('body').toggleClass('no-scroll', isMenuOpen);
+
+	if (!isMenuOpen) {
+		$header.addClass('dark');
+	} else {
+		$header.removeClass('dark');
+	}
+
 	toggleClass($overlay, isMenuOpen);
 	toggleClass($megamenu, isMenuOpen);
+	toggleClass($header, isMenuOpen);
 }
 
 function updateMenuIcon() {
@@ -81,6 +89,13 @@ function toggleMobileMenu() {
 	toggleClass($mobileMenu, isMenuOpen);
 	toggleClass($overlay, isMenuOpen);
 	$header.toggleClass(activeClass, isMenuOpen);
+
+	if (!isMenuOpen) {
+		$header.addClass('dark');
+	} else {
+		$header.removeClass('dark');
+	}
+
 	$('body').toggleClass('no-scroll', isMenuOpen);
 	updateMenuIcon();
 }

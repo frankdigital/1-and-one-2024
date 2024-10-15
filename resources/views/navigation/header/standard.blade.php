@@ -2,7 +2,7 @@
 	$baseClass = 'header';
 @endphp
 
-<header data-header @class(ccn($baseClass))>
+<header data-header @class([ccn($baseClass), 'dark'])>
 	<x-container width="header" @class([ccn($baseClass, 'container')])>
 		<div @class([ccn($baseClass, 'wrapper')])>
 			<div id="logo-reference" @class([ccn($baseClass, 'logo-container')])>

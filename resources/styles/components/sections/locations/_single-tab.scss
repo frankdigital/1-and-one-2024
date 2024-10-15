@@ -10,7 +10,7 @@
 	}
 
 	&__content {
-		@apply gap-y-150 flex flex-col;
+		@apply gap-y-150 flex flex-col lg:pt-10;
 	}
 
 	&__contact-row {

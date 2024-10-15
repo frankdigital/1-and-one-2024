@@ -23,24 +23,7 @@
 				</x-text>
 			@endif
 		</div>
-		@if ($email || $telephone)
-			<hr @class([ccn($baseClass, 'divider')])>
-			<div @class([ccn($baseClass, 'contact-row')])>
-				@if ($email && $emailLink)
-					<div @class([ccn($baseClass, 'contact-details')])>
-						<x-text @class([ccn($baseClass, 'contact-heading')])>Email</x-text>
-						<x-default-link @class([ccn($baseClass, 'contact-link')]) :url="$emailLink" :title="$email" target="_self" />
-					</div>
-				@endif
-				@if ($telephone['formatted_number'] && $telephone['number'] && $telephoneLink)
-					<div @class([ccn($baseClass, 'contact-details')])>
-						<x-text @class([ccn($baseClass, 'contact-heading')])>Phone</x-text>
-						<x-default-link @class([ccn($baseClass, 'contact-link')]) :url="$telephoneLink" :title="$telephone['formatted_number']" target="_self" />
-					</div>
-				@endif
-			</div>
-		@endif
-		@if ($address || $hours)
+		@if ($email || $address)
 			<hr @class([ccn($baseClass, 'divider')])>
 			<div @class([ccn($baseClass, 'contact-row')])>
 				@if ($address)
@@ -54,12 +37,10 @@
 						@endif
 					</div>
 				@endif
-				@if ($hours)
+				@if (isset($emailLink) && !empty($emailLink))
 					<div @class([ccn($baseClass, 'contact-details')])>
-						<x-text @class([ccn($baseClass, 'contact-heading')])>Office Hours</x-text>
-						<x-text :isHTML="true" @class([ccn($baseClass, 'contact-content')])>
-							{!! $hours !!}
-						</x-text>
+						<x-text @class([ccn($baseClass, 'contact-heading')])>Email</x-text>
+						<x-default-link @class([ccn($baseClass, 'contact-link')]) :url="$emailLink" title="Contact via email" target="_self" />
 					</div>
 				@endif
 			</div>

@@ -78,14 +78,6 @@ $builder
                 'required' => false,
                 'placeholder' => 'location@name.com.au',
             ])
-
-            ->addTextarea('opening_hours', [
-                'label' => 'Opening Hours',
-                'instructions' => 'Enter the opening hours of the location.',
-                'rows' => 2,
-                'new_lines' => 'br',
-            ])
-
         ->endGroup()
     ->endGroup();
 

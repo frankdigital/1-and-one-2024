@@ -37,13 +37,15 @@ export default plugin(({ addComponents }) => {
 			className: 'text-introMobile md:text-introTablet lg:text-introDesktop text-theme-text-secondary',
 		},
 		'.typography-large-body': {
-			className: 'text-largeBodyMobile md:text-largeBodyTablet lg:text-largeBodyDesktop',
+			className:
+				'text-largeBodyMobile md:text-largeBodyTablet lg:text-largeBodyDesktop text-theme-text-secondary',
 		},
 		'.typography-body': {
-			className: 'text-bodyMobile md:text-bodyTablet lg:text-bodyDesktop font-normal',
+			className: 'text-bodyMobile md:text-bodyTablet lg:text-bodyDesktop font-normal text-theme-text-secondary',
 		},
 		'.typography-small-body': {
-			className: 'text-smallBodyMobile md:text-smallBodyTablet lg:text-smallBodyDesktop',
+			className:
+				'text-smallBodyMobile md:text-smallBodyTablet lg:text-smallBodyDesktop text-theme-text-secondary',
 		},
 		'.typography-caption': {
 			className: 'text-captionMobile md:text-captionTablet lg:text-captionDesktop',

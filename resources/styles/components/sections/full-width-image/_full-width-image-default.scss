@@ -34,7 +34,7 @@
 	}
 
 	&__content-container {
-		@apply rounded-card gap-y-400 relative z-10 flex flex-col bg-white p-spacing-500 md:max-w-95 lg:max-w-150 lg:rounded-bl-none lg:rounded-br-none lg:p-spacing-800;
+		@apply rounded-card gap-y-400 relative z-10 flex flex-col bg-theme-surface-primary p-spacing-500 md:max-w-95 lg:max-w-150 lg:rounded-bl-none lg:rounded-br-none lg:p-spacing-800;
 	}
 
 	&__content {

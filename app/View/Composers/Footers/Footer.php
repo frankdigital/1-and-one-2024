@@ -21,7 +21,7 @@ class Footer extends Composer {
 		$section = $this->data->get('footer');
 
 		return [
-			'cta' => $this->pathOr([], ['footer', 'content'], $section),
+			'ctaContent' => $this->pathOr([], ['footer', 'content'], $section),
 			'socials' => $this->getSocials($section),
             'locations' => $this->pathOr([], ['footer', 'locations'], $section),
             'featured_links' => $this->pathOr([], ['footer', 'featured_links'], $section),

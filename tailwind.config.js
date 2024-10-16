@@ -100,6 +100,7 @@ const config = {
 				150: pxToRem(600),
 				160: pxToRem(640),
 				170: pxToRem(680),
+				200: pxToRem(800),
 				'9/10': '90%',
 			},
 			inset: {

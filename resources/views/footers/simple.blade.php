@@ -24,27 +24,27 @@
 
 				<div @class([ccn($baseClass, 'content-container')])>
 					@php
-						$showCta = is_cta_enabled($cta['primary_cta']) || is_cta_enabled($cta['secondary_cta']);
+						$showCta = is_cta_enabled($ctaContent['primary_cta']) || is_cta_enabled($ctaContent['secondary_cta']);
 					@endphp
 
 					<div @class([ccn($baseClass, 'content')])>
-						@if (isset($cta['heading']))
+						@if (isset($ctaContent['heading']))
 							<x-text as="span" textStyle="h5">
-								{{ $cta['heading'] }}
+								{{ $ctaContent['heading'] }}
 							</x-text>
 						@endif
 
-						@if (isset($cta['content']))
+						@if (isset($ctaContent['content']))
 							<x-text as="span" textStyle="bodySmall">
-								{{ $cta['content'] }}
+								{{ $ctaContent['content'] }}
 							</x-text>
 						@endif
 					</div>
 
 					@if ($showCta)
 						<x-cta-container :fullWidth="true" @class([ccn($baseClass, 'cta-container')])>
-							<x-cta size="small" priority="primary" :icon="null" :cta="$cta['primary_cta']" />
-							<x-cta size="small" priority="secondary" :icon="null" :cta="$cta['secondary_cta']" />
+							<x-cta size="small" priority="primary" :icon="null" :cta="$ctaContent['primary_cta']" />
+							<x-cta size="small" priority="secondary" :icon="null" :cta="$ctaContent['secondary_cta']" />
 						</x-cta-container>
 					@endif
 				</div>

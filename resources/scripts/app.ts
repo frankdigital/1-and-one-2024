@@ -10,6 +10,7 @@ import {
 	ANIMATE_HEIGHT,
 	BLOG_LISTING,
 	CTA_BLOCK_CONTAINED,
+	INHERIT_COLOR_SELECTOR,
 	LOGOS_CAROUSEL,
 	SERVICE_TILES,
 	TABS_LIST,
@@ -101,7 +102,7 @@ domReady(async () => {
 		});
 	}
 
-	const ctaBlockConbtained = document.querySelectorAll(CTA_BLOCK_CONTAINED);
+	const ctaBlockConbtained = document.querySelectorAll(INHERIT_COLOR_SELECTOR);
 	if (ctaBlockConbtained) {
 		ctaBlockConbtained.forEach((element) => {
 			initCtaBlockContained(element as HTMLElement);

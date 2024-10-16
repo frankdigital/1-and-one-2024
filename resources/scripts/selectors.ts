@@ -31,4 +31,4 @@ export const MODAL_PORTAL = '[data-modal-portal]';
 
 export const ACCORDION_CONTAINER = '[data-accordion-container]';
 
-export const CTA_BLOCK_CONTAINED = '[data-cta-block-containded]';
+export const INHERIT_COLOR_SELECTOR = '[data-inherit-color]';

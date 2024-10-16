@@ -15,9 +15,9 @@
 	&__padding-bottom {
 	}
 
-	// & + .jw-section {
-	// 	@apply pt-0;
-	// }
+	& + .jw-section {
+		@apply vertical-sm;
+	}
 
 	& + .hero {
 	}

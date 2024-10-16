@@ -8,11 +8,25 @@
 	}
 
 	&__action {
-		@apply flex items-center;
+		@apply flex items-center gap-1 py-1;
 
 		&:after {
 			content: '';
-			@apply pointer-events-none absolute bottom-0.5 left-0 h-0.25 w-0 bg-theme-text-primary transition-all duration-200;
+			@apply pointer-events-none absolute bottom-0.5 left-0 h-0.25 w-0 bg-theme-surface-accent transition-all duration-200;
+		}
+	}
+
+	&__icon {
+		@apply transition-transform duration-200;
+	}
+
+	&__action.is-active {
+		&:after {
+			@apply w-full;
+		}
+
+		.jw-responsive-menu__icon {
+			@apply rotate-180;
 		}
 	}
 
@@ -21,12 +35,6 @@
 	}
 
 	&__action:hover {
-		&:after {
-			@apply w-full;
-		}
-	}
-
-	&__action.is-active {
 		&:after {
 			@apply w-full;
 		}

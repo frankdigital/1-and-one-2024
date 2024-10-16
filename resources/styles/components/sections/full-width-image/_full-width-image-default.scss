@@ -49,7 +49,7 @@
 
 	&__reverse {
 		.jw-full-width-image-default__container {
-			@apply flex justify-end;
+			@apply flex justify-end md:pr-0;
 		}
 
 		&:after {

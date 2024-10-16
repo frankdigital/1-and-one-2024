@@ -61,6 +61,7 @@ export const padding = {
 	13: pxToRem(52),
 	15: pxToRem(60),
 	18: pxToRem(72),
+	22.5: pxToRem(90),
 	26: pxToRem(104),
 	30: pxToRem(120),
 	35: pxToRem(140),

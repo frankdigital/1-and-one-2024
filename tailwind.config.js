@@ -36,6 +36,7 @@ const config = {
 				eyebrow: pxToRem(2),
 			},
 			width: {
+				22.5: pxToRem(90),
 				30: pxToRem(120),
 				37.5: pxToRem(150),
 				39: pxToRem(156),

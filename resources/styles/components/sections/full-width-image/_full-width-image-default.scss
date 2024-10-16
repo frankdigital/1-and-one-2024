@@ -1,12 +1,17 @@
 .jw-full-width-image-default {
-	@apply relative;
+	@apply relative overflow-hidden;
+
+	&:after {
+		@apply w-22.5 absolute right-0 top-0 z-10 hidden h-full bg-theme-surface-primary md:block;
+		content: '';
+	}
 
 	&__padding-container {
-		@apply lg:mr-22.5 relative;
+		@apply relative;
 	}
 
 	&__container {
-		@apply lg:min-h-156 vertical-lg pt-70 lg:vertical-lg lg:pb-0 lg:pl-0 lg:pt-60;
+		@apply lg:min-h-156 vertical-lg pt-70 lg:vertical-lg md:pb-0 md:pl-0 md:pt-60;
 	}
 
 	&__background {
@@ -47,8 +52,12 @@
 			@apply flex justify-end;
 		}
 
-		.jw-full-width-image-default__padding-container {
-			@apply lg:ml-22.5 lg:mr-auto;
+		&:after {
+			@apply left-0 right-auto;
 		}
+	}
+
+	&.jw-section--darker:after {
+		@apply bg-theme-surface-tertiary;
 	}
 }

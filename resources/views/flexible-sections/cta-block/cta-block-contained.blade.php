@@ -3,7 +3,7 @@
 	$showCta = is_cta_enabled($content['primary_cta']) || is_cta_enabled($content['secondary_cta']);
 @endphp
 
-<x-section data-cta-block-containded="" :contain="false" :dark="true" @class([ccn($baseClass), $last => ccn($baseClass . '--last')])>
+<x-section data-inherit-color="" :contain="false" :dark="true" @class([ccn($baseClass), $last => ccn($baseClass . '--last')])>
 	<x-container @class([ccn($baseClass, 'container')])>
 		<div @class([ccn($baseClass, 'margin')])>
 			<div @class([ccn($baseClass, 'gradient')])></div>

@@ -2,6 +2,7 @@
 	$componentMap = [
 	    'blog_listing' => 'blog-listing.blog-listing-standard',
 	    'contact_form' => 'contact-form.contact-form-default',
+	    'content_tiles' => 'content-tiles.content-tiles-default',
 	    'image_left_right' => 'image-left-right.image-left-right-default',
 	    'intro' => 'intro.intro',
 	    'faq_standard' => 'faq.faq-standard',

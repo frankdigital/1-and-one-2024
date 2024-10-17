@@ -21,12 +21,6 @@ $builder
             'delay' => 0,
         ])
 
-        ->addAccordion('ctas', [
-            'label' => 'Call to Actions'
-        ])
-            ->addFields(get_field_partial('Fields.Components.CtaPrimary'))
-        ->addAccordion('ctas_end')->endpoint()
-
         ->addRepeater('tiles', [
             'label' => 'Tiles',
             'layout' => 'block',
@@ -49,6 +43,12 @@ $builder
                 'label' => 'Image',
             ])
         ->endRepeater()
+
+        ->addAccordion('ctas', [
+            'label' => 'Call to Actions'
+        ])
+            ->addFields(get_field_partial('Fields.Components.CtaPrimary'))
+        ->addAccordion('ctas_end')->endpoint()
     ->endGroup()
 
     ->addFields(get_field_partial('Fields.Components.ScrollSettings'));

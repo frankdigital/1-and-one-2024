@@ -5,7 +5,7 @@
 		$baseClass = 'four-oh-four';
 	@endphp
 
-	<x-section @class([ccn($baseClass)])>
+	<x-section :contain="false" @class([ccn($baseClass)])>
 		<div @class([ccn($baseClass, 'gradient')])></div>
 		<x-container @class([ccn($baseClass, 'container')])>
 
@@ -19,8 +19,9 @@
 					<x-cta classes="" priority="primary" :cta="$cta" />
 				</x-cta-container>
 			</div>
-
 		</x-container>
+
+		<span @class([ccn($baseClass, 'headline')])>404</span>
 	</x-section>
 
 	@include('footers.footer', [

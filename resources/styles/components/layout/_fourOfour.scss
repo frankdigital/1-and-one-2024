@@ -11,11 +11,6 @@
 			rgba(253, 249, 240, 0) 80%,
 			#fdf9f0 100%
 		);
-
-		&:after {
-			content: '404';
-			@apply pointer-events-none absolute left-1/2 top-1/2 max-w-full -translate-x-1/2 -translate-y-1/2 text-[240px] font-light text-theme-surface-accent opacity-5 md:text-[400px] lg:text-[800px];
-		}
 	}
 
 	&__container {
@@ -28,5 +23,9 @@
 
 	&__content {
 		@apply flex flex-col items-center justify-center gap-spacing-300 text-center;
+	}
+
+	&__headline {
+		@apply pointer-events-none absolute left-1/2 top-1/2 max-w-full -translate-x-1/2 -translate-y-1/2 text-[240px] font-light text-theme-surface-accent opacity-5 md:text-[400px] lg:text-[800px];
 	}
 }

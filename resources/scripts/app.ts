@@ -1,7 +1,7 @@
 import domReady from '@roots/sage/client/dom-ready';
 import Choices from 'choices.js';
 
-import { initLenis } from './core/lenis';
+import { SmoothScroller } from './core/SmoothScroller';
 import { initAnimation } from './core/animation';
 
 import { initSlider } from './components/carousel';
@@ -9,7 +9,6 @@ import {
 	ACCORDION_CONTAINER,
 	ANIMATE_HEIGHT,
 	BLOG_LISTING,
-	CTA_BLOCK_CONTAINED,
 	INHERIT_COLOR_SELECTOR,
 	LOGOS_CAROUSEL,
 	SERVICE_TILES,
@@ -20,23 +19,27 @@ import {
 import { initModal } from './ui/base-modal';
 import { registerAppHeight } from './core/appHeight';
 import AutoScroll from 'embla-carousel-auto-scroll';
-import './navigation/initMegamenu';
 import { registerHeaderHeight } from './core/headerHeight';
 import { initBlogListing } from './components/blogListing';
 import { initTabs } from './components/tabs';
 import { initAccordions } from './components/accordion';
 import { initAnimateHeight } from './core/animateHeight';
 import { initCtaBlockContained } from './components/ctaBlock/initCtaBlockContained';
+import { initMegamenu } from './navigation/initMegamenu';
 
 /**
  * Application entrypoint
  */
 domReady(async () => {
+	const scroller = new SmoothScroller();
+	scroller.start();
+
 	registerAppHeight();
 	registerHeaderHeight();
-	initLenis();
+
 	initAnimation();
 	initModal();
+	initMegamenu(scroller);
 
 	const animateHeight = document.querySelectorAll(ANIMATE_HEIGHT);
 	if (animateHeight) {

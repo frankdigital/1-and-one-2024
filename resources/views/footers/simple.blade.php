@@ -91,7 +91,7 @@
 		<div @class([ccn($baseClass, 'legal-container')])>
 			<div @class([ccn($baseClass, 'copyright')])>
 				<x-text as="span" textStyle="bodySmall">
-					&copy; 1 AND ONE {{ date('Y') }}
+					&copy; {{ date('Y') }} 1 and One. All rights reserved.
 				</x-text>
 			</div>
 

@@ -14,7 +14,7 @@
 	}
 
 	&__contact-row {
-		@apply gap-x-250 gap-y-250 grid items-start sm:grid-cols-2;
+		@apply gap-x-250 gap-y-250 grid grid-cols-2 items-start;
 	}
 
 	&__heading {

@@ -24,8 +24,6 @@ export class SmoothScroller {
 
 	// Method to pause Lenis scrolling
 	public pause(): void {
-		console.log('pause');
-
 		if (this.isRunning) {
 			this.isRunning = false;
 		}
@@ -33,7 +31,6 @@ export class SmoothScroller {
 
 	// Method to resume Lenis scrolling
 	public resume(): void {
-		console.log('resume', this.isRunning);
 		if (!this.isRunning) {
 			this.isRunning = true;
 			this.animate(); // Resume animation loop
@@ -42,8 +39,6 @@ export class SmoothScroller {
 
 	// Internal method to handle animation loop
 	private animate = (time: number = 0): void => {
-		console.log('animate', this.isRunning, time);
-
 		if (this.isRunning) {
 			this.lenis.raf(time); // Update Lenis on each animation frame
 			requestAnimationFrame(this.animate); // Continue the animation loop

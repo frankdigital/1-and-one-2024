@@ -38,7 +38,7 @@ domReady(async () => {
 	registerHeaderHeight();
 
 	initAnimation();
-	initModal();
+	initModal(scroller);
 	initMegamenu(scroller);
 
 	const animateHeight = document.querySelectorAll(ANIMATE_HEIGHT);

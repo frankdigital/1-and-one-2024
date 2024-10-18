@@ -3,13 +3,20 @@ import Lenis from 'lenis';
 export class SmoothScroller {
 	private lenis: Lenis;
 	private isRunning: boolean;
+	private wrapper: HTMLElement;
 
-	constructor() {
+	constructor(wrapper: HTMLElement = window.document.documentElement) {
+		this.wrapper = wrapper;
+
 		// Initialize the Lenis instance
 		this.lenis = new Lenis({
 			lerp: 0.1, // Customize the options here
 			smoothWheel: true,
+			wrapper: this.wrapper,
+			prevent: (node) => node.classList.contains('jw-base-modal'),
 		});
+
+		console.log('lenis', this.lenis);
 
 		this.isRunning = false;
 	}

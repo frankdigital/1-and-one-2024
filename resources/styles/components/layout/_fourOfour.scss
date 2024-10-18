@@ -1,5 +1,5 @@
 .jw-four-oh-four {
-	@apply lg:h-200 flex h-120 flex-col items-center justify-center bg-theme-surface-primary;
+	@apply relative flex flex-col items-center justify-center overflow-hidden bg-theme-surface-primary py-vertical-sm md:py-vertical-xl;
 
 	&__gradient {
 		@apply absolute inset-0 z-0;
@@ -14,7 +14,7 @@
 
 		&:after {
 			content: '404';
-			@apply pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-[400px] font-light text-theme-surface-accent opacity-5 lg:text-[800px];
+			@apply pointer-events-none absolute left-1/2 top-1/2 max-w-full -translate-x-1/2 -translate-y-1/2 text-[240px] font-light text-theme-surface-accent opacity-5 md:text-[400px] lg:text-[800px];
 		}
 	}
 

@@ -24,11 +24,7 @@ $builder
             'delay' => 0,
         ])
 
-        ->addAccordion('ctas', [
-            'label' => 'Call to Actions'
-        ])
-            ->addFields(get_field_partial('Fields.Components.CtaPrimary'))
-        ->addAccordion('ctas_end')->endpoint()
+
 
 
         ->addTrueFalse('custom_locations_select', [
@@ -52,6 +48,12 @@ $builder
                 ],
             ],
 		])
+
+        ->addAccordion('ctas', [
+            'label' => 'Call to Actions'
+        ])
+            ->addFields(get_field_partial('Fields.Components.CtaPrimary'))
+        ->addAccordion('ctas_end')->endpoint()
 
         ->addAccordion('settings', [
             'label' => 'Settings'

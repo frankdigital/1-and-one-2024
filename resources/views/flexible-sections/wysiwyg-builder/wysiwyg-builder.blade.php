@@ -1,7 +1,7 @@
 @php
 	$baseClass = 'wysiwyg-builder';
 @endphp
-<x-section :contain="false" @class([ccn($baseClass)])>
+<x-section :darkerBg="$darkerBg" :contain="false" @class([ccn($baseClass)])>
 	<x-container @class([ccn($baseClass, 'container')])>
 		@isset($content['wysiwyg_builder'])
 			@foreach ($content['wysiwyg_builder'] as $item)

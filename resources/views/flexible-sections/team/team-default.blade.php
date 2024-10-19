@@ -2,7 +2,7 @@
 	$baseClass = 'team-default';
 @endphp
 
-<x-section :contain="false" @class([ccn($baseClass)])>
+<x-section :darkerBg="$darkerBg" :contain="false" @class([ccn($baseClass)])>
 	<x-container @class([ccn($baseClass, 'container')])>
 		<x-section-wrap :content="$content">
 			<div @class([ccn($baseClass, 'grid')])>

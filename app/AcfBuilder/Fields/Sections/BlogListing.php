@@ -23,13 +23,46 @@ $builder
             'delay' => 0,
         ])
 
+        ->addSelect('content_type', [
+            'label' => 'Content Type',
+            'instructions' => 'Select the type of content you would like to display.',
+            'choices' => [
+                'automatic' => 'Automatic Posts',
+                'curated' => 'Curated Posts',
+            ],
+            'default_value' => 'automatic',
+            'ui' => 1,
+        ])
+
         ->addRelationship('posts', [
             'label' => 'Posts',
             'instructions' => 'Select the posts you would like to display.',
             'post_type' => ['post'],
-            'min' => 2,
+            'min' => 3,
             'return_format' => 'object',
+            'conditional_logic' => [
+                [
+                    [
+                        'field' => 'content_type',
+                        'operator' => '==',
+                        'value' => 'curated',
+                    ],
+                ],
+            ],
         ])
+
+        ->addMessage('Automatic Posts', 'Published post will automatically be displayed in date DESC order.', [
+            'conditional_logic' => [
+                [
+                    [
+                        'field' => 'content_type',
+                        'operator' => '==',
+                        'value' => '0',
+                    ],
+                ],
+            ],
+        ])
+
 
         ->addAccordion('ctas', [
             'label' => 'Call to Actions'

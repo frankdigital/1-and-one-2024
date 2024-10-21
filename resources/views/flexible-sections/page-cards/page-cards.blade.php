@@ -25,10 +25,7 @@
 				<div @class([ccn($baseClass, 'pagination-container')])>
 					<nav @class([ccn($baseClass, 'pagination')])>
 						@foreach ($content['pages'] as $key => $postGroup)
-							<button data-blog-listing-pagination-trigger="{{ $key }}" @class([
-								ccn($baseClass, 'pagination-button'),
-								ccn($baseClass, 'pagination-button--active'),
-							])><x-text
+							<button data-blog-listing-pagination-trigger="{{ $key }}" @class([ccn($baseClass, 'pagination-button')])><x-text
 									textStyle="bodySmall" as="span" @class([ccn($baseClass, 'pagination-label')])>{{ $key + 1 }}</x-text></button>
 						@endforeach
 					</nav>

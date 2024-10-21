@@ -86,9 +86,14 @@ domReady(async () => {
 		});
 	}
 
-	const blogListing = document.querySelector(BLOG_LISTING);
+	const blogListing = document.querySelectorAll(BLOG_LISTING);
+
+	console.log('blogListing', blogListing);
+
 	if (blogListing) {
-		initBlogListing(blogListing as HTMLElement);
+		blogListing.forEach((blogListing) => {
+			initBlogListing(blogListing as HTMLElement);
+		});
 	}
 
 	const tabsList = document.querySelectorAll(TABS_LIST);

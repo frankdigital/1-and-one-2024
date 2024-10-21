@@ -13,7 +13,7 @@ class BlogListing extends Composer {
      *
      * @var int
      */
-    const POSTS_PER_PAGE = 12;
+    const POSTS_PER_PAGE = 3;
 	/**
 	 * List of views served by this composer.
 	 *

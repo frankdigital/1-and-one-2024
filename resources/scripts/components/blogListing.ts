@@ -23,7 +23,7 @@ export function initBlogListing(node: HTMLElement | Document | JQuery.PlainObjec
 		);
 
 		// Animate the card blogs within the target
-		const $cardBlogs = $target.find('.jw-card-blog');
+		const $cardBlogs = $target.find('[data-transition-target]');
 		setTimeout(() => {
 			gsap.from($cardBlogs, {
 				autoAlpha: 0,

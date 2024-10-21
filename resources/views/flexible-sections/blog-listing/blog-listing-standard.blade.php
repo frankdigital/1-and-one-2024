@@ -11,7 +11,9 @@
 						@foreach ($content['posts'] as $key => $postGroup)
 							<div data-blog-listing-pagination-target="{{ $key }}" @class([ccn($baseClass, 'grid-group')])>
 								@foreach ($postGroup as $post)
-									<x-card-blog :id="$post->ID" :hideDate="$content['hide_date']" :variant="$columnsCount === 'two_columns' ? 'large' : 'default'" />
+									<div data-transition-target>
+										<x-card-blog :id="$post->ID" :hideDate="$content['hide_date']" :variant="$columnsCount === 'two_columns' ? 'large' : 'default'" />
+									</div>
 								@endforeach
 							</div>
 						@endforeach

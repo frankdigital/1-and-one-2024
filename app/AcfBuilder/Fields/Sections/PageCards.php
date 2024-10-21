@@ -20,12 +20,6 @@ $builder
             'media_upload' => false,
             'delay' => 0,
         ])
-
-        ->addAccordion('ctas', [
-            'label' => 'Call to Actions'
-        ])
-            ->addFields(get_field_partial('Fields.Components.CtaPrimary'))
-        ->addAccordion('ctas_end')->endpoint()
             
         ->addRelationship('pages', [
             'label' => 'Pages',
@@ -39,9 +33,22 @@ $builder
             ],
         ])
 
+        ->addAccordion('ctas', [
+            'label' => 'Call to Actions'
+        ])
+            ->addFields(get_field_partial('Fields.Components.CtaPrimary'))
+        ->addAccordion('ctas_end')->endpoint()
+
         ->addAccordion('settings', [
             'label' => 'Settings'
         ])
+            ->addTrueFalse('toggle_pagination', [
+                'label' => 'Pagination',
+                'instructions' => 'Display pagination for the posts. This will only display if there are more than 12 posts.',
+                'default_value' => 1,
+                'ui' => 1,
+            ])
+
             ->addButtonGroup('columns', [
                 'label' => 'Columns',
                 'instructions' => 'Choose the number of columns for the posts.',

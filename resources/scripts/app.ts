@@ -87,9 +87,6 @@ domReady(async () => {
 	}
 
 	const blogListing = document.querySelectorAll(BLOG_LISTING);
-
-	console.log('blogListing', blogListing);
-
 	if (blogListing) {
 		blogListing.forEach((blogListing) => {
 			initBlogListing(blogListing as HTMLElement);

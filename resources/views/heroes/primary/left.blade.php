@@ -21,7 +21,7 @@
 			@endphp
 
 			<div @class([ccn($baseClass, 'video-container')])>
-				<video autoplay loop muted preload @class([ccn($baseClass, 'video')])>
+				<video autoplay loop muted preload playsinline @class([ccn($baseClass, 'video')])>
 					<source src="{{ $url }}" type="video/mp4">
 				</video>
 			</div>

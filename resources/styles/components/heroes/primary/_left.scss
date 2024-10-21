@@ -21,7 +21,7 @@
 	}
 
 	&__video-container {
-		@apply absolute left-1/2 top-1/2 z-10 w-[300%] -translate-x-1/2 -translate-y-1/2 sm:w-[250%] lg:h-auto xl:w-[150%];
+		@apply absolute left-1/2 top-1/2 z-10 w-[320%] -translate-x-1/2 -translate-y-1/2 sm:w-[250%] lg:h-auto xl:w-[150%];
 
 		video {
 			@apply h-full w-full object-cover object-center;

@@ -1,8 +1,8 @@
 .jw-primary-hero-left {
-	@apply relative py-0;
+	@apply relative overflow-hidden py-0;
 
 	&__watermark {
-		@apply w-90 lg:w-139 absolute bottom-0 right-0 z-30 h-auto opacity-0 md:opacity-15;
+		@apply absolute bottom-0 right-0 z-30 h-auto w-90 opacity-0 md:opacity-15 lg:w-139;
 	}
 
 	&__overlay {
@@ -20,6 +20,14 @@
 		}
 	}
 
+	&__video-container {
+		@apply absolute left-1/2 top-1/2 z-10 w-[300%] -translate-x-1/2 -translate-y-1/2 sm:w-[250%] lg:h-auto xl:w-[150%];
+
+		video {
+			@apply h-full w-full object-cover object-center;
+		}
+	}
+
 	&__image-container {
 		@apply absolute left-0 top-0 z-10 h-full w-full;
 	}
@@ -32,11 +40,11 @@
 	}
 
 	&__content-container {
-		@apply lg:pb-50 gap-y-600 relative z-30 flex flex-col items-start justify-center pb-20 text-left;
+		@apply gap-y-600 relative z-30 flex flex-col items-start justify-center pb-20 text-left lg:pb-50;
 	}
 
 	&__content {
-		@apply pt-82 lg:pt-87 gap-y-400 relative flex flex-col;
+		@apply gap-y-400 relative flex flex-col pt-82 lg:pt-87;
 	}
 
 	&__cta-container.jw-cta-container {

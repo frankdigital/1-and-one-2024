@@ -1,8 +1,8 @@
 .jw-full-width-image-default {
-	@apply relative overflow-hidden;
+	@apply relative overflow-hidden pb-0;
 
 	&:after {
-		@apply w-22.5 absolute right-0 top-0 z-10 hidden h-full bg-theme-surface-primary md:block;
+		@apply absolute right-0 top-0 z-10 hidden h-full w-22.5 bg-theme-surface-primary md:block;
 		content: '';
 	}
 
@@ -11,7 +11,7 @@
 	}
 
 	&__container {
-		@apply lg:min-h-156 vertical-lg pt-70 lg:vertical-lg md:pb-0 md:pl-0 md:pt-60;
+		@apply vertical-lg pt-70 lg:vertical-lg md:flex md:items-end md:pb-0 md:pl-0 md:pt-60 lg:min-h-156;
 	}
 
 	&__background {

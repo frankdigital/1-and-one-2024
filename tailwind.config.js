@@ -86,6 +86,7 @@ const config = {
 				70: pxToRem(280),
 				71: pxToRem(284),
 				80: pxToRem(320),
+				86: pxToRem(344),
 				90: pxToRem(360),
 				95: pxToRem(380),
 				100: pxToRem(400),

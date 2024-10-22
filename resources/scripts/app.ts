@@ -27,6 +27,7 @@ import { initTabs } from './components/tabs';
 import { initAccordions } from './components/accordion';
 import { initAnimateHeight } from './core/animateHeight';
 import { initCtaBlockContained } from './components/ctaBlock/initCtaBlockContained';
+import { initContentTiles } from './components/content-tiles';
 
 /**
  * Application entrypoint
@@ -99,6 +100,13 @@ domReady(async () => {
 	if (accordion) {
 		accordion.forEach((element) => {
 			initAccordions(element as HTMLElement);
+		});
+	}
+
+	const contentTile = document.querySelectorAll('.jw-content-tiles__tile');
+	if (contentTile) {
+		contentTile.forEach((element) => {
+			initContentTiles(element as HTMLElement);
 		});
 	}
 

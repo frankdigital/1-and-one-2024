@@ -2,9 +2,12 @@
 
 namespace App\View\Components;
 
+use App\Traits\UseHelpers;
 use Roots\Acorn\View\Component;
 
 class Breadcrumbs extends Component {
+	use UseHelpers;
+	
 	public $links = [];
 
 	/**
@@ -40,13 +43,14 @@ class Breadcrumbs extends Component {
 	 * @return void
 	 */
 	private function setPostBreadcrumbs($post) {
-		$categories = get_the_category($post->ID);
-		if (!empty($categories)) {
-		
-			$category = $categories[0];
+		$options = $this->getAcfFieldFromOptions('options_general_page_parent');
+		$parent = $this->pathOr(null, ['post_page_parent'], $options);
+
+		if (isset($parent) && $parent) {
+			// Add the current category name
 			$this->links[] = [
-				'url' => get_category_link($category->term_id),
-				'label' => $category->name
+				'url' => get_the_permalink($parent),
+				'label' => get_the_title($parent)
 			];
 		}
 

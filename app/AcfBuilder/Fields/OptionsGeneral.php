@@ -90,6 +90,15 @@ $fields
                 'placeholder' => 'email@name.com.au',
             ])
 		->endGroup()
+
+        ->addGroup('page_parent', ['label' => 'Page Parents'])
+            ->addPostObject('post_page_parent', [
+                'label' => 'Post Page Parent',
+                'instructions' => 'Select the page that will be used as the parent for all posts.',
+                'required' => true,
+                'post_type' => ['page'],
+            ])
+        ->endGroup()
 	->endGroup();
 
 return $fields;

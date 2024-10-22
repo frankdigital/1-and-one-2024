@@ -34,4 +34,10 @@
 	.jw-contained-icon {
 		@apply bg-theme-surface-tertiary;
 	}
+
+	&.jw-section--darker {
+		.jw-contained-icon {
+			@apply bg-theme-surface-primary;
+		}
+	}
 }

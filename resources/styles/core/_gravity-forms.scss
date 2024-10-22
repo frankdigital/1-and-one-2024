@@ -184,6 +184,10 @@
 	}
 }
 
+.gfield--type-consent.gfield_contains_required .gform-field-label:after {
+	content: '(Required)';
+}
+
 .gform-field-label {
 	@apply typography-caption mb-2 font-medium;
 	&--type-inline {

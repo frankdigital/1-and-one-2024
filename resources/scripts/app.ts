@@ -9,6 +9,7 @@ import {
 	ACCORDION_CONTAINER,
 	ANIMATE_HEIGHT,
 	BLOG_LISTING,
+	CONTENT_TILE_TRIGGER,
 	CTA_BLOCK_CONTAINED,
 	INHERIT_COLOR_SELECTOR,
 	LOGOS_CAROUSEL,
@@ -103,7 +104,7 @@ domReady(async () => {
 		});
 	}
 
-	const contentTile = document.querySelectorAll('.jw-content-tiles__tile');
+	const contentTile = document.querySelectorAll(CONTENT_TILE_TRIGGER);
 	if (contentTile) {
 		contentTile.forEach((element) => {
 			initContentTiles(element as HTMLElement);

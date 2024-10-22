@@ -1,13 +1,16 @@
 .jw-content-tiles {
 	&__section-wrap {
-		@apply mb-spacing-700 block gap-x-6 md:grid;
 	}
 
-	&__icon-container {
-		@apply mb-spacing-250;
+	&__tile-icon-container {
+		@apply flex;
 	}
 
-	&__text-content {
+	&__tile-content-container {
+		@apply z-40 flex h-full flex-col justify-between gap-spacing-150;
+	}
+
+	&__tile-content {
 		@apply flex flex-col gap-spacing-150;
 	}
 
@@ -16,30 +19,74 @@
 	}
 
 	&__tile {
-		@apply relative z-5 flex min-h-64 flex-col justify-between bg-theme-border-tertiary p-spacing-300 md:h-130 md:px-spacing-400 md:py-spacing-500;
+		@apply relative z-5 flex min-h-64 flex-col justify-between overflow-hidden bg-transparent p-spacing-300 md:h-130 md:px-spacing-400 md:py-spacing-500;
+
+		.jw-contained-icon {
+			@apply transition-colors duration-500;
+		}
+
+		.jw-contained-icon__icon {
+			@apply transition-colors duration-500;
+		}
 	}
 
-	&__description {
-		@apply line-clamp-2 md:line-clamp-3;
+	&__tile-description {
+		&--clamped {
+			@apply line-clamp-2 md:line-clamp-3;
+		}
 	}
 
-	&__description--active {
-		@apply line-clamp-none;
+	&__tile-image-container {
+		@apply absolute inset-0 z-10 translate-y-5 scale-105 transition-transform duration-500;
 	}
 
-	&__image-container {
-		@apply hidden;
+	&__tile-image-gradient {
+		@apply absolute inset-0 z-20 bg-orange-950/90;
 	}
 
-	&__image-container--active {
-		@apply absolute left-0 top-0 z-0 h-full w-full;
-	}
-
-	&__read-more {
+	&__tile-cta {
 		@apply md:hidden;
 	}
 
-	// &__icon-container {
-	// 	@apply max-w-6;
-	// }
+	&__background-image {
+		@apply absolute inset-0 z-0 bg-theme-border-tertiary;
+	}
+
+	&__background {
+		@apply absolute inset-0 z-20 bg-theme-surface-tertiary opacity-100 transition-opacity duration-500;
+	}
+
+	&__tile-description,
+	&__tile-heading {
+		@apply transition-colors duration-500;
+	}
+
+	&__tile {
+		@apply relative;
+
+		@screen lg {
+			&:hover {
+				.jw-contained-icon {
+					@apply bg-theme-surface-accent;
+				}
+
+				.jw-contained-icon__icon {
+					@apply text-white;
+				}
+
+				.jw-content-tiles__tile-image-container {
+					@apply translate-y-0 scale-100;
+				}
+
+				.jw-content-tiles__background {
+					@apply opacity-0;
+				}
+
+				.jw-content-tiles__tile-description,
+				.jw-content-tiles__tile-heading {
+					@apply text-white;
+				}
+			}
+		}
+	}
 }

@@ -27,7 +27,6 @@ class ContentTiles extends Composer {
 
 		return [
 			'content' => $section['content'],
-			'columnsCount' => $this->pathOr('three_columns', ['content', 'columns'], $section),
 		];
 	}
 }

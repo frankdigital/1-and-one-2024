@@ -20,6 +20,7 @@ export const LOGOS_CAROUSEL = '[data-logos-carousel]';
 export const TABS_LIST = '[data-tabs-list]';
 export const TESTIMONIALS_SINGLE = '[data-testimonials-single]';
 export const TESTIMONIALS_DUAL = '[data-testimonials-dual]';
+export const CONTENT_TILE_TRIGGER = '[data-content-tile-trigger]';
 
 export const CAROUSEL_PREV = '[data-carousel-prev]';
 export const CAROUSEL_NEXT = '[data-carousel-next]';

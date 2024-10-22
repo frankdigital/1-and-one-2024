@@ -11,7 +11,7 @@
 		@apply no-scrollbar relative flex gap-x-spacing-400 overflow-auto;
 
 		&:after {
-			@apply absolute inset-x-0 bottom-0 h-1 origin-left bg-theme-border-accent transition-[scale,translate];
+			@apply absolute inset-x-0 bottom-0 h-0.5 origin-left bg-theme-border-accent transition-[scale,translate];
 			scale: var(--_width, 0.125) 1;
 			translate: var(--_left, 0) 0;
 			content: '';

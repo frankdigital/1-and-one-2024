@@ -3,7 +3,7 @@
 	@apply fixed top-0 z-50 w-full bg-white;
 
 	&.dark {
-		@apply bg-black/75 backdrop-blur-md;
+		@apply bg-black backdrop-blur-md;
 
 		.jw-header__navigation {
 			.jw-responsive-menu__item-text {

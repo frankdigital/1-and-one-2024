@@ -14,16 +14,16 @@ export function initBlogListing(node: HTMLElement | Document | JQuery.PlainObjec
 	const showGridGroup = (index: number) => {
 		// Hide all grid groups and remove active class from buttons
 		$paginationTargets.addClass('is-hidden');
-		$paginationTriggers.removeClass('jw-blog-listing-standard__pagination-button--active');
+		$paginationTriggers.removeClass('is-active');
+
+		console.log('paginationTriggers', $paginationTriggers);
 
 		// Show the selected grid group and add active class to button
 		const $target = $(`[data-blog-listing-pagination-target="${index}"]`, node).removeClass('is-hidden');
-		$(`[data-blog-listing-pagination-trigger="${index}"]`, node).addClass(
-			'jw-blog-listing-standard__pagination-button--active',
-		);
+		$(`[data-blog-listing-pagination-trigger="${index}"]`, node).addClass('is-active');
 
 		// Animate the card blogs within the target
-		const $cardBlogs = $target.find('.jw-card-blog');
+		const $cardBlogs = $target.find('[data-transition-target]');
 		setTimeout(() => {
 			gsap.from($cardBlogs, {
 				autoAlpha: 0,

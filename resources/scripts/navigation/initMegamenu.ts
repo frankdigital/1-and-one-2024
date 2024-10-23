@@ -1,4 +1,6 @@
+import { SmoothScroller } from './../core/SmoothScroller';
 import { gsap } from 'gsap';
+
 import {
 	HEADER,
 	HEADER_MEGAMENU,
@@ -18,14 +20,11 @@ const $megamenu = $(HEADER_MEGAMENU, $header);
 const $triggers = $(MENU_TRIGGER, $header);
 
 const $targetMegamenu = $(`[data-callout-index]`, $megamenu);
-
 const $mobileMenuTrigger = $(HEADER_MOBILEMENU_TRIGGER, $header);
 const $mobileMenu = $(HEADER_MOBILEMENU, $header);
-
 const $mobileMenuBack = $(MOBILE_MENU_BACK, $header);
 const $mobileMenuLevelTrigger = $(MOBILE_MENU_TRIGGER, $header);
 const $mobileMenuLevelTarget = $(MOBILE_MENU_TARGET, $header);
-
 const $menuOpenIcon = $('[class$="__menu-open"]');
 const $menuCloseIcon = $('[class$="__menu-close"]');
 
@@ -33,11 +32,27 @@ const activeClass = 'is-active';
 let isMenuOpen = false;
 let activeMegamenuIndex: number | null = null;
 
-function toggleClass($element: JQuery, condition: boolean) {
+const toggleClass = ($element: JQuery<HTMLElement>, condition: boolean) => {
 	$element.toggleClass(activeClass, condition);
-}
+};
 
-function toggleMegaMenu(index: number | null) {
+const updateMenuIcon = () => {
+	$mobileMenuTrigger.toggleClass('is-open', isMenuOpen).toggleClass('is-closed', !isMenuOpen);
+};
+
+const toggleMobileMenu = (smoothScroller: SmoothScroller) => {
+	toggleClass($mobileMenu, isMenuOpen);
+	toggleClass($overlay, isMenuOpen);
+	$header.toggleClass(activeClass, isMenuOpen).toggleClass('dark', !isMenuOpen);
+	$('body').toggleClass('no-scroll', isMenuOpen);
+
+	if (isMenuOpen) smoothScroller.pause();
+	else smoothScroller.resume();
+
+	updateMenuIcon();
+};
+
+const toggleMegaMenu = (index: number | null) => {
 	if (index !== null) {
 		const $targetMegamenuCallout = $(`[data-callout-index="${index}"]`, $megamenu);
 		$targetMegamenu.removeClass(activeClass);
@@ -45,134 +60,85 @@ function toggleMegaMenu(index: number | null) {
 
 		const calloutMenuElement = $targetMegamenuCallout.get(0);
 		if (calloutMenuElement) {
-			const listElements = calloutMenuElement.querySelectorAll('.jw-menu-expanded-link-list');
-			listElements.forEach((el, index) => {
-				gsap.from(el.querySelectorAll('li'), {
-					y: -20,
-					opacity: 0,
-					stagger: 0.1,
-					delay: index * 0.15,
-				});
+			const listElements = calloutMenuElement.querySelectorAll<HTMLUListElement>('.jw-megamenu-callout__menu li');
+			listElements.forEach((el, i) => {
+				gsap.from(el, { y: -20, opacity: 0, stagger: 0.1, delay: i * 0.15 });
 			});
 		}
 	} else {
-		$overlay.removeClass(activeClass);
-
-		//Commneted out the setTimeout function due to the flickering issue with Animateheight
-		//setTimeout(() => {
 		$targetMegamenu.removeClass(activeClass);
-		//}, 300);
+		toggleClass($overlay, false);
 	}
 
-	$('body').toggleClass('no-scroll', isMenuOpen);
-
-	if (!isMenuOpen) {
-		$header.addClass('dark');
-	} else {
-		$header.removeClass('dark');
-	}
-
+	$header.toggleClass('dark', !isMenuOpen);
 	toggleClass($overlay, isMenuOpen);
 	toggleClass($megamenu, isMenuOpen);
 	toggleClass($header, isMenuOpen);
-}
-
-function updateMenuIcon() {
-	if (isMenuOpen) {
-		$mobileMenuTrigger.addClass('is-open').removeClass('is-closed');
-	} else {
-		$mobileMenuTrigger.addClass('is-closed').removeClass('is-open');
-	}
-}
-
-function toggleMobileMenu() {
-	toggleClass($mobileMenu, isMenuOpen);
-	toggleClass($overlay, isMenuOpen);
-	$header.toggleClass(activeClass, isMenuOpen);
-
-	if (!isMenuOpen) {
-		$header.addClass('dark');
-	} else {
-		$header.removeClass('dark');
-	}
-
 	$('body').toggleClass('no-scroll', isMenuOpen);
-	updateMenuIcon();
-}
+};
 
-function closeMenu() {
+const closeMenu = (smoothScroller: SmoothScroller) => {
 	isMenuOpen = false;
 	activeMegamenuIndex = null;
 	toggleMegaMenu(null);
 	$triggers.removeClass(activeClass);
+	smoothScroller.resume();
 	updateMenuIcon();
-}
+};
 
-// Event handlers
-$mobileMenuTrigger.on('click', function () {
-	isMenuOpen = !isMenuOpen;
-	const headerHeight = $header.outerHeight();
-	$mobileMenu.css('maxHeight', `calc(var(--app-height) - ${headerHeight}px)`);
-	toggleMobileMenu();
-});
+export function initMegamenu(smoothScroller: SmoothScroller) {
+	$mobileMenuTrigger.on('click', () => {
+		isMenuOpen = !isMenuOpen;
+		$mobileMenu.css('maxHeight', `calc(var(--app-height) - ${$header.outerHeight()}px)`);
+		toggleMobileMenu(smoothScroller);
+	});
 
-$triggers.on('click', function () {
-	const $this = $(this);
-	const index = $triggers.index($this);
+	$triggers.on('click', function () {
+		const $this = $(this);
+		const index = $triggers.index($this);
 
-	if (!$this.is('button')) {
-		return;
-	}
+		if ($this.is('button')) {
+			$triggers.not($this).removeClass(activeClass);
 
-	$triggers.not($this).removeClass(activeClass);
+			if (activeMegamenuIndex === index && isMenuOpen) {
+				closeMenu(smoothScroller);
+			} else {
+				isMenuOpen = true;
+				activeMegamenuIndex = index;
+				$this.addClass(activeClass);
+				toggleMegaMenu(index);
+				smoothScroller.pause();
+			}
 
-	if (activeMegamenuIndex === index && isMenuOpen) {
-		closeMenu();
-	} else {
-		isMenuOpen = true;
-		activeMegamenuIndex = index;
-		$this.addClass(activeClass);
-		toggleMegaMenu(index);
-	}
+			updateMenuIcon();
+		}
+	});
 
-	updateMenuIcon();
-});
+	$mobileMenuLevelTrigger.on('click', function () {
+		const $this = $(this);
+		const index = $mobileMenuLevelTrigger.index($this);
+		$mobileMenuLevelTarget.eq(index).toggleClass(activeClass);
+	});
 
-$mobileMenuLevelTrigger.on('click', function () {
-	const $this = $(this);
-	const index = $mobileMenuLevelTrigger.index($this);
-	const $target = $mobileMenuLevelTarget.eq(index);
-	$target.toggleClass(activeClass);
-});
+	$mobileMenuBack.on('click', () => $mobileMenuLevelTarget.removeClass(activeClass));
+	$overlay.on('click', () => closeMenu(smoothScroller));
 
-$mobileMenuBack.on('click', function () {
-	$mobileMenuLevelTarget.removeClass(activeClass);
-});
+	$(document).on('keydown', (e: JQuery.KeyDownEvent) => {
+		if (e.key === 'Escape' && isMenuOpen) closeMenu(smoothScroller);
+	});
 
-$overlay.on('click', closeMenu);
+	// Handle window size changes
+	const windowSizeHandler = $.fn.useWindowSize();
+	$(window).on('windowSizeChange', () => {
+		const isLg = windowSizeHandler.isAtLeast('lg');
+		if (isLg && isMenuOpen) {
+			isMenuOpen = false;
+			toggleMobileMenu(smoothScroller);
+			updateMenuIcon();
+		} else if (!isLg && isMenuOpen) {
+			closeMenu(smoothScroller);
+		}
+	});
 
-// Add ESCAPE key listener
-$(document).on('keydown', function (e) {
-	if (e.key === 'Escape' && isMenuOpen) {
-		closeMenu();
-	}
-});
-
-// Debounced window resize handling
-const windowSizeHandler = $.fn.useWindowSize();
-$(window).on('windowSizeChange', (e: JQuery.Event, windowSize: WindowSize) => {
-	const isLg = windowSizeHandler.isAtLeast('lg');
-
-	if (!isLg && isMenuOpen) {
-		closeMenu();
-	} else if (isLg && isMenuOpen) {
-		isMenuOpen = false;
-		toggleMobileMenu();
-		updateMenuIcon();
-	}
-});
-
-(function () {
-	// Initialize the megamenu
 	$menuOpenIcon.addClass(activeClass);
-})();
+}

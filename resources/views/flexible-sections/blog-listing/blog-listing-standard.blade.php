@@ -11,7 +11,9 @@
 						@foreach ($content['posts'] as $key => $postGroup)
 							<div data-blog-listing-pagination-target="{{ $key }}" @class([ccn($baseClass, 'grid-group')])>
 								@foreach ($postGroup as $post)
-									<x-card-blog :id="$post->ID" :hideDate="$content['hide_date']" :variant="$columnsCount === 'two_columns' ? 'large' : 'default'" />
+									<div data-transition-target>
+										<x-card-blog :id="$post->ID" :hideDate="$content['hide_date']" :variant="$columnsCount === 'two_columns' ? 'large' : 'default'" />
+									</div>
 								@endforeach
 							</div>
 						@endforeach
@@ -23,10 +25,7 @@
 				<div @class([ccn($baseClass, 'pagination-container')])>
 					<nav @class([ccn($baseClass, 'pagination')])>
 						@foreach ($content['posts'] as $key => $postGroup)
-							<button data-blog-listing-pagination-trigger="{{ $key }}" @class([
-								ccn($baseClass, 'pagination-button'),
-								ccn($baseClass, 'pagination-button--active'),
-							])><x-text
+							<button data-blog-listing-pagination-trigger="{{ $key }}" @class([ccn($baseClass, 'pagination-button')])><x-text
 									textStyle="bodySmall" as="span" @class([ccn($baseClass, 'pagination-label')])>{{ $key + 1 }}</x-text></button>
 						@endforeach
 					</nav>

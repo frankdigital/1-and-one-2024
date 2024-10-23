@@ -3,7 +3,7 @@
 	@apply fixed top-0 z-50 w-full bg-white;
 
 	&.dark {
-		@apply bg-black/75 backdrop-blur-md;
+		@apply bg-black backdrop-blur-md;
 
 		.jw-header__navigation {
 			.jw-responsive-menu__item-text {
@@ -31,7 +31,8 @@
 	}
 
 	&.is-active {
-		@apply border-b border-theme-border-tertiary;
+		// @apply border-b border-theme-border-tertiary;
+		@apply border-none;
 
 		.jw-header__cta-container {
 			@apply opacity-0 lg:opacity-100;
@@ -58,7 +59,7 @@
 	}
 
 	&__logo {
-		@apply w-30 lg:w-39 text-black-900 h-auto;
+		@apply h-auto w-30 text-black-900 lg:w-39;
 	}
 
 	&__navigation--primary {
@@ -116,7 +117,8 @@
 
 	&__mobile-menu {
 		@apply pointer-events-none absolute left-0 h-screen w-full translate-y-5 overflow-hidden overflow-y-auto bg-white opacity-0 transition-all duration-200;
-		top: calc(100% + 1px);
+		// top: calc(100% + 1px);
+		top: calc(100%);
 
 		&.is-active {
 			@apply pointer-events-auto translate-y-0 opacity-100;

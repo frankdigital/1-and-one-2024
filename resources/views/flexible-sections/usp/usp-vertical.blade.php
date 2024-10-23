@@ -35,9 +35,8 @@
 			<div @class([ccn($baseClass, 'usps')])>
 				@foreach ($content['usps'] as $usp)
 					<x-usp :usp="$usp" />
-					@if (!$loop->last)
-						<hr @class([ccn($baseClass, 'divider')])>
-					@endif
+
+					<hr @class([ccn($baseClass, 'divider')])>
 				@endforeach
 			</div>
 		@endif

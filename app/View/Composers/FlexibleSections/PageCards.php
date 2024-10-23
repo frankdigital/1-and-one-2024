@@ -9,6 +9,13 @@ class PageCards extends Composer {
     use UseHelpers;
 
 	/**
+     * Number of posts per page.
+     *
+     * @var int
+     */
+    const POSTS_PER_PAGE = 12;
+
+	/**
 	 * List of views served by this composer.
 	 *
 	 * @var array
@@ -24,6 +31,11 @@ class PageCards extends Composer {
 	 */
 	public function with() {
 		$section = $this->data->get('section');
+		$posts = $section['content']['pages'] ?? [];
+
+		if (!empty($posts)) {
+			$section['content']['pages'] = array_chunk($posts, self::POSTS_PER_PAGE);
+		}
 
 		return [
 			'content' => $section['content'],

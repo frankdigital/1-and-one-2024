@@ -34,7 +34,8 @@ class ContactForm extends Composer {
 			'address' => $this->getLocationAddress($contact['location']),
 			'telephone' => $this->pathOr(null, ['phone'], $contact),
 			'homeCta' => $this->buildButtonFromLink(home_url(), 'Take Me Home'),
-			'reloadCta' => $this->buildButtonFromLink(get_permalink( get_queried_object_id() ), 'Submit Another Message')
+			'reloadCta' => $this->buildButtonFromLink(get_permalink( get_queried_object_id() ), 'Submit Another Message'),
+			'darkerBg' => $this->pathOr('lighter', ['content', 'bg_color'], $section) === 'darker',
 		];
 	}
 

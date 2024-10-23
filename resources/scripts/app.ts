@@ -1,7 +1,7 @@
 import domReady from '@roots/sage/client/dom-ready';
 import Choices from 'choices.js';
 
-import { initLenis } from './core/lenis';
+import { SmoothScroller } from './core/SmoothScroller';
 import { initAnimation } from './core/animation';
 
 import { initSlider } from './components/carousel';
@@ -21,7 +21,6 @@ import {
 import { initModal } from './ui/base-modal';
 import { registerAppHeight } from './core/appHeight';
 import AutoScroll from 'embla-carousel-auto-scroll';
-import './navigation/initMegamenu';
 import { registerHeaderHeight } from './core/headerHeight';
 import { initBlogListing } from './components/blogListing';
 import { initTabs } from './components/tabs';
@@ -29,16 +28,21 @@ import { initAccordions } from './components/accordion';
 import { initAnimateHeight } from './core/animateHeight';
 import { initCtaBlockContained } from './components/ctaBlock/initCtaBlockContained';
 import { initContentTiles } from './components/content-tiles';
+import { initMegamenu } from './navigation/initMegamenu';
 
 /**
  * Application entrypoint
  */
 domReady(async () => {
+	const scroller = new SmoothScroller();
+	scroller.start();
+
 	registerAppHeight();
 	registerHeaderHeight();
-	initLenis();
+
 	initAnimation();
-	initModal();
+	initModal(scroller);
+	initMegamenu(scroller);
 
 	const animateHeight = document.querySelectorAll(ANIMATE_HEIGHT);
 	if (animateHeight) {
@@ -85,9 +89,11 @@ domReady(async () => {
 		});
 	}
 
-	const blogListing = document.querySelector(BLOG_LISTING);
+	const blogListing = document.querySelectorAll(BLOG_LISTING);
 	if (blogListing) {
-		initBlogListing(blogListing as HTMLElement);
+		blogListing.forEach((blogListing) => {
+			initBlogListing(blogListing as HTMLElement);
+		});
 	}
 
 	const tabsList = document.querySelectorAll(TABS_LIST);

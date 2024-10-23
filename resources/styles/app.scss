@@ -13,9 +13,6 @@
 @import './core/forms';
 @import './core/gravity-forms';
 
-// @import './components/atoms//breadcrumbs/breadcrumb';
-// @import './components/atoms//breadcrumbs/breadcrumbs';
-
 @import './components/atoms/cta/cta';
 @import './components/atoms/cta/cta-button-contained';
 @import './components/atoms/cta/cta-text-link';
@@ -138,6 +135,10 @@ body {
 
 ::-webkit-scrollbar-thumb {
 	@apply bg-theme-surface-accent;
+}
+
+.no-scroll {
+	overflow: hidden;
 }
 
 @layer utilities {

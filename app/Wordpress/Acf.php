@@ -6,6 +6,38 @@ class Acf {
     public function init() {
         add_action('acf/init', [$this, 'register_google_map_api_key'], 10, 2);
         add_action('acf/save_post', [$this, 'update_hero_heading'], 10, 2);
+        add_action('acf/save_post', [$this, 'update_featured_image_from_acf_hero_image'], 20 );
+    }
+
+    /**
+     * Updates the post's featured image with the ACF 'hero_image' field value.
+     *
+     * This function hooks into the save process of a post and updates the post's
+     * featured image (thumbnail) with the 'hero_image' field value from Advanced Custom Fields (ACF).
+     *
+     * @param int $post_id The ID of the post being saved.
+     *
+     * @return void
+     */
+    function update_featured_image_from_acf_hero_image( $post_id ) {
+        if ( wp_is_post_autosave( $post_id ) || wp_is_post_revision( $post_id ) ) {
+            return;
+        }
+
+        if ( get_post_type( $post_id ) !== 'post' ) {
+            return;
+        }
+
+        if ( has_post_thumbnail( $post_id ) ) {
+            return;
+        }
+    
+        $hero_image_id = get_field('hero_image', $post_id);
+    
+        if ( $hero_image_id ) {
+            // Update the post's featured image (thumbnail) with the 'hero_image'
+            set_post_thumbnail( $post_id, $hero_image_id['ID'] );
+        }
     }
 
     /**

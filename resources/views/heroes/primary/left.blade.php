@@ -6,10 +6,25 @@
 <div @class([ccn($baseClass), 'dark'])>
 	<x-container @class([ccn($baseClass, 'container')])>
 
-		@if (isset($content['image']) && is_image_valid($content['image']))
+		@if (isset($content['content_type']) &&
+				$content['content_type'] === 'image' &&
+				isset($content['image']) &&
+				is_image_valid($content['image']))
 			<x-parallax @class([ccn($baseClass, 'image-container')])>
 				<x-image :image="$content['image']" :fill="true" :size="[2400, 0]" @class([ccn($baseClass, 'image')]) />
 			</x-parallax>
+		@endif
+
+		@if (isset($content['content_type']) && $content['content_type'] === 'video' && isset($content['video']))
+			@php
+				$url = $content['video']['url'];
+			@endphp
+
+			<div @class([ccn($baseClass, 'video-container')])>
+				<video autoplay loop muted preload playsinline @class([ccn($baseClass, 'video')])>
+					<source src="{{ $url }}" type="video/mp4">
+				</video>
+			</div>
 		@endif
 
 		<div @class([ccn($baseClass, 'content-container')])>

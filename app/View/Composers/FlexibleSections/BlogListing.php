@@ -30,12 +30,23 @@ class BlogListing extends Composer {
 	 */
 	public function with() {
 		$section = $this->data->get('section');
-        $posts = $section['content']['posts'];
-
-        // Chunk posts into groups of POSTS_PER_PAGE
-        $chunkedPosts = array_chunk($posts, self::POSTS_PER_PAGE);
-
-        $section['content']['posts'] = $chunkedPosts;
+		$contentType = $this->pathOr(true, ['content', 'content_type'], $section);
+		$posts = [];
+	
+		if ($contentType === 'curated') {
+			$posts = $section['content']['posts'] ?? [];
+		} elseif ($contentType === 'automatic') {
+			$args = [
+				'numberposts' => -1,
+				'post_type'   => 'post',
+				'post_status' => 'publish',
+			];
+			$posts = get_posts($args);
+		}
+	
+		if (!empty($posts)) {
+			$section['content']['posts'] = array_chunk($posts, self::POSTS_PER_PAGE);
+		}
 
 		return [
 			'content' => $section['content'],

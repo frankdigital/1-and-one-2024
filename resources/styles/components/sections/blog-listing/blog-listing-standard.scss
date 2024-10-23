@@ -22,28 +22,28 @@
 	}
 
 	&__pagination-button {
-		@apply rounded-button box-content flex h-6 w-6 items-center justify-center bg-theme-surface-tertiary p-spacing-150;
+		@apply rounded-button box-content flex h-6 w-6 items-center justify-center bg-theme-surface-tertiary p-spacing-150 transition-colors duration-150;
 
 		&:hover,
 		&:focus {
-			@apply bg-theme-cta-primary-surface-hover;
+			@apply bg-theme-cta-primary-surface-hover transition-colors duration-150;
 
 			.jw-blog-listing-standard__pagination-label {
-				@apply text-theme-cta-primary-text;
+				@apply text-white;
+			}
+		}
+
+		&.is-active {
+			@apply pointer-events-none bg-theme-surface-accent;
+
+			.jw-blog-listing-standard__pagination-label {
+				@apply text-white;
 			}
 		}
 	}
 
-	&__pagination-button.active {
-		@apply bg-theme-cta-primary-surface-hover;
-
-		.jw-blog-listing-standard__pagination-label {
-			@apply text-white;
-		}
-	}
-
 	&__pagination-label {
-		@apply pointer-events-none leading-3 text-theme-text-primary;
+		@apply pointer-events-none font-medium leading-3 text-black;
 	}
 
 	&__pagination-next-container {
@@ -61,6 +61,29 @@
 		&:not(.disabled):hover,
 		&:not(.disabled):focus {
 			@apply after:w-0;
+		}
+	}
+
+	&.jw-section--darker {
+		.jw-blog-listing-standard__pagination-button {
+			@apply bg-theme-surface-primary;
+
+			&:hover,
+			&:focus {
+				@apply bg-theme-cta-primary-surface-hover transition-colors duration-150;
+
+				.jw-blog-listing-standard__pagination-label {
+					@apply text-white;
+				}
+			}
+
+			&.is-active {
+				@apply pointer-events-none bg-theme-surface-accent;
+
+				.jw-blog-listing-standard__pagination-label {
+					@apply text-white;
+				}
+			}
 		}
 	}
 }

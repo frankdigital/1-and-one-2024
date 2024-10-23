@@ -85,7 +85,7 @@ function get_gravity_forms_options() {
 |
 */
 
-collect(['setup', 'filters', 'Acf/Pages', 'AcfBuilder/Config', 'Wordpress/Acf', 'Wordpress/Fonts', 'Wordpress/IconPicker', 'Wordpress/PostTypes'])
+collect(['setup', 'filters', 'Acf/Pages', 'AcfBuilder/Config', 'Wordpress/Acf', 'Wordpress/Fonts', 'Wordpress/GravityForms', 'Wordpress/IconPicker', 'Wordpress/PostTypes'])
     ->each(function ($file) {
         if (! locate_template($file = "app/{$file}.php", true, true)) {
             wp_die(

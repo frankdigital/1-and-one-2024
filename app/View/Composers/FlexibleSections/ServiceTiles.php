@@ -27,6 +27,7 @@ class ServiceTiles extends Composer {
 
 		return [
 			'content' => $section['content'],
+			'darkerBg' => $this->pathOr('lighter', ['content', 'bg_color'], $section) === 'darker',
 		];
 	}
 }

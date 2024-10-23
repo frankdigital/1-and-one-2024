@@ -17,6 +17,7 @@ interface WindowSize {
 interface UseWindowSizeHandler {
 	getWindowSize: () => WindowSize;
 	isAtLeast: (breakpoint: keyof TailwindBreakpoints) => boolean;
+	isAtMost: (breakpoint: keyof TailwindBreakpoints) => boolean;
 	destroy: () => void;
 }
 
@@ -76,6 +77,9 @@ interface JQuery {
 			},
 			isAtLeast: (breakpoint: keyof TailwindBreakpoints): boolean => {
 				return windowSize.width >= tailwindBreakpoints[breakpoint];
+			},
+			isAtMost: (breakpoint: keyof TailwindBreakpoints): boolean => {
+				return windowSize.width <= tailwindBreakpoints[breakpoint];
 			},
 			destroy: (): void => {
 				$window.off('resize', handleResize);

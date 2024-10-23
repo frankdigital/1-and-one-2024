@@ -29,11 +29,11 @@
 										@endif
 
 										@if (isset($tile['description']) && !empty($tile['description']))
-											<x-wysiwyg @class([
+											<x-wysiwyg data-content-tile-description @class([
 												ccn($baseClass, 'tile-description'),
 												ccn($baseClass, 'tile-description--clamped'),
 											]) :wysiwyg="$tile['description']" />
-											<x-wysiwyg @class([
+											<x-wysiwyg data-content-tile-description @class([
 												ccn($baseClass, 'tile-description'),
 												ccn($baseClass, 'tile-description--unclamped'),
 											]) :wysiwyg="$tile['description']" />

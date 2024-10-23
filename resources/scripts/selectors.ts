@@ -23,6 +23,7 @@ export const TESTIMONIALS_DUAL = '[data-testimonials-dual]';
 
 export const CONTENT_TILE = '[data-content-tile]';
 export const CONTENT_TILE_TRIGGER = '[data-content-tile-trigger]';
+export const CONTENT_TILE_DESCRIPTION = '[data-content-tile-description]';
 
 export const CAROUSEL_PREV = '[data-carousel-prev]';
 export const CAROUSEL_NEXT = '[data-carousel-next]';

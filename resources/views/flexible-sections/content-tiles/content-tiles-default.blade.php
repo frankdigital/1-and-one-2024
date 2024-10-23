@@ -9,7 +9,7 @@
 				<div @class([ccn($baseClass, 'tiles')])>
 					<div @class([ccn($baseClass, 'tiles-container')])>
 						@foreach ($content['tiles'] as $tile)
-							<div @class([ccn($baseClass, 'tile')])>
+							<div data-content-tile @class([ccn($baseClass, 'tile')])>
 
 								<div @class([ccn($baseClass, 'tile-content-container')])>
 									@if (isset($tile['icon']) && $tile['icon'])
@@ -40,21 +40,13 @@
 										@endif
 
 										<div @class([ccn($baseClass, 'tile-cta')])>
-											@php
-												$tileCta = [
-												    'cta' => ['label' => 'Read More'],
-												    'priority' => 'text-link',
-												    'size' => 'small',
-												    'icon' => 'ArrowDown',
-												];
-											@endphp
-
 											<button data-content-tile-trigger>
-												<x-cta-text-link size="small" label="Read More" icon="ArrowDown" />
+												<x-cta-text-link class="inactive" size="small" label="Read More" icon="ArrowDown" />
+												<x-cta-text-link class="active" size="small" label="Show Less" icon="ArrowUp" />
 											</button>
 										</div>
 
-										<div @class([ccn($baseClass, 'tile-cta--active')])>
+										{{-- <div @class([ccn($baseClass, 'tile-cta--active')])>
 											@php
 												$tileCta = [
 												    'cta' => ['label' => 'Show Less'],
@@ -67,7 +59,7 @@
 											<button data-content-tile-trigger>
 												<x-cta-text-link size="small" label="Show Less" icon="ArrowUp" />
 											</button>
-										</div>
+										</div> --}}
 
 									</div>
 								</div>

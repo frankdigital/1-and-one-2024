@@ -1,0 +1,171 @@
+.jw-content-tiles {
+	&__tile-icon-container {
+		@apply flex;
+	}
+
+	&__tile-content-container {
+		@apply z-40 flex h-full flex-col justify-between gap-spacing-150;
+	}
+
+	&__tile-content {
+		@apply flex flex-col gap-spacing-150;
+	}
+
+	&__tiles-container {
+		@apply grid gap-spacing-250 md:grid-cols-3;
+	}
+
+	&__tile {
+		@apply relative z-5 flex min-h-64 flex-col justify-between overflow-hidden bg-transparent p-spacing-300 md:h-130 md:px-spacing-400 md:py-spacing-500;
+
+		.jw-contained-icon {
+			@apply transition-colors duration-500;
+		}
+
+		.jw-contained-icon__icon {
+			@apply transition-colors duration-500;
+		}
+
+		&.is-active {
+			.jw-contained-icon {
+				@apply bg-theme-surface-accent;
+			}
+
+			.jw-contained-icon__icon {
+				@apply text-white;
+			}
+
+			.jw-content-tiles__tile-image-container {
+				@apply translate-y-0 scale-100;
+			}
+
+			.jw-content-tiles__background {
+				@apply opacity-0;
+			}
+
+			.jw-content-tiles__tile-description,
+			.jw-content-tiles__tile-heading {
+				@apply text-white;
+			}
+
+			.jw-content-tiles__tile-heading {
+				@apply absolute opacity-0;
+
+				&--hovered {
+					@apply relative translate-y-0 text-white opacity-100 transition-transform duration-500;
+				}
+			}
+
+			.jw-content-tiles__tile-description {
+				&--clamped {
+					@apply absolute opacity-0;
+				}
+
+				&--unclamped {
+					@apply relative translate-y-0 opacity-100 transition-transform duration-500;
+				}
+			}
+
+			.jw-content-tiles__tile-cta .inactive {
+				@apply absolute opacity-0;
+			}
+
+			.jw-content-tiles__tile-cta .active {
+				@apply relative translate-y-0 text-white opacity-100 transition-transform duration-500;
+
+				.cta-text-link {
+					@apply opacity-100 #{!important};
+				}
+			}
+		}
+
+		@screen lg {
+			&:hover {
+				.jw-content-tiles__tile-heading {
+					@apply absolute opacity-0;
+
+					&--hovered {
+						@apply relative translate-y-0 text-white opacity-100 transition-transform duration-500;
+					}
+				}
+
+				.jw-content-tiles__tile-description {
+					&--clamped {
+						@apply absolute opacity-0;
+					}
+
+					&--unclamped {
+						@apply relative translate-y-0 opacity-100 transition-transform duration-500;
+					}
+				}
+				.jw-contained-icon {
+					@apply bg-theme-surface-accent;
+				}
+
+				.jw-contained-icon__icon {
+					@apply text-white;
+				}
+
+				.jw-content-tiles__tile-image-container {
+					@apply translate-y-0 scale-100;
+				}
+
+				.jw-content-tiles__background {
+					@apply opacity-0;
+				}
+
+				.jw-content-tiles__tile-description,
+				.jw-content-tiles__tile-heading {
+					@apply text-white;
+				}
+			}
+		}
+	}
+
+	&__tile-heading {
+		@apply relative;
+	}
+
+	&__tile-heading--hovered {
+		@apply absolute translate-y-10 opacity-0;
+	}
+
+	&__tile-description {
+		&--clamped {
+			@apply relative line-clamp-2 md:line-clamp-3;
+		}
+
+		&--unclamped {
+			@apply absolute translate-y-10 opacity-0;
+		}
+	}
+
+	&__tile-image-container {
+		@apply absolute inset-0 z-10 translate-y-5 scale-105 transition-transform duration-500;
+	}
+
+	&__tile-image-gradient {
+		@apply absolute inset-0 z-20 bg-orange-950/90;
+	}
+
+	&__tile-cta {
+		@apply relative md:hidden;
+	}
+
+	&__tile-cta .active {
+		@apply absolute translate-y-10;
+	}
+
+	&__background-image {
+		@apply absolute inset-0 z-0 bg-theme-border-tertiary;
+	}
+
+	&__background {
+		@apply absolute inset-0 z-20 bg-theme-surface-tertiary opacity-100 transition-opacity duration-500;
+	}
+
+	&__tile-description,
+	&__tile-heading {
+		@apply transition-colors duration-500;
+	}
+}

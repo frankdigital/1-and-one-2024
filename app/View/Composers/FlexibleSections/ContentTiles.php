@@ -14,7 +14,7 @@ class ContentTiles extends Composer {
 	 * @var array
 	 */
 	protected static $views = [
-		'flexible-sections.content-tiles.content-tiles-default'
+        'flexible-sections.content-tiles.content-tiles-default',
     ];
 
 	/**

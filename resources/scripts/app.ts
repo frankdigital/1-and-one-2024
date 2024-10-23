@@ -9,6 +9,8 @@ import {
 	ACCORDION_CONTAINER,
 	ANIMATE_HEIGHT,
 	BLOG_LISTING,
+	CONTENT_TILE_TRIGGER,
+	CTA_BLOCK_CONTAINED,
 	INHERIT_COLOR_SELECTOR,
 	LOGOS_CAROUSEL,
 	SERVICE_TILES,
@@ -25,6 +27,7 @@ import { initTabs } from './components/tabs';
 import { initAccordions } from './components/accordion';
 import { initAnimateHeight } from './core/animateHeight';
 import { initCtaBlockContained } from './components/ctaBlock/initCtaBlockContained';
+import { initContentTiles } from './components/content-tiles';
 import { initMegamenu } from './navigation/initMegamenu';
 
 /**
@@ -104,6 +107,13 @@ domReady(async () => {
 	if (accordion) {
 		accordion.forEach((element) => {
 			initAccordions(element as HTMLElement);
+		});
+	}
+
+	const contentTile = document.querySelectorAll(CONTENT_TILE_TRIGGER);
+	if (contentTile) {
+		contentTile.forEach((element) => {
+			initContentTiles(element as HTMLElement);
 		});
 	}
 

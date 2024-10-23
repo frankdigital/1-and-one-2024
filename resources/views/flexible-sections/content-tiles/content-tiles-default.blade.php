@@ -23,6 +23,9 @@
 											<x-text as="h4" @class([ccn($baseClass, 'tile-heading')])>
 												{{ $tile['heading'] }}
 											</x-text>
+											<x-text as="h4" @class([ccn($baseClass, 'tile-heading--hovered')])>
+												{{ $tile['heading'] }}
+											</x-text>
 										@endif
 
 										@if (isset($tile['description']) && !empty($tile['description']))
@@ -51,6 +54,21 @@
 											</button>
 										</div>
 
+										<div @class([ccn($baseClass, 'tile-cta--active')])>
+											@php
+												$tileCta = [
+												    'cta' => ['label' => 'Show Less'],
+												    'priority' => 'text-link',
+												    'size' => 'small',
+												    'icon' => 'ArrowUp',
+												];
+											@endphp
+
+											<button data-content-tile-trigger>
+												<x-cta-text-link size="small" label="Show Less" icon="ArrowUp" />
+											</button>
+										</div>
+
 									</div>
 								</div>
 
@@ -68,6 +86,7 @@
 							</div>
 						@endforeach
 					</div>
+				</div>
 			@endif
 		</x-section-wrap>
 	</x-container>

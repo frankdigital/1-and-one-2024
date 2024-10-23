@@ -46,21 +46,6 @@
 											</button>
 										</div>
 
-										{{-- <div @class([ccn($baseClass, 'tile-cta--active')])>
-											@php
-												$tileCta = [
-												    'cta' => ['label' => 'Show Less'],
-												    'priority' => 'text-link',
-												    'size' => 'small',
-												    'icon' => 'ArrowUp',
-												];
-											@endphp
-
-											<button data-content-tile-trigger>
-												<x-cta-text-link size="small" label="Show Less" icon="ArrowUp" />
-											</button>
-										</div> --}}
-
 									</div>
 								</div>
 

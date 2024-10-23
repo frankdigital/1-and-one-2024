@@ -12,7 +12,7 @@
 	}
 
 	&__tiles-container {
-		@apply grid gap-spacing-250 md:grid-cols-3;
+		@apply grid gap-spacing-250 md:grid-cols-2 lg:grid-cols-3;
 	}
 
 	&__tile {
@@ -44,7 +44,8 @@
 			}
 
 			.jw-content-tiles__tile-description,
-			.jw-content-tiles__tile-heading {
+			.jw-content-tiles__tile-heading,
+			.jw-content-tiles__tile-heading--single {
 				@apply text-white;
 			}
 
@@ -71,7 +72,7 @@
 			}
 
 			.jw-content-tiles__tile-cta .active {
-				@apply relative translate-y-0 text-white opacity-100 transition-transform duration-500;
+				@apply relative translate-y-0 text-white opacity-100 transition-transform;
 
 				.cta-text-link {
 					@apply opacity-100 #{!important};
@@ -115,7 +116,8 @@
 				}
 
 				.jw-content-tiles__tile-description,
-				.jw-content-tiles__tile-heading {
+				.jw-content-tiles__tile-heading,
+				.jw-content-tiles__tile-heading--single {
 					@apply text-white;
 				}
 			}
@@ -149,11 +151,11 @@
 	}
 
 	&__tile-cta {
-		@apply relative md:hidden;
+		@apply relative lg:hidden;
 	}
 
 	&__tile-cta .active {
-		@apply absolute translate-y-10;
+		@apply absolute translate-y-10 opacity-0;
 	}
 
 	&__background-image {

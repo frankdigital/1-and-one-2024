@@ -9,7 +9,9 @@ import {
 	ACCORDION_CONTAINER,
 	ANIMATE_HEIGHT,
 	BLOG_LISTING,
+	CONTENT_TILE,
 	CONTENT_TILE_TRIGGER,
+	CONTENT_TILE_DESCRIPTION,
 	CTA_BLOCK_CONTAINED,
 	INHERIT_COLOR_SELECTOR,
 	LOGOS_CAROUSEL,
@@ -110,9 +112,23 @@ domReady(async () => {
 		});
 	}
 
-	const contentTile = document.querySelectorAll(CONTENT_TILE_TRIGGER);
+	const contentTile = document.querySelectorAll(CONTENT_TILE);
 	if (contentTile) {
 		contentTile.forEach((element) => {
+			initContentTiles(element as HTMLElement);
+		});
+	}
+
+	const contentTileTrigger = document.querySelectorAll(CONTENT_TILE_TRIGGER);
+	if (contentTileTrigger) {
+		contentTileTrigger.forEach((element) => {
+			initContentTiles(element as HTMLElement);
+		});
+	}
+
+	const contentTileDescription = document.querySelectorAll(CONTENT_TILE_DESCRIPTION);
+	if (contentTileDescription) {
+		contentTileDescription.forEach((element) => {
 			initContentTiles(element as HTMLElement);
 		});
 	}

@@ -18,6 +18,17 @@
 	&__tile {
 		@apply relative z-5 flex min-h-64 flex-col justify-between overflow-hidden bg-transparent p-spacing-300 md:h-130 md:px-spacing-400 md:py-spacing-500;
 
+		&:after {
+			content: '';
+			background: linear-gradient(180deg, rgba(245, 242, 233, 0) 0%, #f5f2e9 49.21%);
+			will-change: transform, opacity;
+			@apply absolute bottom-0 left-0 z-40 hidden h-16 w-full translate-y-0 transition-all duration-500 ease-in-out lg:block;
+		}
+
+		&.no-gradient:after {
+			@apply hidden;
+		}
+
 		.jw-contained-icon {
 			@apply transition-colors duration-500;
 		}
@@ -58,13 +69,11 @@
 			}
 
 			.jw-content-tiles__tile-description {
-				&--clamped {
-					@apply transition-transform duration-500;
-				}
+				@apply max-h-none;
 
-				&--unclamped {
-					@apply transition-transform duration-500;
-				}
+				transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+				transition-property: max-height;
+				transition-duration: 150ms;
 			}
 
 			.jw-content-tiles__tile-cta .inactive {
@@ -78,10 +87,18 @@
 					@apply opacity-100 #{!important};
 				}
 			}
+
+			.jw-content-tiles__tile-description-container {
+				@apply max-h-none;
+			}
 		}
 
 		@screen lg {
 			&:hover {
+				&:after {
+					@apply translate-y-10 opacity-0;
+				}
+
 				.jw-content-tiles__tile-heading {
 					@apply transition-transform duration-500;
 
@@ -90,15 +107,6 @@
 					}
 				}
 
-				.jw-content-tiles__tile-description {
-					// &--clamped {
-					// 	@apply;
-					// }
-
-					&--unclamped {
-						@apply transition-transform duration-500;
-					}
-				}
 				.jw-contained-icon {
 					@apply bg-theme-surface-accent;
 				}
@@ -120,26 +128,25 @@
 				.jw-content-tiles__tile-heading--single {
 					@apply text-white;
 				}
+
+				.jw-content-tiles__tile-description-container {
+				}
+
+				[data-content-tile-content] {
+					transform: translateY(0) !important;
+				}
 			}
 		}
 	}
 
-	// &__tile-heading {
-	// 	@apply;
-	// }
+	[data-content-tile-content] {
+		transition-timing-function: ease-in-out;
+		transition-property: transform;
+		transition-duration: 400ms;
+	}
 
-	// &__tile-heading--hovered {
-	// 	@apply;
-	// }
-
-	&__tile-description {
-		&--clamped {
-			@apply transition-transform duration-500;
-		}
-
-		// &--unclamped {
-		// 	@apply ;
-		// }
+	&__tile-description-container {
+		@apply max-h-13 overflow-hidden lg:max-h-none;
 	}
 
 	&__tile-image-container {

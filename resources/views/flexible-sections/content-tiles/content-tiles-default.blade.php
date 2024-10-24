@@ -18,7 +18,7 @@
 										</div>
 									@endif
 
-									<div @class([ccn($baseClass, 'tile-content')])>
+									<div data-content-tile-content @class([ccn($baseClass, 'tile-content')])>
 										@if (isset($tile['heading']) && !empty($tile['heading']))
 											<x-text as="h4" @class([ccn($baseClass, 'tile-heading')])>
 												{{ $tile['heading'] }}
@@ -26,10 +26,11 @@
 										@endif
 
 										@if (isset($tile['description']) && !empty($tile['description']))
-											<x-wysiwyg data-content-tile-description @class([
-												ccn($baseClass, 'tile-description'),
-												ccn($baseClass, 'tile-description--clamped'),
-											]) :wysiwyg="$tile['description']" />
+											<div data-content-tile-description @class([ccn($baseClass, 'tile-description-container')])>
+												<x-text as="span" textStyle="body" @class([ccn($baseClass, 'tile-description')])>
+													{{ $tile['description'] }}
+												</x-text>
+											</div>
 										@endif
 
 										<div @class([ccn($baseClass, 'tile-cta')])>

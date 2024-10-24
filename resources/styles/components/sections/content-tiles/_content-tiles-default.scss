@@ -50,29 +50,29 @@
 			}
 
 			.jw-content-tiles__tile-heading {
-				@apply absolute opacity-0;
+				@apply transition-transform duration-500;
 
 				&--hovered {
-					@apply relative translate-y-0 text-white opacity-100 transition-transform duration-500;
+					@apply text-white transition-transform duration-500;
 				}
 			}
 
 			.jw-content-tiles__tile-description {
 				&--clamped {
-					@apply absolute opacity-0;
+					@apply transition-transform duration-500;
 				}
 
 				&--unclamped {
-					@apply relative translate-y-0 opacity-100 transition-transform duration-500;
+					@apply transition-transform duration-500;
 				}
 			}
 
 			.jw-content-tiles__tile-cta .inactive {
-				@apply absolute opacity-0;
+				@apply absolute hidden #{!important};
 			}
 
 			.jw-content-tiles__tile-cta .active {
-				@apply relative translate-y-0 text-white opacity-100 transition-transform;
+				@apply relative inline-flex translate-y-0 text-white;
 
 				.cta-text-link {
 					@apply opacity-100 #{!important};
@@ -83,20 +83,20 @@
 		@screen lg {
 			&:hover {
 				.jw-content-tiles__tile-heading {
-					@apply absolute opacity-0;
+					@apply transition-transform duration-500;
 
 					&--hovered {
-						@apply relative translate-y-0 text-white opacity-100 transition-transform duration-500;
+						@apply text-white transition-transform duration-500;
 					}
 				}
 
 				.jw-content-tiles__tile-description {
-					&--clamped {
-						@apply absolute opacity-0;
-					}
+					// &--clamped {
+					// 	@apply;
+					// }
 
 					&--unclamped {
-						@apply relative translate-y-0 opacity-100 transition-transform duration-500;
+						@apply transition-transform duration-500;
 					}
 				}
 				.jw-contained-icon {
@@ -124,22 +124,22 @@
 		}
 	}
 
-	&__tile-heading {
-		@apply relative;
-	}
+	// &__tile-heading {
+	// 	@apply;
+	// }
 
-	&__tile-heading--hovered {
-		@apply absolute translate-y-10 opacity-0;
-	}
+	// &__tile-heading--hovered {
+	// 	@apply;
+	// }
 
 	&__tile-description {
 		&--clamped {
-			@apply relative line-clamp-2 md:line-clamp-3;
+			@apply transition-transform duration-500;
 		}
 
-		&--unclamped {
-			@apply absolute translate-y-10 opacity-0;
-		}
+		// &--unclamped {
+		// 	@apply ;
+		// }
 	}
 
 	&__tile-image-container {
@@ -151,11 +151,11 @@
 	}
 
 	&__tile-cta {
-		@apply relative lg:hidden;
+		@apply lg:hidden;
 	}
 
 	&__tile-cta .active {
-		@apply absolute translate-y-10 opacity-0;
+		@apply absolute hidden translate-y-10;
 	}
 
 	&__background-image {

@@ -23,19 +23,12 @@
 											<x-text as="h4" @class([ccn($baseClass, 'tile-heading')])>
 												{{ $tile['heading'] }}
 											</x-text>
-											<x-text as="h4" @class([ccn($baseClass, 'tile-heading--hovered')])>
-												{{ $tile['heading'] }}
-											</x-text>
 										@endif
 
 										@if (isset($tile['description']) && !empty($tile['description']))
 											<x-wysiwyg data-content-tile-description @class([
 												ccn($baseClass, 'tile-description'),
 												ccn($baseClass, 'tile-description--clamped'),
-											]) :wysiwyg="$tile['description']" />
-											<x-wysiwyg data-content-tile-description @class([
-												ccn($baseClass, 'tile-description'),
-												ccn($baseClass, 'tile-description--unclamped'),
 											]) :wysiwyg="$tile['description']" />
 										@endif
 

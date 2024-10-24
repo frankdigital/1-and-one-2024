@@ -27,7 +27,16 @@ class CardBlog extends Component {
 	 * @return void
 	 */
 	public function __construct($id = null, $variant = 'default', $hideDate = false) {
-        $this->categories = get_the_category($id);
+		$categories = get_the_category($id);
+
+		if (!empty($categories)) {
+			$filtered_categories = array_filter($categories, function($category) {
+				return $category->name !== 'Uncategorized';
+			});
+		
+			$this->categories = $filtered_categories;
+		}
+		
         $this->date = get_the_date('j F Y', $id);
         $this->readTime = get_field('post_type_data_read_time', $id);
 

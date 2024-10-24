@@ -55,17 +55,8 @@
 			}
 
 			.jw-content-tiles__tile-description,
-			.jw-content-tiles__tile-heading,
-			.jw-content-tiles__tile-heading--single {
-				@apply text-white;
-			}
-
 			.jw-content-tiles__tile-heading {
-				@apply transition-transform duration-500;
-
-				&--hovered {
-					@apply text-white transition-transform duration-500;
-				}
+				@apply text-white;
 			}
 
 			.jw-content-tiles__tile-description {
@@ -99,14 +90,6 @@
 					@apply translate-y-10 opacity-0;
 				}
 
-				.jw-content-tiles__tile-heading {
-					@apply transition-transform duration-500;
-
-					&--hovered {
-						@apply text-white transition-transform duration-500;
-					}
-				}
-
 				.jw-contained-icon {
 					@apply bg-theme-surface-accent;
 				}
@@ -124,12 +107,8 @@
 				}
 
 				.jw-content-tiles__tile-description,
-				.jw-content-tiles__tile-heading,
-				.jw-content-tiles__tile-heading--single {
+				.jw-content-tiles__tile-heading {
 					@apply text-white;
-				}
-
-				.jw-content-tiles__tile-description-container {
 				}
 
 				[data-content-tile-content] {

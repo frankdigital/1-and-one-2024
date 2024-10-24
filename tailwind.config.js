@@ -79,6 +79,7 @@ const config = {
 			height: {
 				0.25: pxToRem(1),
 				16: pxToRem(64),
+				19: pxToRem(76),
 				35: pxToRem(140),
 				45: pxToRem(180),
 				50: pxToRem(200),
@@ -116,7 +117,10 @@ const config = {
 				156: pxToRem(624),
 				input: 'calc(var(--spacing-200) * 2 + var(--spacing-400))',
 			},
-			maxHeight: { 180: pxToRem(720) },
+			maxHeight: {
+				13: pxToRem(52),
+				180: pxToRem(720),
+			},
 			flexBasis: {
 				'1/2-gap-3': 'calc(50% - (1/2 * 1rem))',
 			},
@@ -153,6 +157,9 @@ const config = {
 			animation: {
 				accordionSlideDown: 'accordionSlideDown 400ms cubic-bezier(0.16, 1, 0.3, 1)',
 				accordionSlideUp: 'accordionSlideUp 400ms cubic-bezier(0.16, 1, 0.3, 1)',
+			},
+			transitionProperty: {
+				'max-height': 'max-height',
 			},
 		},
 	},

@@ -65,6 +65,5 @@ jobs:
                           }
                         ]
                       }
-                  CACHE_CLEAR: TRUE
               env:
                   SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}

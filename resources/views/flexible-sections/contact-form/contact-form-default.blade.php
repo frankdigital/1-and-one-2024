@@ -59,9 +59,10 @@
 		</div>
 
 		@if (isset($content['form']) && !empty($content['form']))
-			<div @class([ccn($baseClass, 'form')])>
+			<div id="{{ $content['form'] }}" @class([ccn($baseClass, 'form')])>
 				{!! gravity_form($content['form']) !!}
-				<div @class([ccn($baseClass, 'actions')])>
+
+				<div data-gravity-form-confirmation-actions @class([ccn($baseClass, 'actions')])>
 					<x-cta :cta="$homeCta" />
 					<x-cta priority="secondary" :cta="$reloadCta" />
 				</div>

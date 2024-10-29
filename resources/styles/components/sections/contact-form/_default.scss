@@ -29,6 +29,10 @@
 		.gform_confirmation_wrapper + & {
 			@apply grid;
 		}
+
+		&.is-active {
+			@apply grid;
+		}
 	}
 
 	.jw-contained-icon {

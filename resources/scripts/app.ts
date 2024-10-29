@@ -19,6 +19,7 @@ import {
 	TABS_LIST,
 	TESTIMONIALS_DUAL,
 	TESTIMONIALS_SINGLE,
+	GRAVITY_FORM_CONFIRMATION_ACTIONS,
 } from './selectors';
 import { initModal } from './ui/base-modal';
 import { registerAppHeight } from './core/appHeight';
@@ -139,6 +140,15 @@ domReady(async () => {
 			initCtaBlockContained(element as HTMLElement);
 		});
 	}
+
+	jQuery(document).on('gform_confirmation_loaded', function (_, formId) {
+		const target = $(`#gf_${formId}`).parent();
+		const $actions = target.find(GRAVITY_FORM_CONFIRMATION_ACTIONS);
+
+		if ($actions) {
+			$actions.addClass('is-active');
+		}
+	});
 });
 
 /**

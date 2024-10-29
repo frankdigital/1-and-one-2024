@@ -37,3 +37,5 @@ export const MODAL_PORTAL = '[data-modal-portal]';
 export const ACCORDION_CONTAINER = '[data-accordion-container]';
 
 export const INHERIT_COLOR_SELECTOR = '[data-inherit-color]';
+
+export const GRAVITY_FORM_CONFIRMATION_ACTIONS = '[data-gravity-form-confirmation-actions]';

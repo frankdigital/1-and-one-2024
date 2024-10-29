@@ -17,7 +17,21 @@ class GravityForms {
 			is_plugin_active('gravityforms/gravityforms.php')
 		) {
 			add_filter('gform_submit_button', [$this, 'input_to_button'], 10, 2);
+			add_filter( 'gform_form_args', [$this, 'force_ajax_submission'], 10, 2);
 		}
+	}
+
+	/**
+	 * Force Gravity Forms to submit via AJAX.
+	 *
+	 * @param array $args The form arguments.
+	 * @param array $form The form data.
+	 * @return array Modified form arguments.
+	 */
+	public function force_ajax_submission( $args ) {
+		$args['ajax'] = true;
+ 
+		return $args;
 	}
 
 	/**

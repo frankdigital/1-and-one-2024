@@ -144,9 +144,9 @@
 .gfield-choice-input {
 	@apply sr-only;
 	+ .gform-field-label {
-		@apply flex items-center gap-x-spacing-150;
+		@apply flex items-start gap-x-spacing-150;
 		&:before {
-			@apply size-spacing-300 border border-theme-border-secondary bg-theme-surface-primary duration-300;
+			@apply mt-1 size-spacing-300 flex-shrink-0 border border-theme-border-secondary bg-theme-surface-primary duration-300;
 			content: '';
 		}
 	}

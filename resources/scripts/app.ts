@@ -19,6 +19,7 @@ import {
 	TESTIMONIALS_DUAL,
 	TESTIMONIALS_SINGLE,
 	GRAVITY_FORM_CONFIRMATION_ACTIONS,
+	OBFUSCATE_SELECTOR,
 } from './selectors';
 import { initModal } from './ui/base-modal';
 import { registerAppHeight } from './core/appHeight';
@@ -148,6 +149,33 @@ domReady(async () => {
 			$actions.addClass('is-active');
 		}
 	});
+
+	const obfuscateString = document.querySelectorAll(OBFUSCATE_SELECTOR);
+
+	if (obfuscateString) {
+		obfuscateString.forEach((element) => {
+			const $target = $(element);
+			const obfuscateType = $target.data('obfuscate');
+
+			if (obfuscateType === 'email') {
+				const mailtoLink = $target.attr('href');
+				if (mailtoLink && mailtoLink.startsWith('mailto:')) {
+					const email = mailtoLink.slice(7).split('').reverse().join('');
+					$target.attr('href', `mailto:${email}`);
+				}
+			}
+
+			if (obfuscateType === 'tel') {
+				const telLink = $target.attr('href');
+				if (telLink && telLink.startsWith('tel:')) {
+					const tel = telLink.slice(4).split('').reverse().join('');
+					$target.attr('href', `tel:${tel}`);
+				}
+			}
+
+			console.log($target, obfuscateType);
+		});
+	}
 });
 
 /**

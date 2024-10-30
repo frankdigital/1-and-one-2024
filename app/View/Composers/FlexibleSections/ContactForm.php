@@ -26,6 +26,8 @@ class ContactForm extends Composer {
 		$section = $this->data->get('section');
 		$contact = $this->getAcfFieldFromOptions('options_general_contact');
 		$socials = $this->getAcfFieldFromOptions('options_general_socials');
+
+
 		return [
 			'content' => $section['content'],
 			'socials' => $socials,

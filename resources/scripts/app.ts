@@ -172,8 +172,6 @@ domReady(async () => {
 					$target.attr('href', `tel:${tel}`);
 				}
 			}
-
-			console.log($target, obfuscateType);
 		});
 	}
 });

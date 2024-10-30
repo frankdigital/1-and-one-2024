@@ -12,7 +12,7 @@
 	}
 
 	&__tiles-container {
-		@apply grid gap-spacing-250 md:grid-cols-2 lg:grid-cols-3;
+		@apply grid gap-spacing-300 md:grid-cols-2 lg:grid-cols-3;
 	}
 
 	&__tile {

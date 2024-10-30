@@ -12,7 +12,6 @@ import {
 	CONTENT_TILE,
 	CONTENT_TILE_TRIGGER,
 	CONTENT_TILE_DESCRIPTION,
-	CTA_BLOCK_CONTAINED,
 	INHERIT_COLOR_SELECTOR,
 	LOGOS_CAROUSEL,
 	SERVICE_TILES,
@@ -74,7 +73,7 @@ domReady(async () => {
 	const logosCarousel = document.querySelectorAll(LOGOS_CAROUSEL);
 	if (logosCarousel) {
 		logosCarousel.forEach((element) => {
-			initSlider(element as HTMLElement, { loop: true }, [AutoScroll({ stopOnInteraction: false })]);
+			initSlider(element as HTMLElement, { loop: true }, [AutoScroll({ stopOnInteraction: false, speed: 1 })]);
 		});
 	}
 

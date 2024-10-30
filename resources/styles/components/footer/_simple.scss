@@ -46,7 +46,7 @@
 	}
 
 	&__cta-container {
-		@apply flex flex-col gap-spacing-150 self-start md:inline-grid;
+		@apply flex flex-col gap-spacing-150 md:inline-grid md:self-start;
 
 		grid-template-columns: repeat(2, 1fr); /* Ensures two equal-width columns */
 		justify-content: center;

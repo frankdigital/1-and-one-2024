@@ -38,7 +38,7 @@
 	}
 
 	&__content-container {
-		@apply flex-grow-2 md:pt-13 flex basis-full flex-col gap-spacing-400 pt-spacing-800 lg:pr-spacing-600;
+		@apply flex flex-grow-2 basis-full flex-col gap-spacing-400 pt-spacing-800 md:pt-13 lg:pr-spacing-600;
 	}
 
 	&__content {
@@ -46,10 +46,15 @@
 	}
 
 	&__cta-container {
-		@apply flex flex-col gap-spacing-150 md:flex-row;
+		@apply flex flex-col gap-spacing-150 self-start md:inline-grid;
+
+		grid-template-columns: repeat(2, 1fr); /* Ensures two equal-width columns */
+		justify-content: center;
 
 		.jw-cta {
 			@apply w-full md:w-auto;
+
+			white-space: nowrap;
 		}
 	}
 
@@ -98,7 +103,7 @@
 	}
 
 	&__locations {
-		@apply lg:gap-9.5 gap-x-300 gap-y-700 hidden flex-col md:flex-row lg:flex;
+		@apply gap-x-300 gap-y-700 hidden flex-col md:flex-row lg:flex lg:gap-9.5;
 
 		grid-area: b;
 	}

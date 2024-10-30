@@ -1,5 +1,5 @@
 .jw-section {
-	@apply vertical-lg relative mx-auto bg-theme-surface-primary;
+	@apply relative mx-auto bg-theme-surface-primary py-15 md:py-20 lg:py-vertical-lg;
 
 	&--darker {
 		@apply bg-theme-surface-tertiary;

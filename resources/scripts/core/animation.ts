@@ -87,12 +87,17 @@ const splitHeroAnimation = (selector: string) => {
 
 const standardHeroAnimation = (selector: string) => {
 	if (!document.querySelector(selector)) return;
+
 	const tl = gsap.timeline();
-	tl.from(`${selector}__image`, {
-		scale: 1.2,
-		duration: 2.5,
-		ease: 'power1.inOut',
-	});
+	const imageSelect = `${selector}__image`;
+	if (document.querySelector(imageSelect)) {
+		tl.from(imageSelect, {
+			scale: 1.2,
+			duration: 2.5,
+			ease: 'power1.inOut',
+		});
+	}
+
 	const targets: Element[] = gsap.utils.toArray(`${selector}__content > *, ${selector}__cta-container`);
 	targets.forEach((target, index) => {
 		tl.from(target, { opacity: 0, y: (index + 1) * 20, duration: 1 }, 1);

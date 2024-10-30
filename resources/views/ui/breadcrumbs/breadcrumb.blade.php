@@ -9,10 +9,10 @@
 			<x-icon-handler icon="Home" @class(['size-5']) />
 		</a>
 	@elseif ($breadcrumb['url'] === null)
-		<x-text as="span" textStyle="caption">{{ $breadcrumb['label'] }}</x-text>
+		<x-text as="span" textStyle="caption">{!! $breadcrumb['label'] !!}</x-text>
 	@else
 		<a href="{{ $breadcrumb['url'] }}" @class([ccn($baseClass, 'link')])>
-			<x-text as="span" textStyle="caption">{{ $breadcrumb['label'] }}</x-text>
+			<x-text as="span" textStyle="caption">{!! $breadcrumb['label'] !!}</x-text>
 		</a>
 	@endif
 	</a>

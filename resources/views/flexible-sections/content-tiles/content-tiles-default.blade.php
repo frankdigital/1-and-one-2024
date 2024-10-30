@@ -4,7 +4,7 @@
 
 <x-section :contain="false" @class([ccn($baseClass)])>
 	<x-container @class([ccn($baseClass, 'container')])>
-		<x-section-wrap :content="$content">
+		<x-section-wrap :wrapCtaOnMobile="false" :content="$content">
 			@if (isset($content['tiles']) && count($content['tiles']))
 				<div @class([ccn($baseClass, 'tiles')])>
 					<div @class([ccn($baseClass, 'tiles-container')])>

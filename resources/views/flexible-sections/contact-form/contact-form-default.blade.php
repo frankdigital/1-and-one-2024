@@ -41,7 +41,7 @@
 
 					@if (isset($email) && !empty($emailLink))
 						<x-contact-item icon='Email' @class([ccn($baseClass, 'contact-item')])>
-							<x-default-link :url="$emailLink" :title="$email" target="_self" icon='Phone' />
+							<x-default-link :url="$emailLink" title="Contact via email" target="_self" />
 						</x-contact-item>
 					@endif
 

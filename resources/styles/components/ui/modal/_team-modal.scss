@@ -19,6 +19,10 @@
 
 	&__contact {
 		@apply flex border-b border-theme-border-secondary pb-spacing-400;
+
+		.jw-contained-icon {
+			@apply bg-theme-surface-tertiary;
+		}
 	}
 
 	&__traditional-container {

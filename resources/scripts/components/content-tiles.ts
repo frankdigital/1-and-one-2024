@@ -9,8 +9,6 @@ export function initContentTiles(node: HTMLElement) {
 	const contentContainer = $(node).closest(CONTENT_TILE_CONTENT);
 	const maxHeight = 80;
 
-	console.log('textContainer', textContainer);
-
 	$ctaText.on('click', function (e) {
 		e.stopPropagation();
 

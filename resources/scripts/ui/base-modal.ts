@@ -211,8 +211,6 @@ export function registerModalTriggers(element: HTMLElement) {
 	const modalRawData = trigger.attr(triggerDataAttribute);
 	let modalData: any = undefined;
 
-	console.log('modal trigger registered: ', trigger);
-
 	if (modalRawData) {
 		try {
 			modalData = JSON.parse(modalRawData);

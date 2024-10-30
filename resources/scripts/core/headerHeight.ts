@@ -22,6 +22,4 @@ function headerHeight() {
 	const header = $(HEADER);
 	const doc = document.body;
 	doc.style.setProperty('--header-height', `${header.outerHeight()}px`);
-
-	console.log('header height');
 }

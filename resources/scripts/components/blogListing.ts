@@ -16,8 +16,6 @@ export function initBlogListing(node: HTMLElement | Document | JQuery.PlainObjec
 		$paginationTargets.addClass('is-hidden');
 		$paginationTriggers.removeClass('is-active');
 
-		console.log('paginationTriggers', $paginationTriggers);
-
 		// Show the selected grid group and add active class to button
 		const $target = $(`[data-blog-listing-pagination-target="${index}"]`, node).removeClass('is-hidden');
 		$(`[data-blog-listing-pagination-trigger="${index}"]`, node).addClass('is-active');

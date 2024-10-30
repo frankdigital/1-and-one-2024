@@ -16,8 +16,6 @@ export class SmoothScroller {
 			prevent: (node) => node.classList.contains('jw-base-modal'),
 		});
 
-		console.log('lenis', this.lenis);
-
 		this.isRunning = false;
 	}
 

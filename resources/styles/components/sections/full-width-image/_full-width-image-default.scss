@@ -2,7 +2,7 @@
 	@apply relative overflow-hidden;
 
 	&:after {
-		@apply absolute right-0 top-0 z-10 hidden h-full w-22.5 bg-theme-surface-primary md:block;
+		@apply absolute right-0 top-0 z-10 hidden h-full w-11 bg-theme-surface-primary md:block lg:w-22.5;
 		content: '';
 	}
 
@@ -34,7 +34,7 @@
 	}
 
 	&__content-container {
-		@apply rounded-card gap-y-400 relative z-10 flex flex-col bg-theme-surface-primary p-spacing-500 md:max-w-95 lg:max-w-150 lg:rounded-bl-none lg:rounded-br-none lg:p-spacing-800;
+		@apply rounded-card gap-y-400 relative z-10 flex flex-col bg-theme-surface-primary p-spacing-500 md:max-w-95 md:rounded-bl-none md:rounded-br-none lg:max-w-150 lg:p-spacing-800;
 	}
 
 	&__content {

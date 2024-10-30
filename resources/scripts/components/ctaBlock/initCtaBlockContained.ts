@@ -12,5 +12,6 @@ export function initCtaBlockContained(node: HTMLElement | Document | JQuery.Plai
 
 	if (hasDarkerClass) {
 		$element.addClass('jw-section--darker');
+		$element.removeClass('jw-section--lighter');
 	}
 }

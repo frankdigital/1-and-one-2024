@@ -8,7 +8,7 @@
 	    'class' =>
 	        ccn($baseClass) .
 	        ' ' .
-	        ($darkerBg ? ccn($baseClass . '--darker') : '') .
+	        ($darkerBg ? ccn($baseClass . '--darker') : ccn($baseClass . '--lighter')) .
 	        ' ' .
 	        $class .
 	        ' ' .

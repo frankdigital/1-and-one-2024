@@ -125,17 +125,17 @@ body {
 	@apply font-heading;
 }
 
-::-webkit-scrollbar {
-	@apply h-1 w-1.5;
-}
+// ::-webkit-scrollbar {
+// 	@apply h-1 w-1.5;
+// }
 
-::-webkit-scrollbar-track {
-	@apply bg-theme-surface-tertiary;
-}
+// ::-webkit-scrollbar-track {
+// 	@apply bg-theme-surface-tertiary;
+// }
 
-::-webkit-scrollbar-thumb {
-	@apply bg-theme-surface-accent;
-}
+// ::-webkit-scrollbar-thumb {
+// 	@apply bg-theme-surface-accent;
+// }
 
 .no-scroll {
 	overflow: hidden;

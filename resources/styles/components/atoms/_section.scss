@@ -15,10 +15,18 @@
 	&__padding-bottom {
 	}
 
-	& + .jw-section {
-		@apply vertical-sm;
-	}
+	// & + .jw-section {
+	// 	@apply vertical-sm;
+	// }
 
 	& + .hero {
 	}
+}
+
+.jw-section--lighter + .jw-section--lighter:not(.jw-logos-standard) {
+	@apply pt-0;
+}
+
+.jw-section--darker + .jw-section--darker {
+	@apply pt-0;
 }

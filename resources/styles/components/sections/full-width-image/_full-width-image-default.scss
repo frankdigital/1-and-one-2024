@@ -1,5 +1,5 @@
 .jw-full-width-image-default {
-	@apply relative overflow-hidden pb-0 #{!important};
+	@apply relative overflow-hidden;
 
 	&:after {
 		@apply absolute right-0 top-0 z-10 hidden h-full w-22.5 bg-theme-surface-primary md:block;

@@ -13,7 +13,6 @@ export class SmoothScroller {
 			lerp: 0.1, // Customize the options here
 			smoothWheel: true,
 			wrapper: this.wrapper,
-			prevent: (node) => node.classList.contains('jw-base-modal'),
 		});
 
 		this.isRunning = false;

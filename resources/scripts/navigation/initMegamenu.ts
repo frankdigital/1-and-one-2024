@@ -46,9 +46,6 @@ const toggleMobileMenu = (smoothScroller: SmoothScroller) => {
 	$header.toggleClass(activeClass, isMenuOpen).toggleClass('dark', !isMenuOpen);
 	$('body').toggleClass('no-scroll', isMenuOpen);
 
-	if (isMenuOpen) smoothScroller.pause();
-	else smoothScroller.resume();
-
 	updateMenuIcon();
 };
 
@@ -82,7 +79,7 @@ const closeMenu = (smoothScroller: SmoothScroller) => {
 	activeMegamenuIndex = null;
 	toggleMegaMenu(null);
 	$triggers.removeClass(activeClass);
-	smoothScroller.resume();
+
 	updateMenuIcon();
 };
 
@@ -107,7 +104,6 @@ export function initMegamenu(smoothScroller: SmoothScroller) {
 				activeMegamenuIndex = index;
 				$this.addClass(activeClass);
 				toggleMegaMenu(index);
-				smoothScroller.pause();
 			}
 
 			updateMenuIcon();

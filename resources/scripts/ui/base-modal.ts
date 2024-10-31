@@ -110,11 +110,9 @@ const $modalPortal = $(MODAL_PORTAL);
 const modalCloseIcon = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="jw-icon-handler__icon"><path fill="currentColor" d="M12 13.414 8.465 16.95q-.3.3-.708.3a.97.97 0 0 1-.707-.3q-.3-.3-.3-.707t.3-.707L10.586 12 7.05 8.464q-.3-.3-.3-.707 0-.405.3-.707.3-.3.707-.3t.708.3L12 10.586l3.536-3.536q.3-.3.707-.3t.707.3q.3.3.3.707t-.3.707L13.414 12l3.536 3.536q.3.3.3.707 0 .405-.3.707-.3.3-.707.3a.97.97 0 0 1-.707-.3z"></path></svg>`;
 let currentModal: JQuery<HTMLElement> | null = null;
 let currentTrigger: JQuery<HTMLElement> | null = null;
-let GlobalSmoothScrollerInstance: SmoothScroller | null = null;
 const focusTrapMap: Map<string, FocusTrap> = new Map();
 
 export function initModal(scroll: SmoothScroller) {
-	GlobalSmoothScrollerInstance = scroll;
 	const $modalContainerTarget = $(MODAL_CONTAINER);
 
 	if ($modalContainerTarget.length) {
@@ -248,8 +246,6 @@ export function handleModalOpen(modalId: string, srcTrigger: JQuery<HTMLElement>
 		if (!modal.data().hasOwnProperty('disableHash')) {
 			history.pushState(null, '', `#${modalId}`);
 		}
-
-		GlobalSmoothScrollerInstance?.pause();
 	} else {
 		console.warn(`Modal trigger's target invalid: "${modalId}"`, srcTrigger);
 	}
@@ -281,8 +277,6 @@ function handleModalClose(modal: JQuery<HTMLElement>) {
 		// Send the focus back onto the original trigger
 		currentTrigger[0].focus();
 	}
-
-	GlobalSmoothScrollerInstance?.resume();
 
 	// Remove # from URL
 	const hashlessHref = location.href.split('#')[0];

@@ -73,11 +73,6 @@
 
 			.jw-content-tiles__tile-description-container {
 				@apply max-h-full;
-
-				transition: max-height;
-				transition-duration: 400ms;
-				transition-timing-function: ease-in-out;
-				transform-origin: top;
 			}
 		}
 
@@ -127,11 +122,6 @@
 
 	&__tile-description-container {
 		@apply max-h-13 overflow-hidden lg:max-h-none;
-
-		transition: max-height;
-		transition-duration: 400ms;
-		transition-timing-function: ease-in-out;
-		transform-origin: bottom;
 	}
 
 	&__tile-image-container {

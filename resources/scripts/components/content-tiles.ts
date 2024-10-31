@@ -37,8 +37,6 @@ export function initContentTiles(node: HTMLElement) {
 				const parent = textContainer.closest(CONTENT_TILE);
 				parent.addClass('no-gradient');
 			}
-		} else {
-			contentContainer.css('transform', `translateY(0)`);
 		}
 	});
 }

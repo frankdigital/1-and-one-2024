@@ -43,11 +43,36 @@
 			}
 
 			.jw-content-tiles__tile-cta .active {
-				@apply relative inline-flex translate-y-0;
+				@apply relative inline-flex translate-y-0 text-white;
 
 				.cta-text-link {
 					@apply opacity-100 #{!important};
 				}
+			}
+
+			.jw-contained-icon {
+				@apply bg-theme-surface-accent;
+			}
+
+			.jw-content-tiles__tile-image-gradient {
+				@apply opacity-100;
+			}
+
+			.jw-contained-icon__icon {
+				@apply text-white;
+			}
+
+			.jw-content-tiles__tile-image-container {
+				@apply translate-y-0 scale-100;
+			}
+
+			.jw-content-tiles__background {
+				@apply opacity-0;
+			}
+
+			.jw-content-tiles__tile-description,
+			.jw-content-tiles__tile-heading {
+				@apply text-white;
 			}
 		}
 

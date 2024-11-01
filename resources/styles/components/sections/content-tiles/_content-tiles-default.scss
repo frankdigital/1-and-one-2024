@@ -8,7 +8,7 @@
 	}
 
 	&__tile-content {
-		@apply flex flex-col gap-spacing-150;
+		@apply flex flex-col gap-spacing-150 pt-9 md:pt-0;
 	}
 
 	&__tiles-container {
@@ -35,6 +35,20 @@
 
 		.jw-contained-icon__icon {
 			@apply transition-colors duration-500;
+		}
+
+		&.is-triggered {
+			.jw-content-tiles__tile-cta .inactive {
+				@apply absolute hidden #{!important};
+			}
+
+			.jw-content-tiles__tile-cta .active {
+				@apply relative inline-flex translate-y-0;
+
+				.cta-text-link {
+					@apply opacity-100 #{!important};
+				}
+			}
 		}
 
 		&.is-active {
@@ -121,7 +135,7 @@
 	}
 
 	&__tile-description-container {
-		@apply max-h-13 overflow-hidden lg:max-h-none;
+		@apply h-13 overflow-hidden lg:h-auto lg:max-h-none;
 	}
 
 	&__tile-image-container {

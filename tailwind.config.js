@@ -78,6 +78,7 @@ const config = {
 			},
 			height: {
 				0.25: pxToRem(1),
+				13: pxToRem(52),
 				16: pxToRem(64),
 				19: pxToRem(76),
 				35: pxToRem(140),

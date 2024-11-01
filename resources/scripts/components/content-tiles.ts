@@ -3,6 +3,7 @@ import '../helpers/useWindowSize';
 const windowSizeHandler = $.fn.useWindowSize();
 
 export function initContentTiles(node: HTMLElement) {
+	const originalHeight = $(node).find(CONTENT_TILE_DESCRIPTION).outerHeight();
 	const $ctaText = $(node).find(CONTENT_TILE_TRIGGER);
 
 	const textContainer = $(node).closest(CONTENT_TILE_DESCRIPTION);
@@ -13,12 +14,18 @@ export function initContentTiles(node: HTMLElement) {
 		e.stopPropagation();
 
 		const parent = $(this).closest(CONTENT_TILE);
-		const isActive = parent.hasClass('is-active');
+		const isActive = parent.hasClass('is-triggered');
+
+		const textContainer = parent.find(CONTENT_TILE_DESCRIPTION);
+		const text = textContainer.find('span');
+		const textHeight = text.outerHeight();
 
 		if (isActive) {
-			parent.removeClass('is-active');
+			parent.removeClass('is-triggered');
+			textContainer.animate({ height: originalHeight }, 300);
 		} else {
-			parent.addClass('is-active');
+			parent.addClass('is-triggered');
+			textContainer.animate({ height: textHeight }, 300);
 		}
 	});
 

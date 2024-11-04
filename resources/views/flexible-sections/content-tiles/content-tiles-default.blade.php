@@ -2,7 +2,7 @@
 	$baseClass = 'content-tiles';
 @endphp
 
-<x-section :contain="false" @class([ccn($baseClass)])>
+<x-section :contain="false" :scrollId="$section['scroll_id']" @class([ccn($baseClass)])>
 	<x-container @class([ccn($baseClass, 'container')])>
 		<x-section-wrap :wrapCtaOnMobile="false" :content="$content">
 			@if (isset($content['tiles']) && count($content['tiles']))

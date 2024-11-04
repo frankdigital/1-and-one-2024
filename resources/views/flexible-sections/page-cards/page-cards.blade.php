@@ -2,7 +2,7 @@
 	$baseClass = 'page-cards';
 @endphp
 
-<x-section :contain="false" @class([ccn($baseClass), ccn($baseClass . '--' . $columnsCount)])>
+<x-section :contain="false" :scrollId="$section['scroll_id']" @class([ccn($baseClass), ccn($baseClass . '--' . $columnsCount)])>
 	<x-container @class([ccn($baseClass, 'container')])>
 		<div data-blog-listing>
 			<x-section-wrap :content="$content">

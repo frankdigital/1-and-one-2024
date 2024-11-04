@@ -2,7 +2,7 @@
 	$baseClass = 'page-cards-overlaid';
 @endphp
 
-<x-section @class([ccn($baseClass)])>
+<x-section :scrollId="$section['scroll_id']" @class([ccn($baseClass)])>
 	<x-container width="large" @class([ccn($baseClass, 'container')])>
 		<div @class([ccn($baseClass, 'content')])>
 			@isset($content['eyebrow'])

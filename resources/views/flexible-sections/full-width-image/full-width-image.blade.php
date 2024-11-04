@@ -3,7 +3,7 @@
 	$showCta = is_cta_enabled($content['primary_cta']);
 @endphp
 
-<x-section data-inherit-color="" :contain="false" @class([
+<x-section data-inherit-color="" :scrollId="$section['scroll_id']" :contain="false" @class([
 	ccn($baseClass),
 	ccn($baseClass, 'reverse') => $content['orientation'] === 'content-right',
 ])>

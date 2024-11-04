@@ -2,7 +2,7 @@
 	$baseClass = 'usps-vertical';
 	$showCta = is_cta_enabled($content['primary_cta']);
 @endphp
-<x-section :darkerBg="$darkerBg" :contain="false" @class([ccn($baseClass)])>
+<x-section :darkerBg="$darkerBg" :contain="false" :scrollId="$section['scroll_id']" @class([ccn($baseClass)])>
 	<x-container @class([ccn($baseClass, 'container')])>
 		<div @class([ccn($baseClass, 'sidebar')])>
 

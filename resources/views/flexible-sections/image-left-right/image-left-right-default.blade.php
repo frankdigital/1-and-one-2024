@@ -3,7 +3,7 @@
 	$showCta = is_cta_enabled($content['primary_cta']) || is_cta_enabled($content['secondary_cta']);
 @endphp
 
-<x-section :darkerBg="$darkerBg" :contain="false" @class([
+<x-section :darkerBg="$darkerBg" :contain="false" :scrollId="$section['scroll_id']" @class([
 	ccn($baseClass),
 	ccn($baseClass . '--image-right') => $orientation === 'image-right',
 ])>

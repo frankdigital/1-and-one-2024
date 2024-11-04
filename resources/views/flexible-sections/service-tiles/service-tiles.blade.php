@@ -2,7 +2,7 @@
 	$baseClass = 'service-tiles';
 @endphp
 
-<x-section :darkerBg="$darkerBg" :contain="false" @class([ccn($baseClass)])>
+<x-section :darkerBg="$darkerBg" :contain="false" :scrollId="$section['scroll_id']" @class([ccn($baseClass)])>
 	<x-container @class([ccn($baseClass, 'container')])>
 		<x-section-wrap :content="$content" priority="secondary">
 			<div @class([ccn($baseClass, 'carousel')]) data-service-tiles>

@@ -45,7 +45,7 @@ class Section extends Component {
         $this->class = $class;
 		$this->contain = $contain;
 		$this->attributes = $attributes;
-		$this->scrollId = $scrollId;
+		$this->scrollId = $scrollId !== '' && $scrollId !== null ? $scrollId : null; 
 	}
 
 	/**

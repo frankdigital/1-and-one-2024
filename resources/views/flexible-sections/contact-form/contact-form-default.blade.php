@@ -4,7 +4,7 @@
 	$emailLink = 'mailto:' . $email;
 @endphp
 
-<x-section :darkerBg="$darkerBg" :contain="false" @class([ccn($baseClass)])>
+<x-section :darkerBg="$darkerBg" :contain="false" :scrollId="$section['scroll_id']" @class([ccn($baseClass)])>
 	<x-container @class([ccn($baseClass, 'container')])>
 		<div @class([ccn($baseClass, 'content-container')])>
 			<div @class([ccn($baseClass, 'content')])>

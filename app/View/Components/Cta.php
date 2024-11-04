@@ -15,7 +15,7 @@ class Cta extends Component {
     public $class;
     public $size;
     public $icon;
-    public $url = '#';
+    public $url = '';
     public $target = '_self';
     public $label = '';
     public $attributeData = [];
@@ -36,11 +36,12 @@ class Cta extends Component {
         $this->priority = $priority;
         $this->class = $class;
         $this->size = $size;
-        $this->icon = $icon;
+        
         $this->enableCta = !empty($cta['enable_cta']);
         $this->isTextLink = ($priority === 'text-link');
         $this->type = $this->determineType();
         $this->setLabelAndAttributes();   
+        $this->icon = $this->setIcon();
     }
 
     private function determineType(): string {
@@ -111,6 +112,17 @@ class Cta extends Component {
         return [
             'data-modal-trigger' => $this->modalId,
         ];
+    }
+
+    protected function setIcon(): string {
+        $icon = 'ArrowRight';
+        $url = $this->url;
+        
+        if (strpos($url, '#') === 0) {
+            $icon = 'ArrowDown';
+        }
+        
+        return $icon;
     }
 
     public function shouldDisplay(): bool {

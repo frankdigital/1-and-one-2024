@@ -2,7 +2,7 @@
 	$baseClass = 'testimonials-dual';
 @endphp
 
-<x-section :contain="false" @class([ccn($baseClass)])>
+<x-section :contain="false" :scrollId="$section['scroll_id']" @class([ccn($baseClass)])>
 	<x-container @class([ccn($baseClass, 'container')])>
 		<x-section-wrap :content="$content">
 			<div @class([ccn($baseClass, 'carousel')]) data-testimonials-dual>

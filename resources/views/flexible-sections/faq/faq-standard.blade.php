@@ -3,7 +3,7 @@
 	$baseClassAccordion = 'accordion';
 @endphp
 
-<x-section @class([ccn($baseClass)])>
+<x-section :scrollId="$section['scroll_id']" @class([ccn($baseClass)])>
 	<x-container @class([ccn($baseClass, 'container')]) width="small">
 		<div @class([ccn($baseClass, 'content-container')])>
 			<div @class([ccn($baseClass, 'content')])>

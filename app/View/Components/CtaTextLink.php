@@ -10,10 +10,10 @@ class CtaTextLink extends Component {
     public $icon;
     public $class;
 
-    public function __construct($size = 'default', $label = null, $icon = 'ChevronRight', $class = '') {
+    public function __construct($size = 'default', $label = null, $icon = 'ArrowRight', $class = '') {
         $this->size = $size;
         $this->label = $label;
-        $this->icon = $icon ?: 'ChevronRight';
+        $this->icon = $icon ?: 'ArrowRight';
         $this->class = $class;
     }
 

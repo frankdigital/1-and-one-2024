@@ -32,6 +32,7 @@ import { initAnimateHeight } from './core/animateHeight';
 import { initCtaBlockContained } from './components/ctaBlock/initCtaBlockContained';
 import { initContentTiles } from './components/content-tiles';
 import { initMegamenu } from './navigation/initMegamenu';
+import { initJaywingConsoleLog } from './components/jaywingConsoleLog';
 
 /**
  * Application entrypoint
@@ -174,6 +175,8 @@ domReady(async () => {
 			}
 		});
 	}
+
+	initJaywingConsoleLog();
 });
 
 /**

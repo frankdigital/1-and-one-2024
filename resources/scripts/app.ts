@@ -176,6 +176,11 @@ domReady(async () => {
 		});
 	}
 
+	$('.gfield--input-type-consent.gfield_contains_required').each(function () {
+		const label = $(this).find('label');
+		label.text(`${label.text()} (Required)`);
+	});
+
 	initJaywingConsoleLog();
 });
 

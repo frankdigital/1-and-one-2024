@@ -9,7 +9,7 @@
 	$class,
 ])>
 	<img @class([ccn($baseClass, 'image')])
-		{{ $attributes->merge(['src' => $bisImage['src'], 'width' => $bisImage['width'], 'height' => $bisImage['height'], 'alt' => $alt, 'priority' => $priority]) }} />
+		{{ $attributes->merge(['src' => $bisImage['src'], 'width' => $bisImage['width'], 'height' => $bisImage['height'], 'alt' => $alt, 'loading' => $priority]) }} />
 
 	@if (isset($alt))
 		<figcaption @class([ccn($baseClass, 'caption')])>

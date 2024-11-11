@@ -43,6 +43,10 @@
 		@apply gap-y-600 relative z-30 flex flex-col items-start justify-center pb-20 text-left lg:pb-50;
 	}
 
+	&__supporting-text {
+		@apply max-w-150;
+	}
+
 	&__content {
 		@apply gap-y-400 relative flex flex-col pt-82 lg:pt-87;
 	}

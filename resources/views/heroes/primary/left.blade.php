@@ -42,7 +42,7 @@
 				@endif
 
 				@if ($content['supporting_text'])
-					<x-text textStyle="bodyIntro" as="span">
+					<x-text @class([ccn($baseClass, 'supporting-text')]) textStyle="bodyIntro" as="span">
 						{!! $content['supporting_text'] !!}
 					</x-text>
 				@endif

@@ -9,9 +9,11 @@
 			'hero' => $hero,
 		])
 
-		@include('partials.flexible-sections', [
-			'sections' => $flexibleSections,
-		])
+		<main id="main" class="main">
+			@include('partials.flexible-sections', [
+				'sections' => $flexibleSections,
+			])
+		</main>
 
 		@include('footers.footer', [
 			'footer' => $footer,

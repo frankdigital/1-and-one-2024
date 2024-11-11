@@ -144,6 +144,21 @@ body {
 	scrollbar-gutter: stable;
 }
 
+.skip-content {
+	display: inline-block;
+	position: absolute;
+	top: 100px;
+	transition: 0.5s ease;
+	transform: translateX(-200%);
+
+	@apply z-40 rounded bg-theme-surface-accent px-4 py-3 text-theme-text-primary-invert;
+
+	&:focus {
+		transform: translateX(40px);
+		@apply underline;
+	}
+}
+
 @layer utilities {
 	.text-balance {
 		text-wrap: balance;

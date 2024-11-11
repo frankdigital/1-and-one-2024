@@ -11,7 +11,7 @@
 		@php(wp_body_open())
 
 		<div id="app">
-			<a class="sr-only focus:not-sr-only" href="#main">
+			<a class="skip-content" href="#main">
 				{{ __('Skip to content') }}
 			</a>
 
@@ -19,15 +19,11 @@
 				'header' => $header,
 			])
 
-			<main id="main" class="main">
-				@yield('content')
-			</main>
+			@yield('content')
 
 			@include('sections.footer')
 
-			<div data-modal-portal>
-
-			</div>
+			<div data-modal-portal></div>
 		</div>
 
 		@php(do_action('get_footer'))

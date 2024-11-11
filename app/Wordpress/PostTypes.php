@@ -20,6 +20,40 @@ class PostTypes {
 
 	public function init() {
 		add_action('init', [$this, 'createCustomPostTypes'], 10, 2);
+		add_action('admin_menu', [$this, 'change_post_menu_label'], 10, 2);
+	}
+
+	function change_post_menu_label() {
+		global $menu;
+		global $submenu;
+	
+		// Change menu label
+		$menu[5][0] = 'Case Studies';
+	
+		// Change submenu label
+		$submenu['edit.php'][5][0] = 'Case Studies';
+		$submenu['edit.php'][10][0] = 'Add Case Study';
+	
+		// Optional: Change post object labels as well
+		add_action('init', function() {
+			global $wp_post_types;
+			if (isset($wp_post_types['post'])) {
+				$labels = &$wp_post_types['post']->labels;
+				$labels->name = 'Case Studies';
+				$labels->singular_name = 'Case Study';
+				$labels->add_new = 'Add Case Study';
+				$labels->add_new_item = 'Add New Case Study';
+				$labels->edit_item = 'Edit Case Study';
+				$labels->new_item = 'Case Study';
+				$labels->view_item = 'View Case Study';
+				$labels->search_items = 'Search Case Studies';
+				$labels->not_found = 'No Case Studies found';
+				$labels->not_found_in_trash = 'No Case Studies found in Trash';
+				$labels->all_items = 'All Case Studies';
+				$labels->menu_name = 'Case Studies';
+				$labels->name_admin_bar = 'Case Study';
+			}
+		});
 	}
 
 	public function createCustomPostTypes() {

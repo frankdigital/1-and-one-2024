@@ -23,7 +23,8 @@
 	&__action {
 		@apply flex w-full flex-row items-center px-spacing-400 py-spacing-400 text-left font-medium;
 
-		&:hover {
+		&:hover,
+		&:focus {
 			@apply text-theme-surface-accent;
 		}
 	}

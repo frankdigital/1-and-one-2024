@@ -1,6 +1,18 @@
 .jw-card-blog {
 	@apply relative flex flex-col gap-spacing-400;
 
+	&:hover &__image,
+	&:focus-within &__image {
+		img {
+			@apply scale-105;
+		}
+	}
+
+	&:hover &__heading,
+	&:focus-within &__heading {
+		@apply underline;
+	}
+
 	&__image-container {
 		@apply rounded-card relative h-60 overflow-hidden bg-theme-surface-invert;
 	}
@@ -58,16 +70,6 @@
 			@apply absolute inset-0;
 			content: '';
 		}
-	}
-
-	&:hover &__image {
-		img {
-			@apply scale-105;
-		}
-	}
-
-	&:hover &__heading {
-		@apply underline;
 	}
 }
 

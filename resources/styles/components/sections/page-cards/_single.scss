@@ -2,6 +2,19 @@
 	$this: &;
 	@apply rounded-card relative flex flex-col overflow-hidden lg:h-145;
 
+	&:hover,
+	&:focus-within {
+		#{$this}__image-container {
+			@apply lg:h-90;
+		}
+		#{$this}__image {
+			@apply lg:-translate-y-5;
+		}
+		#{$this}__cta .cta-text-link {
+			@apply lg:translate-y-0 lg:opacity-100;
+		}
+	}
+
 	&__image-container {
 		@apply relative h-60 shrink-0 overflow-hidden bg-theme-surface-invert transition-[height] duration-500 md:h-100;
 	}
@@ -36,18 +49,6 @@
 		&:before {
 			@apply absolute inset-0;
 			content: '';
-		}
-	}
-
-	&:hover {
-		#{$this}__image-container {
-			@apply lg:h-90;
-		}
-		#{$this}__image {
-			@apply lg:-translate-y-5;
-		}
-		#{$this}__cta .cta-text-link {
-			@apply lg:translate-y-0 lg:opacity-100;
 		}
 	}
 }

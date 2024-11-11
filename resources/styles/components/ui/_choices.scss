@@ -180,7 +180,7 @@ $choices-z-index: 1 !default;
 }
 
 %choices-dropdown {
-	@apply shadow-dropdown absolute top-full z-10 mt-1 hidden w-full overflow-hidden break-all rounded bg-theme-surface-primary;
+	@apply absolute top-full z-10 mt-1 hidden w-full overflow-hidden break-all rounded bg-theme-surface-primary shadow-dropdown;
 
 	&.is-active {
 		@apply block;

@@ -1,6 +1,13 @@
 .jw-team-tile {
 	@apply relative flex flex-col gap-spacing-250;
 
+	&:hover &__image,
+	&:focus-within &__image {
+		img {
+			@apply scale-105;
+		}
+	}
+
 	&__image-container {
 		@apply relative h-45 overflow-hidden rounded will-change-transform md:h-105;
 	}
@@ -23,12 +30,6 @@
 		&:before {
 			@apply absolute inset-0;
 			content: '';
-		}
-	}
-
-	&:hover &__image {
-		img {
-			@apply scale-105;
 		}
 	}
 }

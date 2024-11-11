@@ -34,7 +34,8 @@
 		@apply size-5;
 	}
 
-	&__action:hover {
+	&__action:hover,
+	&__action:focus {
 		&:after {
 			@apply w-full;
 		}

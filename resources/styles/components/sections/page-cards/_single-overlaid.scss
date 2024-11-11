@@ -47,7 +47,8 @@
 		}
 	}
 
-	&:hover {
+	&:hover,
+	&:focus {
 		#{$this}__image {
 			@apply scale-105;
 		}

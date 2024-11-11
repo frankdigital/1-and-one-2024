@@ -9,7 +9,7 @@
 				<div @class([ccn($baseClass, 'tiles')])>
 					<div @class([ccn($baseClass, 'tiles-container')])>
 						@foreach ($content['tiles'] as $tile)
-							<div data-content-tile @class([ccn($baseClass, 'tile')])>
+							<div data-content-tile @class([ccn($baseClass, 'tile')]) tabindex="0">
 
 								<div @class([ccn($baseClass, 'tile-content-container')])>
 									@if (isset($tile['icon']) && $tile['icon'])

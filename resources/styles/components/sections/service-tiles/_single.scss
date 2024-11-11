@@ -2,8 +2,19 @@
 	$this: &;
 	@apply gap-y-250 relative flex flex-col;
 
+	&:focus-within,
+	&:hover {
+		#{$this}__heading {
+			@apply underline;
+		}
+
+		#{$this}__image {
+			@apply scale-105;
+		}
+	}
+
 	&__image-container {
-		@apply lg:h-108 rounded-card relative h-95 overflow-hidden bg-theme-surface-invert;
+		@apply rounded-card relative h-95 overflow-hidden bg-theme-surface-invert lg:h-108;
 	}
 
 	&__image {
@@ -35,22 +46,9 @@
 	}
 
 	&__cta {
-		.cta-text-link {
-		}
 		&:before {
 			@apply absolute inset-0;
 			content: '';
-		}
-	}
-
-	&:hover,
-	&:focus {
-		#{$this}__heading {
-			@apply underline;
-		}
-
-		#{$this}__image {
-			@apply scale-105;
 		}
 	}
 }

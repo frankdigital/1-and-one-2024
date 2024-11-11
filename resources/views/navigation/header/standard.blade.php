@@ -38,6 +38,8 @@
 				<span class="middle"></span>
 				<span class="middle-reverse"></span>
 				<span class="bottom"></span>
+
+				<span class="sr-only">Toggle Menu</span>
 			</button>
 		</div>
 	</x-container>

@@ -7,6 +7,7 @@
 		<div @class([ccn($baseClass, 'wrapper')])>
 			<div id="logo-reference" @class([ccn($baseClass, 'logo-container')])>
 				<a href="{{ url('/') }}">
+					<span class="sr-only">1 and One</span>
 					@svg('icons.brand.LogoDark', ccn($baseClass, 'logo'))
 				</a>
 			</div>

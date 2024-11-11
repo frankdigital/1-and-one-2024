@@ -9,6 +9,7 @@
 			<div @class([ccn($baseClass, 'sidebar')])>
 				<div @class([ccn($baseClass, 'logo-container')])>
 					<a href="{{ url('/') }}" @class([ccn($baseClass, 'logo-link')])>
+						<span class="sr-only">1 and One</span>
 						@svg('icons.brand.LogoDark', ccn($baseClass, 'logo'))
 					</a>
 				</div>

@@ -2,6 +2,7 @@ export const MENU_TRIGGER = `[data-responsive-menu-trigger]`;
 export const HEADER = `[data-header]`;
 export const HEADER_OVERLAY = `[data-header-overlay]`;
 export const HEADER_MEGAMENU = `[data-header-megamenu]`;
+export const HEADER_MEGAMENU_TARGET = `[data-header-megamenu-target]`;
 
 export const HEADER_MOBILEMENU_TRIGGER = `[data-header-mobilemenu-trigger]`;
 export const HEADER_MOBILEMENU = `[data-header-mobilemenu]`;

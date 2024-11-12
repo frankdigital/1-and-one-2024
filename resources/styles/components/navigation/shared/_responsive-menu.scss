@@ -4,11 +4,15 @@
 	}
 
 	&__item {
-		@apply relative whitespace-nowrap;
+		@apply whitespace-nowrap;
 	}
 
 	&__action {
-		@apply flex items-center gap-1 py-1;
+		@apply relative flex items-center gap-1 py-1;
+
+		span {
+			@apply pointer-events-none;
+		}
 
 		&:after {
 			content: '';
@@ -25,7 +29,7 @@
 			@apply w-full;
 		}
 
-		.jw-responsive-menu__icon {
+		.jw-icon-handler__icon {
 			@apply rotate-180;
 		}
 	}
@@ -43,5 +47,9 @@
 
 	&__item--hidden {
 		@apply hidden;
+	}
+
+	&__mega-menu {
+		@apply absolute left-0 top-full h-0 w-full overflow-hidden;
 	}
 }

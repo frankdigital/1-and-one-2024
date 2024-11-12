@@ -77,4 +77,8 @@
 	&__icon {
 		@apply size-5;
 	}
+
+	&__icon-container {
+		@apply flex size-5;
+	}
 }

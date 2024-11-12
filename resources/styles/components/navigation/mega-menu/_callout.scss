@@ -1,17 +1,22 @@
 .jw-megamenu-callout {
-	@apply border border-t border-theme-surface-tertiary;
+	@apply pointer-events-none whitespace-normal border border-t border-theme-surface-tertiary bg-theme-surface-secondary opacity-0;
+
+	&.is-active {
+		@apply pointer-events-auto opacity-100;
+	}
+
+	.jw-container {
+		@apply flex;
+	}
 
 	&__background {
 		@apply absolute right-0 top-0 z-10 h-full w-1/2 bg-theme-surface-tertiary;
 	}
 
 	&__container {
-		@apply hidden flex-row;
-
-		&.is-active {
-			@apply flex;
-		}
+		@apply flex flex-row;
 	}
+
 	&__menu-container {
 		@apply relative z-20 flex flex-1 gap-16 bg-white py-spacing-600 pr-spacing-700;
 	}

@@ -1,5 +1,6 @@
 .jw-header {
 	// @apply py-spacing-200 md:py-spacing-250;
+	transition: background-color 0.3s ease-in-out;
 	@apply fixed top-0 z-50 w-full bg-white;
 
 	&.dark {

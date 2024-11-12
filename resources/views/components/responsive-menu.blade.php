@@ -15,6 +15,15 @@
 							<x-icon-handler @class([ccn($baseClass, 'icon')]) icon="SharpChevronDown" />
 						</span>
 					</button>
+
+					<div data-header-megamenu @class([ccn($baseClass, 'mega-menu')])>
+
+						@include('navigation.megamenu.callout-single', [
+							'item' => $item,
+							'key' => $loop->index,
+						])
+
+					</div>
 				@else
 					<a href="{{ $item['uri'] }}" data-responsive-menu-trigger>
 						<x-text as="span" textStyle="bodySmall" :strong="true"

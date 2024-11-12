@@ -48,12 +48,12 @@ domReady(async () => {
 	initModal(scroller);
 	initMegamenu(scroller);
 
-	const animateHeight = document.querySelectorAll(ANIMATE_HEIGHT);
-	if (animateHeight) {
-		animateHeight.forEach((element) => {
-			initAnimateHeight(element as HTMLElement);
-		});
-	}
+	// const animateHeight = document.querySelectorAll(ANIMATE_HEIGHT);
+	// if (animateHeight) {
+	// 	animateHeight.forEach((element) => {
+	// 		initAnimateHeight(element as HTMLElement);
+	// 	});
+	// }
 
 	const selectElements = document.querySelectorAll('.gfield_select');
 	if (selectElements) {

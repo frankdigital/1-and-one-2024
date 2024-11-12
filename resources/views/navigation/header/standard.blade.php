@@ -46,13 +46,13 @@
 		</div>
 	</x-container>
 
-	<div data-header-megamenu @class([ccn($baseClass, 'mega-menu')])>
+	{{-- <div data-header-megamenu @class([ccn($baseClass, 'mega-menu')])>
 		<x-animate-height>
 			@include('navigation.megamenu.callout', [
 				'menu' => $content['menu'],
 			])
 		</x-animate-height>
-	</div>
+	</div> --}}
 
 	<div data-header-mobilemenu @class([ccn($baseClass, 'mobile-menu')])>
 		@include('navigation.mobile-menu.default', [

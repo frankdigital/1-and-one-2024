@@ -99,6 +99,80 @@ $fields
                 'post_type' => ['page'],
             ])
         ->endGroup()
+
+        ->addTrueFalse('enable_global_content_tiles', [
+            'label' => 'Enable Global Content Tiles',
+            'default_value' => 0,
+            'ui' => 1,
+        ])
+
+        ->addGroup('content', [
+            'label' => 'Content Tiles',
+            'graphql_field_name' => 'contentContentTiles',
+            'conditional_logic' => [
+                [
+                    [
+                        'field' => 'enable_global_content_tiles',
+                        'operator' => '==',
+                        'value' => '1',
+                    ],
+                ],
+            ],
+        ])
+            ->addFields(get_field_partial('Fields.Atoms.HeadingTextarea'))
+            
+            ->addWysiwyg('description', [
+                'label' => 'Supporting Text',
+                'toolbar' => 'minimal',
+                'media_upload' => false,
+                'delay' => 0,
+            ])
+    
+            ->addRepeater('tiles', [
+                'label' => 'Tiles',
+                'layout' => 'block',
+                'min' => 1,
+            ])
+                ->addField('icon', 'icon-picker', [
+                    'label' => 'Icon',
+                    'required' => true,
+                ])
+    
+                ->addFields(get_field_partial('Fields.Atoms.Heading'))
+    
+                ->addTextarea('description', [
+                    'label' => 'Description',
+                    'maxlength' => '350',
+                ])  
+    
+                ->addImage('image', [
+                    'required' => true,
+                    'label' => 'Image',
+                ])
+            ->endRepeater()
+    
+            ->addAccordion('ctas', [
+                'label' => 'Call to Actions'
+            ])
+                ->addFields(get_field_partial('Fields.Components.CtaPrimary'))
+            ->addAccordion('ctas_end')->endpoint()
+        ->endGroup()
+
+        ->addRelationship('global_content_tiles', [
+            'label' => 'Global Content Tiles',
+            'instructions' => 'Select the content tiles that will be displayed on all pages.',
+            'post_type' => ['page'],
+            'return_format' => 'id',
+            'conditional_logic' => [
+                [
+                    [
+                        'field' => 'enable_global_content_tiles',
+                        'operator' => '==',
+                        'value' => '1',
+                    ],
+                ],
+            ],
+        ])
 	->endGroup();
 
 return $fields;

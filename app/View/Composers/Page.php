@@ -46,9 +46,27 @@ class Page extends Composer {
 	 */
 	public function flexibleSections() {
 		$data = get_field('flexible_sections') ?? [];
+		
+		if ($this->getAcfFieldFromOptions('options_general_enable_global_content_tiles')) {
+			$contentTilesGlobal = $this->getAcfFieldFromOptions('options_general_content');
+			$pagesToDisplayGlobalContentTiles = $this->getAcfFieldFromOptions('options_general_global_content_tiles') ?? [];
 
-        return $data;
+			if (!empty($pagesToDisplayGlobalContentTiles) && in_array(get_the_ID(), $pagesToDisplayGlobalContentTiles ?? [])) {
+				$position = max(0, count($data) - 2);
+				$globalContent = [
+					'acf_fc_layout' => 'content_tiles',
+					'scroll_id' => 'global-content-tiles',
+					'content' => $contentTilesGlobal
+				];
+				
+				array_splice($data, $position, 0, [$globalContent]);
+			}
+		}
+	
+		return $data;
 	}
+	
+	
 
 	public function header() {
 		$optionsHeader = $this->getAcfFieldFromOptions('options_header');

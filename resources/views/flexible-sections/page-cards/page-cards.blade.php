@@ -12,7 +12,33 @@
 							<div data-blog-listing-pagination-target="{{ $key }}" @class([ccn($baseClass, 'grid-group')])>
 								@foreach ($postGroup as $post)
 									<div data-transition-target>
-										<x-page-card :id="$post" />
+										@php
+											$baseClass = 'page-card';
+										@endphp
+
+										<article @class([ccn($baseClass)]) title="{!! $post['heading'] !!}">
+											@isset($post['image'])
+												<div @class([ccn($baseClass, 'image-container')])>
+													<x-image :image="$post['image']" :fill="true" :size="[588, 360]" @class([ccn($baseClass, 'image')]) />
+												</div>
+											@endisset
+											<div @class([ccn($baseClass, 'content-container')])>
+												<div @class([ccn($baseClass, 'content')])>
+													@isset($post['heading'])
+														<x-text @class([ccn($baseClass, 'heading')]) as="h4">
+															{!! $post['heading'] !!}
+														</x-text>
+													@endisset
+
+													@isset($post['description'])
+														<x-text @class([ccn($baseClass, 'description')]) as="body" :isHTML="true">
+															{!! $post['description'] !!}
+														</x-text>
+													@endisset
+												</div>
+
+											</div>
+										</article>
 									</div>
 								@endforeach
 							</div>

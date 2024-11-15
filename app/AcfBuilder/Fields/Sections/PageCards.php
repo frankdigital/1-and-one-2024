@@ -20,18 +20,23 @@ $builder
             'media_upload' => false,
             'delay' => 0,
         ])
-            
-        ->addRelationship('pages', [
+
+        ->addRepeater('pages', [
             'label' => 'Pages',
-            'post_type' => ['page'],
-            'min' => 2,
             'layout' => 'block',
-            'button_label' => 'Add Card',
-            'return_format' => 'id',
-            'filters' => [
-                0 => 'search',
-            ],
+            'min' => 2,
         ])
+           ->addImage('image', [
+                'label' => 'Image',
+                'required' => true,
+            ])
+            ->addFields(get_field_partial('Fields.Atoms.Heading'))
+
+            ->addTextarea('description', [
+                'label' => 'Description',
+                'maxlength' => '350',
+            ])
+        ->endRepeater()
 
         ->addAccordion('ctas', [
             'label' => 'Call to Actions'

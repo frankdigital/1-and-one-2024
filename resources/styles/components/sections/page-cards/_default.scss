@@ -67,4 +67,8 @@
 	.jw-page-cards__grid-group {
 		@apply lg:grid-cols-3;
 	}
+
+	.jw-page-card__description {
+		@apply line-clamp-4;
+	}
 }

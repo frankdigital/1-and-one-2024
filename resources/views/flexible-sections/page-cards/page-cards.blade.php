@@ -12,33 +12,39 @@
 							<div data-blog-listing-pagination-target="{{ $key }}" @class([ccn($baseClass, 'grid-group')])>
 								@foreach ($postGroup as $post)
 									<div data-transition-target>
-										@php
-											$baseClass = 'page-card';
-										@endphp
+										@if ($contentType === 'pages')
+											<x-page-card :id="$post" />
+										@endif
 
-										<article @class([ccn($baseClass)]) title="{!! $post['heading'] !!}">
-											@isset($post['image'])
-												<div @class([ccn($baseClass, 'image-container')])>
-													<x-image :image="$post['image']" :fill="true" :size="[588, 360]" @class([ccn($baseClass, 'image')]) />
+										@if ($contentType === 'manual')
+											@php
+												$baseClass = 'page-card';
+											@endphp
+
+											<article @class([ccn($baseClass)]) title="{!! $post['heading'] !!}">
+												@isset($post['image'])
+													<div @class([ccn($baseClass, 'image-container')])>
+														<x-image :image="$post['image']" :fill="true" :size="[588, 360]" @class([ccn($baseClass, 'image')]) />
+													</div>
+												@endisset
+												<div @class([ccn($baseClass, 'content-container')])>
+													<div @class([ccn($baseClass, 'content')])>
+														@isset($post['heading'])
+															<x-text @class([ccn($baseClass, 'heading')]) as="h4">
+																{!! $post['heading'] !!}
+															</x-text>
+														@endisset
+
+														@isset($post['description'])
+															<x-text @class([ccn($baseClass, 'description')]) as="body" :isHTML="true">
+																{!! $post['description'] !!}
+															</x-text>
+														@endisset
+													</div>
+
 												</div>
-											@endisset
-											<div @class([ccn($baseClass, 'content-container')])>
-												<div @class([ccn($baseClass, 'content')])>
-													@isset($post['heading'])
-														<x-text @class([ccn($baseClass, 'heading')]) as="h4">
-															{!! $post['heading'] !!}
-														</x-text>
-													@endisset
-
-													@isset($post['description'])
-														<x-text @class([ccn($baseClass, 'description')]) as="body" :isHTML="true">
-															{!! $post['description'] !!}
-														</x-text>
-													@endisset
-												</div>
-
-											</div>
-										</article>
+											</article>
+										@endif
 									</div>
 								@endforeach
 							</div>

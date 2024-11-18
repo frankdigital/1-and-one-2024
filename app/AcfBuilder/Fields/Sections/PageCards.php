@@ -21,10 +21,45 @@ $builder
             'delay' => 0,
         ])
 
+        ->addRadio('content_type', [
+            'label' => 'Content Type',
+            'choices' => [
+                'manual' => 'Manual',
+                'pages' => 'Pages',
+            ],
+            'default_value' => 'manual',
+            'layout' => 'horizontal',
+        ])
+
+        ->addRelationship('pages_automatic', [
+            'label' => 'Pages',
+            'post_type' => ['page'],
+            'max' => 12,
+            'instructions' => 'Select the pages you would like to display. This will automtaically pull the content from the selected pages.',
+            'conditional_logic' => [
+                [
+                    [
+                        'field' => 'content_type',
+                        'operator' => '==',
+                        'value' => 'pages',
+                    ],
+                ],
+            ],
+        ])
+
         ->addRepeater('pages', [
             'label' => 'Pages',
             'layout' => 'block',
             'min' => 2,
+            'conditional_logic' => [
+                [
+                    [
+                        'field' => 'content_type',
+                        'operator' => '==',
+                        'value' => 'manual',
+                    ],
+                ],
+            ],
         ])
            ->addImage('image', [
                 'label' => 'Image',

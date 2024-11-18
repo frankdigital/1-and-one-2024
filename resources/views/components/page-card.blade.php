@@ -20,6 +20,6 @@
 				</x-text>
 			@endisset
 		</div>
-		<x-cta @class([ccn($baseClass, 'cta')]) priority="text-link" :cta="$cta" />
+		{{-- <x-cta @class([ccn($baseClass, 'cta')]) priority="text-link" :cta="$cta" /> --}}
 	</div>
 </article>

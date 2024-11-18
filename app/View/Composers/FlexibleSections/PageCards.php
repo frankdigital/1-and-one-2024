@@ -31,7 +31,15 @@ class PageCards extends Composer {
 	 */
 	public function with() {
 		$section = $this->data->get('section');
-		$posts = $section['content']['pages'] ?? [];
+		$posts = [];
+
+		$contentType = $this->pathOr('manual', ['content', 'content_type'], $section);
+
+		if ($contentType === 'manual') {
+			$posts = $section['content']['pages'] ?? [];
+		} else if ($contentType === 'pages') {
+			$posts = $section['content']['pages_automatic'] ?? [];
+		}
 
 		if (!empty($posts)) {
 			$section['content']['pages'] = array_chunk($posts, self::POSTS_PER_PAGE);
@@ -39,6 +47,7 @@ class PageCards extends Composer {
 
 		return [
 			'content' => $section['content'],
+			'contentType' => $contentType,
 			'columnsCount' => $this->pathOr('two_columns', ['content', 'columns'], $section),
 		];
 	}

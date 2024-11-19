@@ -8,6 +8,10 @@
 	&__image {
 		@apply transition-transform duration-500 md:h-95;
 
+		.jw-page-card:hover:not(.jw-page-card--manual) & {
+			@apply scale-105 transform;
+		}
+
 		img {
 			@apply h-full w-full object-cover;
 		}
@@ -34,9 +38,12 @@
 	}
 
 	&__cta {
+		@apply lg:absolute lg:inset-0;
+
 		.cta-text-link {
 			@apply transition-[transform,opacity] duration-500 lg:translate-y-5 lg:opacity-0;
 		}
+
 		&:before {
 			@apply absolute inset-0;
 			content: '';

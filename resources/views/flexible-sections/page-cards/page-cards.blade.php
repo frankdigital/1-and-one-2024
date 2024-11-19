@@ -21,7 +21,7 @@
 												$baseClass = 'page-card';
 											@endphp
 
-											<article @class([ccn($baseClass)]) title="{!! $post['heading'] !!}">
+											<article @class([ccn($baseClass), ccn($baseClass . '--manual')]) title="{!! $post['heading'] !!}">
 												@isset($post['image'])
 													<div @class([ccn($baseClass, 'image-container')])>
 														<x-image :image="$post['image']" :fill="true" :size="[588, 360]" @class([ccn($baseClass, 'image')]) />

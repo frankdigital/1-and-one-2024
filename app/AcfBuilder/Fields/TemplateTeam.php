@@ -39,7 +39,26 @@ $builder
             'label' => 'Contact Information',
             'show_in_graphql' => true
         ])
-            ->addGroup('phone')
+            ->addTrueFalse('enable_phone', [
+                'label' => 'Enable Phone Number',
+                'instructions' => 'Enable the phone number field. This will display the phone number on the team modal.',
+                'ui' => 1,
+                'default_value' => 1,
+            ])
+
+            ->addGroup('phone', [
+                'label' => 'Phone Number',
+                'show_in_graphql' => true,
+                'conditional_logic' => [
+                    [
+                        [
+                            'field' => 'enable_phone',
+                            'operator' => '==',
+                            'value' => '1',
+                        ],
+                    ],
+                ],
+            ])
                 ->addText('formatted_number', [
                     'label' => 'Formatted Number',
                     'instructions' => 'Add the formatted telephone number, with spaces, dashes and brackets.',

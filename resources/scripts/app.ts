@@ -61,6 +61,7 @@ domReady(async () => {
 			new Choices(element, {
 				itemSelectText: '',
 				searchEnabled: false,
+				shouldSort: false,
 			});
 		});
 	}

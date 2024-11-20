@@ -25,7 +25,7 @@
 
 					</div>
 				@else
-					<a href="{{ $item['uri'] }}" data-responsive-menu-trigger>
+					<a href="{{ $item['uri'] }}" data-responsive-menu-trigger @class([ccn($baseClass, 'action')])>
 						<x-text as="span" textStyle="bodySmall" :strong="true"
 							@class(ccn($baseClass, 'item-text'))>{!! $item['label'] !!}</x-text>
 					</a>

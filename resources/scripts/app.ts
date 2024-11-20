@@ -179,7 +179,9 @@ domReady(async () => {
 
 	$('.gfield--input-type-consent.gfield_contains_required').each(function () {
 		const label = $(this).find('label');
-		label.text(`${label.text()} (Required)`);
+		// Weird issue, where some forms show the (Required) when needed by default, others don't. Solution is to remove them all and add them back in.
+		const text = label.text().replace('(Required)', '');
+		label.text(`${text} (Required)`);
 	});
 
 	initJaywingConsoleLog();

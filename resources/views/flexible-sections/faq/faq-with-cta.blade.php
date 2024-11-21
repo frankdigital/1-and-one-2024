@@ -22,7 +22,7 @@
 			</div>
 			@if ($showCta)
 				<x-cta-container @class([ccn($baseClass, 'cta-container')])>
-					<x-cta classes="" priority="primary" :cta="$content['primary_cta']" />
+					<x-cta priority="primary" :cta="$content['primary_cta']" />
 				</x-cta-container>
 			@endif
 		</div>

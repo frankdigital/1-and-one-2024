@@ -16,7 +16,7 @@
 				</div>
 
 				<x-cta-container :fullWidth="true" @class([ccn($baseClass, 'cta-container')])>
-					<x-cta classes="" priority="primary" :cta="$cta" />
+					<x-cta priority="primary" :cta="$cta" />
 				</x-cta-container>
 			</div>
 		</x-container>

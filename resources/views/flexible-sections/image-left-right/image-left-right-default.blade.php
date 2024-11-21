@@ -36,8 +36,8 @@
 
 			@if ($showCta)
 				<x-cta-container :fullWidth="true" @class([ccn($baseClass, 'cta-container')])>
-					<x-cta classes="" priority="primary" :cta="$content['primary_cta']" />
-					<x-cta classes="" priority="secondary" :cta="$content['secondary_cta']" />
+					<x-cta priority="primary" :cta="$content['primary_cta']" />
+					<x-cta priority="secondary" :cta="$content['secondary_cta']" />
 				</x-cta-container>
 			@endif
 		</div>

@@ -50,8 +50,8 @@
 
 			@if ($showCta)
 				<x-cta-container @class([ccn($baseClass, 'cta-container')])>
-					<x-cta classes="" priority="primary" :cta="$content['primary_cta']" />
-					<x-cta classes="" priority="text-link" :cta="$content['secondary_cta']" />
+					<x-cta priority="primary" :cta="$content['primary_cta']" />
+					<x-cta priority="text-link" :cta="$content['secondary_cta']" />
 				</x-cta-container>
 			@endif
 		</div>

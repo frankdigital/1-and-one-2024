@@ -64,11 +64,11 @@
 	<div @class([ccn($baseClass, 'actions-container')])>
 		<div @class([ccn($baseClass, 'cta-container')])>
 			@if (is_cta_enabled($content['primary_cta']))
-				<x-cta classes="" size="small" priority="primary" :cta="$content['primary_cta']" />
+				<x-cta size="small" priority="primary" :cta="$content['primary_cta']" />
 			@endif
 
 			@if (is_cta_enabled($content['secondary_cta']))
-				<x-cta classes="" size="small" priority="text-link" :cta="$content['secondary_cta']" />
+				<x-cta size="small" priority="text-link" :cta="$content['secondary_cta']" />
 			@endif
 		</div>
 	</div>

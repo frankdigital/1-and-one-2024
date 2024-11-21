@@ -26,7 +26,7 @@
 		</div>
 
 		<x-cta-container @class([ccn($baseClass, 'cta-container')])>
-			<x-cta classes="" priority="primary" size="small" :cta="$content['cta']" />
+			<x-cta priority="primary" size="small" :cta="$content['cta']" />
 		</x-cta-container>
 	</div>
 

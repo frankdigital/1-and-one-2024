@@ -23,9 +23,9 @@
 							])>
 								<div @class([ccn($baseClass, 'back-container')])>
 									<button data-mobile-menu-back @class([ccn($baseClass, 'back')])>
-										<div @class([ccn($baseClass, 'icon-container')])>
+										<span @class([ccn($baseClass, 'icon-container')])>
 											<x-icon-handler @class([ccn($baseClass, 'icon')]) icon="ChevronLeft" />
-										</div>
+										</span>
 
 										<x-text as="span" textStyle="bodySmall">{!! $item['label'] !!}</x-text>
 									</button>

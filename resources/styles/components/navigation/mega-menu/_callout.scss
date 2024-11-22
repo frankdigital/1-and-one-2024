@@ -18,14 +18,18 @@
 	}
 
 	&__menu-container {
-		@apply relative z-20 flex flex-1 gap-16 bg-white py-spacing-600 pr-spacing-700;
+		@apply relative z-20 flex flex-1 flex-col items-start justify-start gap-8 bg-white py-spacing-600 pr-spacing-700;
 	}
 
 	&__menu {
-		@apply grid grid-cols-2 gap-x-16 gap-y-spacing-300;
+		@apply mb-3 grid grid-cols-2 gap-x-16 gap-y-spacing-300;
 	}
 
 	&__featured-container {
 		@apply relative z-20 bg-theme-surface-tertiary py-spacing-600 pl-6 xl:pl-spacing-700;
+	}
+
+	&__link-container {
+		@apply flex w-full items-end justify-end border-t border-theme-border-secondary pt-8;
 	}
 }

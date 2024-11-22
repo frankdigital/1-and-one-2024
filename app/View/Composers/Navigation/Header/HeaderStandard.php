@@ -62,6 +62,8 @@ class HeaderStandard extends Composer {
 						'uri' => $item->url,
 						'label' => $item->title,
 						'excerpt' => $jwNavEnableExcerpt ? $jwNavExcerpt : null,
+						'enable_link' => $this->getAcfFieldFromID('enabled_link', $item),
+						'link' => $this->getAcfFieldFromID('link', $item),
 						'icon' => $jwNavIcon,
 						'featured' => $jwNavEnableFeatured ?  $jwNavFeatured : null,
 						'children' => [] // Prepare for children to be added later

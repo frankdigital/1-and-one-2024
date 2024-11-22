@@ -7,11 +7,13 @@
 		@foreach ($menu as $key => $item)
 			@if (isset($item['children']) && sizeof($item['children']) > 0)
 				<div @class([ccn($baseClass, 'container')]) data-callout-index="{{ $key }}">
+
 					@if (isset($item['featured']) && is_array($item['featured']))
 						<div @class([ccn($baseClass, 'background')])></div>
 					@endif
 
 					<nav @class([ccn($baseClass, 'menu-container')])>
+
 						<div>
 							<ul @class([ccn($baseClass, 'menu')])>
 								@foreach ($item['children'] as $key => $child)

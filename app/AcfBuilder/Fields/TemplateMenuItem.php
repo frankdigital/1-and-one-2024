@@ -21,6 +21,26 @@ $builder
         'required' => false,
     ])
 
+    ->addTrueFalse('enabled_link', [
+        'label' => 'Enable Link',
+        'instructions' => 'Check this box to add a link to the menu item.',
+        'ui' => 1,
+    ])
+
+    ->addLink('link', [
+        'label' => 'Link',
+        'instructions' => 'Enter the link of the menu item.',
+        'conditional_logic' => [
+            [
+                [
+                    'field' => 'enabled_link',
+                    'operator' => '==',
+                    'value' => '1',
+                ],
+            ],
+        ],
+    ])
+
     ->addTrueFalse('enable_excerpt', [
         'label' => 'Enable Excerpt',
         'instructions' => 'Check this box to add a Excerpt to the menu item.',

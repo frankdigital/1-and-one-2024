@@ -7,11 +7,13 @@
 
 		@if (isset($item['children']) && sizeof($item['children']) > 0)
 			<div @class([ccn($baseClass, 'container')]) data-callout-index="{{ $key }}">
+
 				@if (isset($item['featured']) && is_array($item['featured']))
 					<div @class([ccn($baseClass, 'background')])></div>
 				@endif
 
 				<nav @class([ccn($baseClass, 'menu-container')])>
+
 					<div>
 						<ul @class([ccn($baseClass, 'menu')])>
 							@foreach ($item['children'] as $key => $child)
@@ -28,6 +30,15 @@
 							@endforeach
 						</ul>
 					</div>
+
+					@if (isset($item['enable_link']) && $item['enable_link'])
+						<div @class([ccn($baseClass, 'link-container')])>
+							@php
+								$cta = build_button_from_link($item['link']['url'], $item['link']['title']);
+							@endphp
+							<x-cta :cta="$cta" priority="text-link" />
+						</div>
+					@endif
 				</nav>
 
 				@if (isset($item['featured']) && is_array($item['featured']))

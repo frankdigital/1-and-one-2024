@@ -33,6 +33,23 @@ if (!function_exists('is_image_valid')) {
     }
 }
 
+if (!function_exists('build_button_from_link')) {
+    function build_button_from_link($link, $label = 'Read More', $target = '_self') {
+        return [
+            'cta' => [
+                "type" => "link",
+                'url' => [
+                    'url' => $link,
+                    'title' => $label,
+                    'target'=> $target
+                ],
+            ],
+            'enable_cta' => true,
+        ];
+    }
+}
+
+
 
 /**
  * Checks if the CTA (Call to Action) is enabled.

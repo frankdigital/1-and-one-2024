@@ -66,6 +66,11 @@ const closeMenu = () => {
 };
 
 export function initMegamenu(smoothScroller: SmoothScroller) {
+	const $focusableElements = $(
+		`${HEADER_MEGAMENU_TARGET} a, ${HEADER_MEGAMENU_TARGET} button, ${HEADER_MEGAMENU_TARGET} input, ${HEADER_MEGAMENU_TARGET} select, ${HEADER_MEGAMENU_TARGET} textarea, ${HEADER_MEGAMENU_TARGET} [tabindex]`,
+	);
+	$focusableElements.attr('tabindex', '-1');
+
 	$triggers.on('click', function () {
 		const $this = $(this);
 		const $megamenuParent = $this.siblings(HEADER_MEGAMENU);
@@ -106,6 +111,19 @@ export function initMegamenu(smoothScroller: SmoothScroller) {
 			}
 			$megamentTarget.addClass(activeClass);
 		}
+
+		// Remove focus but not if has active class
+		$(HEADER_MEGAMENU_TARGET).each((i, el) => {
+			const $element = $(el);
+
+			console.log('hasClass', $element.hasClass(activeClass));
+
+			if (!$element.hasClass(activeClass)) {
+				$element.find('a, button').attr('tabindex', '-1');
+			} else {
+				$element.find('a, button').removeAttr('tabindex');
+			}
+		});
 
 		// Remove header dark class
 		$header.removeClass('dark');

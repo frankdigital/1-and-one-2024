@@ -7,8 +7,16 @@
 		@apply whitespace-nowrap;
 	}
 
+	&__item-text {
+		@apply text-smallBodyMobile;
+
+		@media (min-width: 1200px) {
+			@apply text-smallBodyDesktop;
+		}
+	}
+
 	&__action {
-		@apply relative flex items-center gap-1 py-1;
+		@apply relative flex items-center gap-1 py-1 text-smallBodyMobile;
 
 		span {
 			@apply pointer-events-none;

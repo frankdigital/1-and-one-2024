@@ -41,7 +41,7 @@
 	}
 
 	&__container {
-		@apply flex items-center justify-between py-spacing-200 md:py-spacing-250 lg:gap-spacing-700;
+		@apply flex items-center justify-between gap-spacing-400 py-spacing-200 md:py-spacing-250 xl:gap-spacing-700;
 	}
 
 	&__navigation--secondary {
@@ -76,10 +76,19 @@
 	}
 
 	&__cta-container {
-		@apply items-center gap-spacing-300 opacity-100 transition-opacity duration-200 will-change-auto lg:flex;
+		@apply items-center gap-spacing-150 opacity-100 transition-opacity duration-200 will-change-auto lg:flex xl:gap-spacing-300;
 
 		.cta-contained__icon {
 			@apply hidden lg:block;
+		}
+
+		.cta-text-link__label,
+		.cta-contained__label {
+			@apply text-smallBodyMobile;
+
+			@media (min-width: 1200px) {
+				@apply text-smallBodyDesktop;
+			}
 		}
 	}
 

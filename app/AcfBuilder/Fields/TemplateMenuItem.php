@@ -30,6 +30,7 @@ $builder
     ->addLink('link', [
         'label' => 'Link',
         'instructions' => 'Enter the link of the menu item.',
+        'required' => true,
         'conditional_logic' => [
             [
                 [

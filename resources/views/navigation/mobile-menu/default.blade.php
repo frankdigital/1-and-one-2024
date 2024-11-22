@@ -48,6 +48,17 @@
 											@endforeach
 										</ul>
 									</div>
+
+									@if (isset($item['enable_link']) && $item['enable_link'])
+										<div @class([ccn($baseClass, 'link-wrapper')])>
+											<div @class([ccn($baseClass, 'link-container')])>
+												@php
+													$cta = build_button_from_link($item['link']['url'], $item['link']['title']);
+												@endphp
+												<x-cta :cta="$cta" priority="text-link" />
+											</div>
+										</div>
+									@endif
 								@endif
 							</div>
 						@else

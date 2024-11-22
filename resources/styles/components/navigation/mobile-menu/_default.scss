@@ -81,4 +81,12 @@
 	&__icon-container {
 		@apply flex size-5;
 	}
+
+	&__link-wrapper {
+		@apply px-spacing-400;
+	}
+
+	&__link-container {
+		@apply flex w-full items-start justify-start border-t border-theme-border-secondary pt-5;
+	}
 }

@@ -67,7 +67,7 @@
 	}
 
 	&__back-container {
-		@apply border-b border-theme-border-tertiary;
+		@apply sticky top-0 z-10 border-b border-theme-border-tertiary bg-white;
 	}
 
 	&__back {
@@ -87,6 +87,6 @@
 	}
 
 	&__link-container {
-		@apply flex w-full items-start justify-start border-t border-theme-border-secondary pt-5;
+		@apply flex w-full items-start justify-start border-t border-theme-border-secondary py-5;
 	}
 }

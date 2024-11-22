@@ -38,7 +38,7 @@
 				@isset($content['images'])
 					@foreach ($content['images'] as $logo)
 						<div @class([ccn($baseClass, 'carousel-image-container')])>
-							<x-image :image="$logo" :fill='true' :size="[182, 140]" @class([ccn($baseClass, 'image')]) />
+							<x-image :image="$logo" :fill='true' :size="[728, 560]" @class([ccn($baseClass, 'image')]) />
 						</div>
 					@endforeach
 				@endisset
@@ -49,7 +49,7 @@
 			@isset($content['images'])
 				@foreach ($content['images'] as $logo)
 					<div @class([ccn($baseClass, 'grid-image-container')])>
-						<x-image :image="$logo" :fill='true' :size="[182, 140]" @class([ccn($baseClass, 'image')]) />
+						<x-image :image="$logo" :fill='true' :size="[728, 560]" @class([ccn($baseClass, 'image')]) />
 					</div>
 				@endforeach
 			@endisset

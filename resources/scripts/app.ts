@@ -20,6 +20,7 @@ import {
 	TESTIMONIALS_SINGLE,
 	GRAVITY_FORM_CONFIRMATION_ACTIONS,
 	OBFUSCATE_SELECTOR,
+	HEADER_MEGAMENU_TARGET,
 } from './selectors';
 import { initModal } from './ui/base-modal';
 import { registerAppHeight } from './core/appHeight';
@@ -183,6 +184,47 @@ domReady(async () => {
 		const text = label.text().replace('(Required)', '');
 		label.text(`${text} (Required)`);
 	});
+
+	const repositionNavigation = () => {
+		const logo = document.querySelector<HTMLElement>('#logo-reference');
+		const navigation = document.querySelector<HTMLElement>('.jw-responsive-menu');
+		const megamenu = document.querySelector<HTMLElement>('.jw-megamenu-callout__menu-container');
+
+		// Exit early if any element is missing
+		if (!logo || !navigation || !megamenu) return;
+
+		// Check screen width condition
+		if (window.innerWidth > 1736) {
+			const logoRect = logo.getBoundingClientRect();
+			const megamenuRect = megamenu.getBoundingClientRect();
+
+			// Calculate offset
+			const totalOffset = megamenuRect.left - logoRect.left;
+
+			// Set width dynamically
+			logo.style.width = `${totalOffset}px`;
+		} else {
+			// Reset width to default
+			logo.style.width = 'auto';
+		}
+	};
+
+	// Debounce utility to improve performance
+	const debounce = (func: () => void, wait: number) => {
+		let timeout: ReturnType<typeof setTimeout>;
+		return (...args: any[]) => {
+			clearTimeout(timeout);
+			timeout = setTimeout(() => func.apply(null, args), wait);
+		};
+	};
+
+	// Attach the debounced event listener
+	window.addEventListener('resize', debounce(repositionNavigation, 200));
+
+	// Initial call to position navigation on page load
+	repositionNavigation();
+
+	repositionNavigation();
 
 	initJaywingConsoleLog();
 });

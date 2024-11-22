@@ -3,6 +3,10 @@
 	transition: background-color 0.3s ease-in-out;
 	@apply fixed top-0 z-50 w-full bg-white;
 
+	#logo-reference {
+		@apply 2xl:pr-spacing-600;
+	}
+
 	&.dark {
 		@apply bg-black backdrop-blur-md;
 
@@ -41,7 +45,7 @@
 	}
 
 	&__container {
-		@apply flex items-center justify-between gap-spacing-400 py-spacing-200 md:py-spacing-250 xl:gap-spacing-700;
+		@apply flex items-center justify-between gap-spacing-400 py-spacing-200 md:py-spacing-250 xl:gap-spacing-700 2xl:max-w-none 2xl:px-6;
 	}
 
 	&__navigation--secondary {
@@ -53,7 +57,7 @@
 	}
 
 	&__wrapper {
-		@apply flex min-h-10 flex-grow items-center gap-spacing-600;
+		@apply flex min-h-10 flex-grow items-center gap-spacing-600 2xl:gap-0;
 	}
 
 	&__logo-container {

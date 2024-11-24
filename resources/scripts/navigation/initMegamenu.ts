@@ -52,14 +52,28 @@ const toggleMobileMenu = (smoothScroller: SmoothScroller) => {
 const closeMenu = () => {
 	const $activeMegamenu = $(`${HEADER_MEGAMENU}.${activeClass}`);
 
-	console.log('activeMegamenu', $activeMegamenu);
+	if ($activeMegamenu) {
+		const parent = $activeMegamenu.prev(MENU_TRIGGER);
 
-	gsap.to($activeMegamenu[0], { height: '0px', duration: 0.2 });
+		gsap.to($activeMegamenu[0], { height: '0px', duration: 0.2 });
 
-	setTimeout(() => {
-		$header.addClass('dark');
-		$overlay.removeClass(activeClass);
-	}, 120);
+		setTimeout(() => {
+			$header.addClass('dark');
+			$overlay.removeClass(activeClass);
+		}, 120);
+
+		if (parent) {
+			parent.focus();
+
+			$(HEADER_MEGAMENU).each((i, el) => {
+				$(el).find(HEADER_MEGAMENU_TARGET).removeClass(activeClass);
+				$(el).removeClass(activeClass);
+				$(el).find('a, button').attr('tabindex', '-1');
+			});
+		}
+
+		$activeMegamenu.removeClass(activeClass);
+	}
 
 	activeMegamenuIndex = null;
 	isMenuOpen = false;
@@ -80,15 +94,7 @@ export function initMegamenu(smoothScroller: SmoothScroller) {
 
 		// If you click the menu item again, close the menu
 		if (index === activeMegamenuIndex) {
-			gsap.to($megamenuParent[0], { height: '0px', duration: 0.2 });
-
-			setTimeout(() => {
-				$header.addClass('dark');
-				$overlay.removeClass(activeClass);
-			}, 120);
-
-			activeMegamenuIndex = null;
-			isMenuOpen = false;
+			closeMenu();
 			return;
 		}
 

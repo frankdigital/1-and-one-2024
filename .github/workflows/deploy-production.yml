@@ -1,0 +1,69 @@
+name: Deploy to WPEngine - Production
+
+on:
+    push:
+        branches:
+            - develop
+    workflow_dispatch:
+
+jobs:
+    deploy-to-wpengine:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v3
+              with:
+                  fetch-depth: 0 # Fetch all history for all tags and branches
+
+            - name: Setup Node.js 20
+              uses: actions/setup-node@v3
+              with:
+                  node-version: '20'
+
+            - name: Build - Cache Yarn dependencies
+              uses: actions/cache@v2
+              with:
+                  path: ~/.cache/yarn
+                  key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+
+            - name: Build - Install Yarn
+              if: steps.cache.outputs.cache-hit != 'true'
+              run: npm install -g yarn
+
+            - name: Build - Install dependencies
+              run: yarn install
+
+            - name: Build - Yarn
+              run: yarn build
+
+            - name: Deploy to WPEngine Production
+              if: github.ref == 'refs/heads/develop'
+              uses: wpengine/github-action-wpe-site-deploy@v3.0
+              with:
+                  WPE_SSHG_KEY_PRIVATE: ${{ secrets.WPE_SSHG_KEY_PRIVATE }}
+                  WPE_ENV: ${{ vars.WPE_INSTALL_PRODUCTION }}
+                  REMOTE_PATH: 'wp-content/themes/1-and-one-2024/'
+                  PHP_LINT: false
+                  FLAGS: '-azvr --inplace --delete --exclude=".*" --exclude-from=.deployignore'
+                  # SCRIPT: wp-content/themes/jaywing-boilerplate/post-deploy.sh
+
+            - name: Notify Slack
+              if: always() # Always send a Slack notification, regardless of success or failure
+              uses: slackapi/slack-github-action@v1.23.0
+              with:
+                  payload: |
+                      {
+                        "text": "GitHub Action build result: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}",
+                        "blocks": [
+                          {
+                            "type": "section",
+                            "text": {
+                              "type": "mrkdwn",
+                              "text": "GitHub Action build result: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}"
+                            }
+                          }
+                        ]
+                      }
+              env:
+                  SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}

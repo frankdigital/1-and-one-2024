@@ -3,7 +3,7 @@ name: Deploy to WPEngine - Production
 on:
     push:
         branches:
-            - develop
+            - main
     workflow_dispatch:
 
 jobs:
@@ -38,7 +38,7 @@ jobs:
               run: yarn build
 
             - name: Deploy to WPEngine Production
-              if: github.ref == 'refs/heads/develop'
+              if: github.ref == 'refs/heads/main'
               uses: wpengine/github-action-wpe-site-deploy@v3.0
               with:
                   WPE_SSHG_KEY_PRIVATE: ${{ secrets.WPE_SSHG_KEY_PRIVATE }}

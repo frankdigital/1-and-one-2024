@@ -23,7 +23,7 @@
 					@endif
 
 					@if (isset($content['heading']))
-						<x-text as="h1">
+						<x-text as="span" textStyle="h1">
 							{!! $content['heading'] !!}
 						</x-text>
 					@endif

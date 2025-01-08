@@ -2,7 +2,7 @@
 	@apply relative overflow-hidden py-0;
 
 	&__watermark {
-		@apply absolute bottom-0 right-0 z-30 h-auto w-90 opacity-0 md:opacity-15 lg:w-139;
+		@apply pointer-events-none absolute bottom-0 right-0 z-30 h-auto w-90 opacity-0 md:opacity-15 lg:w-139;
 	}
 
 	&__overlay {

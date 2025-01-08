@@ -73,7 +73,7 @@ class PostTypes {
 				],
 				'supports' => ['title', 'revisions', 'thumbnail'],
 				'menu_icon' => 'dashicons-networking',
-				'public' => true,
+				'public' => false,
 				'enter_title_here' => 'Enter team member name',
 				'show_in_graphql' => true,
 				'graphql_single_name' => 'jwTeamMember',

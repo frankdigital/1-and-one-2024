@@ -32,7 +32,7 @@ add_action('enqueue_block_editor_assets', function () {
  * @return void
  */
 
- add_action('admin_init', function () {
+add_action('admin_init', function () {
     // Get the theme directory
     $theme_dir = get_stylesheet_directory_uri();
     $css = $theme_dir . '/public/css/theme.css';
@@ -117,6 +117,34 @@ add_action('after_setup_theme', function () {
      * @link https://developer.wordpress.org/reference/functions/add_theme_support/#customize-selective-refresh-widgets
      */
     add_theme_support('customize-selective-refresh-widgets');
+
+    /**
+     * Enqueue Ahrefs analytics script.
+     */
+    $current_url = home_url();
+
+    // Only add the script if the site is on www.1andone.com.au
+    if (strpos($current_url, 'www.1andone.com.au') !== false) {
+        add_action('wp_enqueue_scripts', function () {
+            wp_enqueue_script(
+                'ahrefs-analytics',
+                'https://analytics.ahrefs.com/analytics.js',
+                [],
+                null,
+                true // Load in the footer
+            );
+        }, 100);
+
+        /**
+         * Add data-key attribute to Ahrefs script if it's enqueued.
+         */
+        add_filter('script_loader_tag', function ($tag, $handle, $src) {
+            if ($handle === 'ahrefs-analytics') {
+                return '<script src="' . esc_url($src) . '" data-key="Eaq/+t/M9Njn3/Id8iG16A" async></script>';
+            }
+            return $tag;
+        }, 10, 3);
+    }
 }, 20);
 
 /**

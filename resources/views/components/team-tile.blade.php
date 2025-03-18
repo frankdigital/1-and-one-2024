@@ -5,7 +5,7 @@
 
 <div @class([ccn($baseClass)])>
 	<div @class([ccn($baseClass, 'image-container')])>
-		<x-image :fill="true" :image="$image" :size="[600, 0]" @class([ccn($baseClass, 'image')]) />
+		<x-image :fill="true" :image="$image" :size="[600, 600]" @class([ccn($baseClass, 'image')]) />
 	</div>
 
 	<div @class([ccn($baseClass, 'content-container')])>

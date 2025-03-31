@@ -26,7 +26,7 @@
 
 				<div @class([ccn($baseClass, 'contact')])>
 					<div @class([ccn($baseClass, 'traditional-container')])>
-						@if (isset($content['phone']))
+						@if (isset($content['phone']) && !empty($content['phone']))
 							<div @class([
 								ccn($baseClass, 'link-container'),
 								ccn($baseClass, 'link-container--phone'),
@@ -37,7 +37,7 @@
 							</div>
 						@endif
 
-						@if (isset($content['email']))
+						@if (isset($content['email']) && !empty($content['email']))
 							<div @class([
 								ccn($baseClass, 'link-container'),
 								ccn($baseClass, 'link-container--email'),
@@ -49,7 +49,7 @@
 						@endif
 					</div>
 
-					@if (isset($content['linkedin']))
+					@if (isset($content['linkedin']) && !empty($content['linkedin']))
 						<div @class([ccn($baseClass, 'social-container')])>
 							<div @class([
 								ccn($baseClass, 'link-container'),

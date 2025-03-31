@@ -6,7 +6,7 @@
 	@if (isset($content['image']) && is_image_valid($content['image']))
 		<div @class([ccn($baseClass, 'header')])>
 			<div @class([ccn($baseClass, 'image-container')])>
-				<x-image :rounded="true" :fill="true" :image="$content['image']" :size="[600, 0]" @class([ccn($baseClass, 'image')]) />
+				<x-image :rounded="true" :fill="true" :image="$content['image']" :size="[1200, 1200]" @class([ccn($baseClass, 'image')]) />
 			</div>
 		</div>
 	@endif
